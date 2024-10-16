@@ -1,16 +1,83 @@
-<script lang="ts">
-    let windowScroll = 0;
-    $: hasScrolled = windowScroll <= 100;
-    $: navbarClass = hasScrolled ? 'bg-transparent' : 'bg-purple-800';
+<script>
+    import {onMount} from 'svelte';
+    import {navbarItems} from "~/data/navbar.ts";
+
+    let isOpen = false;
+    const toggleMenu = () => isOpen = !isOpen;
+
+    onMount(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 768) {
+                isOpen = false;
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    });
 </script>
 
-<svelte:window on:scroll={() => windowScroll = window.scrollY} />
-
-<div class={`fixed top-0 left-0 w-full z-50 ${navbarClass} transition-all duration-300 ease-in-out`}>
-    <div class="max-w-8xl w-full mx-auto flex items-center justify-start gap-12">
-        <a href="#" class="text-2xl font-bold text-white">Logo</a>
-        <div class="flex items-center justify-around gap-8 align-middle text-xl">
-            <a href="#" class="text-white hover:text-white">Home</a>
+<nav class="text-white">
+    <div class="bg-primary max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-x border-b border-x-purple-950/40 border-b-purple-950/40">
+        <div class="flex flex-row-reverse md:flex-row items-center justify-between h-16">
+            <div class="flex items-center">
+                <div>
+                    <p class="font-bold text-purple-100">Ariverse Studio<span class="text-2xl inline">.</span></p>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        {#each navbarItems as item}
+                            <a href={item.href}
+                               class="hover:bg-indigo-900 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">{item.label}</a>
+                        {/each}
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden">
+                <button on:click={toggleMenu}
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white z-50">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+          <div class="hidden md:block">
+            <a href="#"
+               class="inline-block bg-indigo-600 hover:bg-indigo-700 px-4 py-2 text-white font-medium"> Contact Us
+            </a>
+          </div>
         </div>
     </div>
-</div>
+
+    {#if isOpen}
+        <div class="fixed inset-0 bg-black z-50 md:hidden">
+            <div class="flex flex-col h-full">
+                <div class="flex justify-between items-center p-4">
+                    <button on:click={toggleMenu} class="text-white">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex-grow overflow-y-auto">
+                    <div class="px-2 pt-2 pb-3 space-y-1">
+                        {#each navbarItems as item}
+                            <a href="#"
+                               class="block px-3 py-2 text-base font-medium border-b border-gray-700">{item.label}</a>
+                        {/each}
+                    </div>
+                </div>
+                <div class="p-4">
+                    <a href="#"
+                       class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-white font-medium">
+                        LET'S TALK ON DISCORD
+                    </a>
+                </div>
+            </div>
+        </div>
+    {/if}
+</nav>
