@@ -1,25 +1,29 @@
 {
-  "name": "Ariverse Studio",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "ariverse-studio",
+  "version": "2.0.0",
+  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/sitemap": "^3.2.0",
-    "@astrojs/svelte": "^5.7.1",
-    "@astrojs/tailwind": "^5.1.1",
-    "@fontsource-variable/comfortaa": "^5.1.0",
-    "astro": "^4.15.11",
-    "svelte": "^4.2.19",
-    "swiper": "^11.1.14",
-    "tailwindcss": "^3.4.13",
-    "typescript": "^5.6.2",
-    "unplugin-icons": "^0.19.3"
+    "bootstrap": "^5.3.3",
+    "html-react-parser": "^5.1.8",
+    "lightgallery": "^2.7.2",
+    "next": "14.1.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.54.2",
+    "react-slick": "^0.30.2",
+    "sass": "^1.71.1",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^8.4.5"
+  },
+  "devDependencies": {
+    "@iconify/react": "^4.1.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.2"
   }
 }
