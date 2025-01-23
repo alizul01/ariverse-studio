@@ -125,7 +125,7 @@ export default function Header({variant}) {
                 <Div className="cs-side_header_in">
                     <Div className="cs-side_header_shape"/>
                     <Link className="cs-site_branding" href="/">
-                        <img src="/images/footer_logo.svg" alt="Logo"/>
+                        <h3>Ariverse</h3>
                     </Link>
                     <Div className="cs-side_header_box">
                         <h2 className="cs-side_header_heading">
@@ -134,13 +134,6 @@ export default function Header({variant}) {
                     </Div>
                     <Div className="cs-side_header_box">
                         <ContactInfoWidget title="Contact Us" withIcon/>
-                    </Div>
-                    <Div className="cs-side_header_box">
-                        <Newsletter
-                            title="Subscribe"
-                            subtitle="At vero eos et accusamus et iusto odio as part dignissimos ducimus qui blandit."
-                            placeholder="example@gmail.com"
-                        />
                     </Div>
                     <Div className="cs-side_header_box">
                         <SocialWidget/>

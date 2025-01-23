@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db91b380-4bb4-4d33-8e32-3d74328ca27c" name="Changes" comment="update: new web design and usin' nextjs instead of astro">
-      <change beforePath="$PROJECT_DIR$/src/app/template-not-used/architecture-agency/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/architecture-agency/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/template-not-used/creative-portfolio/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/creative-portfolio/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/template-not-used/creative-solution/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/creative-solution/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/template-not-used/digital-agency/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/digital-agency/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/template-not-used/freelancer-agency/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/freelancer-agency/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/template-not-used/marketing-agency/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/marketing-agency/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/template-not-used/personal-portfolio/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/personal-portfolio/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/template-not-used/photography-agency/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/photography-agency/page.jsx" afterDir="false" />
+    <list default="true" id="db91b380-4bb4-4d33-8e32-3d74328ca27c" name="Changes" comment="chore: move files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/portfolio/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/portfolio/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ui/Header/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/Header/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +70,7 @@
       <workItem from="1737433135185" duration="1666000" />
       <workItem from="1737442016693" duration="1069000" />
       <workItem from="1737461306197" duration="598000" />
-      <workItem from="1737583230448" duration="5081000" />
+      <workItem from="1737583230448" duration="7229000" />
     </task>
     <task id="LOCAL-00001" summary="update: new web design and usin' nextjs instead of astro">
       <option name="closed" value="true" />
@@ -85,7 +80,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737589210983</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="chore: move files">
+      <option name="closed" value="true" />
+      <created>1737594652209</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737594652209</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +107,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update: new web design and usin' nextjs instead of astro" />
-    <option name="LAST_COMMIT_MESSAGE" value="update: new web design and usin' nextjs instead of astro" />
+    <MESSAGE value="chore: move files" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: move files" />
   </component>
 </project>

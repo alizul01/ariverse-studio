@@ -1,6 +1,6 @@
-const data = {
-  header: "Ariverse Studio | Game Developer Indonesia",
+const data_seo = {
+  header: "Ariverse Studio | Game Developer Malang",
   author: "Ariverse Studio",
 };
 
-export default data;
+export default data_seo;
