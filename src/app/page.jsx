@@ -16,6 +16,7 @@ import VideoModal from '@/app/ui/VideoModal';
 import Card from './ui/Card';
 import FunFact2 from "@/app/ui/FunFact/FunFact2";
 import ServiceList from "@/app/ui/ServiceList";
+import funfaceData from "../../data/funface";
 
 
 const heroSocialLinks = [
@@ -31,21 +32,6 @@ const heroSocialLinks = [
         name: 'Itch io',
         links: 'https://ariversestudio.itch.io/',
     }
-];
-
-const funfaceData = [
-    {
-        title: 'Happy Clients',
-        factNumber: '7',
-    },
-    {
-        title: 'Project Completed',
-        factNumber: '10',
-    },
-    {
-        title: 'Team Members',
-        factNumber: '7',
-    },
 ];
 
 const portfolioData = [
@@ -161,17 +147,17 @@ export default function Home() {
                 />
             </Div>
 
-            {/*<Spacing lg="145" md="80"/>*/}
-            {/*<Div className="container">*/}
-            {/*    <SectionHeading*/}
-            {/*        title="Awesome team <br/>members"*/}
-            {/*        subtitle="Our Team"*/}
-            {/*        variant="cs-style1"*/}
-            {/*    />*/}
-            {/*    <Spacing lg="85" md="45"/>*/}
-            {/*    <TeamSlider/>*/}
-            {/*</Div>*/}
-            {/*<Spacing lg="150" md="80"/>*/}
+            <Spacing lg="145" md="80"/>
+            <Div className="container">
+                <SectionHeading
+                    title="Awesome team <br/>members"
+                    subtitle="Our Team"
+                    variant="cs-style1"
+                />
+                <Spacing lg="85" md="45"/>
+                <TeamSlider/>
+            </Div>
+            <Spacing lg="150" md="80"/>
 
             {/*<TestimonialSlider/>*/}
 

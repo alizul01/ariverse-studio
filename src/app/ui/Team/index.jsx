@@ -37,11 +37,6 @@ export default function Team({
             <Icon icon="fa-brands:youtube" />
           </Link>
         )}
-        {memberSocial.facebook && (
-          <Link href={memberSocial.facebook}>
-            <Icon icon="fa-brands:facebook-f" />
-          </Link>
-        )}
       </Div>
     </Div>
   );

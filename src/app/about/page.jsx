@@ -11,28 +11,7 @@ import aboutImg from '../../../public/images/about_img_1.jpeg'
 import aboutImg2 from '../../../public/images/about_img_2.jpeg'
 import aboutImg3 from '../../../public/images/about_img_3.jpeg'
 import aboutImg4 from '../../../public/images/about_img_4.jpeg'
-
-
-
-
-const funfaceData = [
-  {
-    title: 'Global Happy Clients',
-    factNumber: '40K',
-  },
-  {
-    title: 'Project Completed',
-    factNumber: '50K',
-  },
-  {
-    title: 'Team Members',
-    factNumber: '245',
-  },
-  {
-    title: 'Digital products',
-    factNumber: '550',
-  },
-];
+import funfaceData from "../../../data/funface";
 
 export default function AboutPage() {
   return (
