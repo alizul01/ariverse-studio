@@ -5,24 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db91b380-4bb4-4d33-8e32-3d74328ca27c" name="Changes" comment="update: member data">
-      <change afterPath="$PROJECT_DIR$/data/funface.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/member.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/postData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/member/member_alizul.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/member/member_karina.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/member/member_versa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/member/member_ziedny.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/services/services_gamification.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/services/services_gbl.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/services/services_gdlc.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/services/services_xr.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon-96x96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/opengraph-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/site.webmanifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/web-app-manifest-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/web-app-manifest-512x512.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/services.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/about/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/about/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/Post/PostList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/Post/PostList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/Slider/TeamSlider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/Slider/TeamSlider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/Team/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/Team/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +34,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php\php.exe" />
   <component name="ProjectId" id="2qseZIaofnQABXDX3G5nZIC0Isz" />
   <component name="ProjectLevelVcsManager">
@@ -51,36 +46,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/CODE HUB/Project/2024/ariverse-studio/public/images/member&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.laravel-idea.search-composer-json": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/CODE HUB/Project/2024/ariverse-studio/public",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\member" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\services" />
-      <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\products" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\services" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\services_gbl" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\src\app" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\src\app\template-not-used" />
-      <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\image" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
