@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db91b380-4bb4-4d33-8e32-3d74328ca27c" name="Changes" comment="update: team member data and css styling">
+    <list default="true" id="db91b380-4bb4-4d33-8e32-3d74328ca27c" name="Changes" comment="update: team data">
+      <change afterPath="$PROJECT_DIR$/public/images/documentation/20240812_100900.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/documentation/20241010_102644.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/documentation/20241010_102710.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/documentation/20241010_162529.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/documentation/DSCF4834.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/documentation/Team.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/documentation/team_documentation.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/about/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/about/page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/scss/common/_general.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/scss/common/_general.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,16 +67,17 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\member" />
+      <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\documentation" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\services" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\products" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\documentation" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\member" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\member_alizul.jpg" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\services" />
-      <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\services_gbl" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -89,7 +100,7 @@
       <workItem from="1737618532256" duration="3134000" />
       <workItem from="1737675757973" duration="635000" />
       <workItem from="1738507222585" duration="112000" />
-      <workItem from="1738548440021" duration="647000" />
+      <workItem from="1738548440021" duration="2784000" />
     </task>
     <task id="LOCAL-00001" summary="update: new web design and usin' nextjs instead of astro">
       <option name="closed" value="true" />
@@ -131,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738549069882</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update: team data">
+      <option name="closed" value="true" />
+      <created>1738549169845</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1738549169845</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +174,7 @@
     <MESSAGE value="update: member data" />
     <MESSAGE value="update: team member" />
     <MESSAGE value="update: team member data and css styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="update: team member data and css styling" />
+    <MESSAGE value="update: team data" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: team data" />
   </component>
 </project>
