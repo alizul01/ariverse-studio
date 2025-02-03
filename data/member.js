@@ -1,6 +1,6 @@
 const teamData = [
     {
-        memberImage: '/images/member/member_alizul.jpg',
+        memberImage: '/images/member/member_alizul.png',
         memberName: 'Ali Zulfikar',
         memberDesignation: 'Founder and CEO',
         memberSocial: {
