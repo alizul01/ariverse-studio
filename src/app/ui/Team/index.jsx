@@ -13,7 +13,7 @@ export default function Team({
     <Div className="cs-team cs-style1">
       <Div className="cs-member_thumb">
         <img src={memberImage} alt={memberName} />
-        <Div className="cs-member_overlay" />
+          <Div className="cs-member_overlay" />
       </Div>
       <Div className="cs-member_info">
         <h2 className="cs-member_name">

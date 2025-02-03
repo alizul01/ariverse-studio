@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db91b380-4bb4-4d33-8e32-3d74328ca27c" name="Changes" comment="update: favicon">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="db91b380-4bb4-4d33-8e32-3d74328ca27c" name="Changes" comment="update: team member" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,36 +35,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/CODE HUB/Project/2024/ariverse-studio/public&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.laravel-idea.search-composer-json": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/CODE HUB/Project/2024/ariverse-studio/public/images/member",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\member" />
+      <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\services" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\products" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\member" />
+      <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\member_alizul.jpg" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\services" />
       <recent name="D:\CODE HUB\Project\2024\ariverse-studio\public\images\services_gbl" />
-      <recent name="D:\CODE HUB\Project\2024\ariverse-studio\src\app" />
-      <recent name="D:\CODE HUB\Project\2024\ariverse-studio\src\app\template-not-used" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -89,6 +87,7 @@
       <workItem from="1737618532256" duration="3134000" />
       <workItem from="1737675757973" duration="635000" />
       <workItem from="1738507222585" duration="112000" />
+      <workItem from="1738548440021" duration="317000" />
     </task>
     <task id="LOCAL-00001" summary="update: new web design and usin' nextjs instead of astro">
       <option name="closed" value="true" />
@@ -114,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737597701581</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update: team member">
+      <option name="closed" value="true" />
+      <created>1738548571553</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738548571553</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +143,7 @@
     <MESSAGE value="chore: move files" />
     <MESSAGE value="update: data and google crawl" />
     <MESSAGE value="update: member data" />
-    <option name="LAST_COMMIT_MESSAGE" value="update: member data" />
+    <MESSAGE value="update: team member" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: team member" />
   </component>
 </project>

@@ -2,7 +2,7 @@ const teamData = [
     {
         memberImage: '/images/member/member_alizul.png',
         memberName: 'Ali Zulfikar',
-        memberDesignation: 'Founder and CEO',
+        memberDesignation: 'Founder and Leader',
         memberSocial: {
             linkedin: 'https://www.linkedin.com/in/alizulfikar',
             twitter: 'https://www.x.com/@panggilajazul',
@@ -13,7 +13,7 @@ const teamData = [
     {
         memberImage: '/images/member/member_ziedny.png',
         memberName: 'Ziedny Bisma Mubarok',
-        memberDesignation: 'CTO',
+        memberDesignation: 'Lead Programmer',
         memberSocial: {
             linkedin: 'https://www.linkedin.com/in/alizulfikar',
             twitter: 'https://www.x.com/@panggilajazul',
