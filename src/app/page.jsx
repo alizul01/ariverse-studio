@@ -157,7 +157,7 @@ export default function Home() {
                 <Spacing lg="85" md="45"/>
                 <TeamSlider/>
             </Div>
-            <Spacing lg="150" md="80"/>
+            {/*<Spacing lg="150" md="80"/>*/}
 
             {/*<TestimonialSlider/>*/}
 

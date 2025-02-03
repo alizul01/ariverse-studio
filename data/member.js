@@ -13,7 +13,7 @@ const teamData = [
     {
         memberImage: '/images/member/member_ziedny.png',
         memberName: 'Ziedny Bisma Mubarok',
-        memberDesignation: 'Lead Programmer',
+        memberDesignation: 'Co-Founder and Lead Programmer',
         memberSocial: {
             linkedin: 'https://www.linkedin.com/in/alizulfikar',
             twitter: 'https://www.x.com/@panggilajazul',
