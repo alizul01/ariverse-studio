@@ -32,7 +32,7 @@ export default function Header({ variant }) {
                         <Div className="cs-main_header_in">
                             <Div className="cs-main_header_left">
                                 <Link className="cs-bold" href="/">
-                                    Ariverse
+                                    <img src="/images/logo.png" alt="Logo" style={{ maxWidth: '64px', height: 'auto' }} />
                                 </Link>
                             </Div>
                             <Div className="cs-main_header_center">
