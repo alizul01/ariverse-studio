@@ -30,17 +30,7 @@ export default function ServicesPage() {
         </Div>
         <Spacing lg="120" md="50" />
       </Div>
-      <Spacing lg='150' md='80' />
-      <Div className="container">
-        <SectionHeading
-          title='Providing best <br/>pricing for client'
-          subtitle='Pricing & Packaging'
-        />
-        <Spacing lg='85' md='40' />
-        <PricingTableList />
-      </Div>
-      <Spacing lg='125' md='55' />
-      <TestimonialSlider />
+      {/* <TestimonialSlider /> */}
       <Spacing lg='150' md='80' />
       <Div className="container">
         <Cta
