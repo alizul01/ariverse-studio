@@ -16,7 +16,7 @@ export default function ServiceList({ variant }) {
           key={index}
           onMouseEnter={() => handelActive(index)}
         >
-          <Link href={item.href} className="cs-iconbox cs-style3">
+          <Link href={'#'} className="cs-iconbox cs-style3">
             <>
               <Div className="cs-image_layer cs-style1 cs-size_md">
                 <Div className="cs-image_layer_in">
