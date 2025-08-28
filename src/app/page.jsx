@@ -17,6 +17,8 @@ import Card from './ui/Card';
 import FunFact2 from "@/app/ui/FunFact/FunFact2";
 import ServiceList from "@/app/ui/ServiceList";
 import funfaceData from "../../data/funface";
+import IconBoxStyle2 from './ui/IconBox/IconBoxStyle2';
+import IconBox from './ui/IconBox';
 
 
 const heroSocialLinks = [
@@ -72,7 +74,7 @@ export default function Home() {
                 scrollDownId="#service"
                 socialLinksHeading="Follow Us"
                 heroSocialLinks={heroSocialLinks}
-                bgImageUrl="/images/image/image_0.png"
+                bgImageUrl="/images/image/hero_background.png"
                 overlayOpacity={0.5}
             />
 
@@ -85,38 +87,115 @@ export default function Home() {
                 />
             </div>
 
-            <Spacing lg="150" md="80"/>
+            <Spacing lg="150" md="80" />
 
-            <Div id="service">
-                <Div className="container">
-                    <SectionHeading
-                        title="Our core services"
-                        subtitle="Services"
-                        variant="cs-style1 text-center"
-                    />
-                    <Spacing lg="70" md="45" />
-                    <ServiceList variant="cs-style2" />
+            <section className="cs-shape_wrap_4 cs-parallax">
+                <div className="cs-shape_4 cs-to_up" />
+                <div className="cs-shape_4 cs-to_right" />
+                <div className="cs-height_50 cs-height_lg_50" />
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-5 col-xl-4">
+                            <SectionHeading
+                                title="We provide best value offer"
+                                subtitle="Services"
+                                btnLink="/service"
+                                btnText="See All Services"
+                            />
+                            <Spacing lg="45" md="45" />
+                        </div>
+                        <div className="col-lg-7 offset-xl-1">
+                            <div className="cs-iconbox_4_wrap">
+                                <IconBoxStyle2
+                                    title="Full Game Development Life Cycle"
+                                    subTitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totame."
+                                    iconUrl="/images/icons/game-controller.svg"
+                                    btnLink="/service"
+                                    btnText="Learn More"
+                                />
+                                <IconBoxStyle2
+                                    title="Urban Planning"
+                                    subTitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totame."
+                                    iconUrl="/images/icons/service_icon_5.svg"
+                                    btnLink="/service"
+                                    btnText="Learn More"
+                                />
+                                <IconBoxStyle2
+                                    title="Sustainable Design"
+                                    subTitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totame."
+                                    iconUrl="/images/icons/service_icon_6.svg"
+                                    btnLink="/service"
+                                    btnText="Learn More"
+                                />
+                                <IconBoxStyle2
+                                    title="2D/3D Art Services"
+                                    subTitle="We offer high-quality 2D and 3D art services to bring your ideas to life."
+                                    iconUrl="/images/icons/service_icon_7.svg"
+                                    btnLink="/service"
+                                    btnText="Learn More"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="cs-height_145 cs-height_lg_75" />
+            </section>
+            <Spacing lg="150" md="80" />
+            <Div className="container">
+                <SectionHeading
+                    title="Our Working Process"
+                    subtitle="Game Development Pipeline"
+                    variant="cs-style1 text-center"
+                />
+                <Spacing lg="90" md="45" />
+                <Div className="row">
+                    <Div className="col-lg-4">
+                        <IconBox
+                            icon="/images/icons/creativity.svg"
+                            title="Initiation"
+                            subtitle="Tells us what you need and the objective of your project."
+                        />
+                        <Spacing lg="30" md="30" />
+                    </Div>
+                    <Div className="col-lg-4">
+                        <IconBox
+                            icon="/images/icons/clipboard.svg"
+                            title="Pre-Production"
+                            subtitle="Our creative team gathers materials, research, and inspiration."
+                        />
+                        <Spacing lg="30" md="30" />
+                    </Div>
+                    <Div className="col-lg-4">
+                        <IconBox
+                            icon="/images/icons/code.svg"
+                            title="Production"
+                            subtitle="We do the necessary steps to deliver the best result."
+                        />
+                        <Spacing lg="80" md="80" />
+                    </Div>
+                    <Div className="col-lg-4">
+                        <IconBox
+                            icon="/images/icons/testing.svg"
+                            title="Testing"
+                            subtitle="We test the game thoroughly to ensure no bugs from small to major."
+                        />
+                        <Spacing lg="30" md="30" />
+                    </Div>
+                    <Div className="col-lg-4">
+                        <IconBox
+                            icon="/images/icons/delivery.svg"
+                            title="Delivery"
+                            subtitle="We deliver the result and wait for your valuable feedback."
+                        />
+                        <Spacing lg="30" md="30" />
+                    </Div>
                 </Div>
-                <Spacing lg="120" md="50" />
             </Div>
+            <Spacing lg="120" md="120" />
 
-            {/*<Spacing lg="150" md="50"/>*/}
-            {/*<Div>*/}
-            {/*    <Div className="container">*/}
-            {/*        <SectionHeading*/}
-            {/*            title="Portfolio to explore"*/}
-            {/*            subtitle="Latest Projects"*/}
-            {/*            variant="cs-style1 text-center"*/}
-            {/*        />*/}
-            {/*        <Spacing lg="90" md="45"/>*/}
-            {/*    </Div>*/}
-            {/*    <PortfolioSlider data={portfolioData}/>*/}
-            {/*</Div>*/}
-
-            <Spacing lg="150" md="80"/>
             <Div className="cs-shape_wrap_2">
                 <Div className="cs-shape_2">
-                    <Div/>
+                    <Div />
                 </Div>
                 <Div className="container">
                     <Div className="row">
@@ -126,42 +205,42 @@ export default function Home() {
                                 subtitle="Our Awards and Activities"
                                 variant="cs-style1"
                             />
-                            <Spacing lg="90" md="45"/>
+                            <Spacing lg="90" md="45" />
                         </Div>
                         <Div className="col-xl-7 offset-xl-1">
-                            <TimelineSlider/>
+                            <TimelineSlider />
                         </Div>
                     </Div>
                 </Div>
             </Div>
 
-            <Spacing lg="130" md="70"/>
+            <Spacing lg="130" md="70" />
             <Div className="container">
                 <h2 className="cs-font_50 cs-m0 text-center cs-line_height_4">
                     Our Games Trailer
                 </h2>
-                <Spacing lg="70" md="70"/>
+                <Spacing lg="70" md="70" />
                 <VideoModal
                     videoSrc="https://www.youtube.com/watch?v=VOXmSFzgI_s"
                     bgUrl="/images/products/products_aatmm.jpg"
                 />
             </Div>
 
-            <Spacing lg="145" md="80"/>
+            <Spacing lg="145" md="80" />
             <Div className="container">
                 <SectionHeading
                     title="Astronauts <br /> Behind the Scene"
                     subtitle="Our Team"
                     variant="cs-style1"
                 />
-                <Spacing lg="85" md="45"/>
-                <TeamSlider/>
+                <Spacing lg="85" md="45" />
+                <TeamSlider />
             </Div>
             {/*<Spacing lg="150" md="80"/>*/}
 
             {/*<TestimonialSlider/>*/}
 
-            <Spacing lg="150" md="80"/>
+            <Spacing lg="150" md="80" />
 
             <Div className="container">
                 <Cta
