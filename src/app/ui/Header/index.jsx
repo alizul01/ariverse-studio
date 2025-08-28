@@ -1,5 +1,5 @@
 'use client';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import Div from '../Div';
 import Link from 'next/link';
 import DropDown from './DropDown';
@@ -7,7 +7,7 @@ import ContactInfoWidget from '../Widget/ContactInfoWidget';
 import Newsletter from '../Widget/Newsletter';
 import SocialWidget from '../Widget/SocialWidget';
 
-export default function Header({variant}) {
+export default function Header({ variant }) {
     const [isSticky, setIsSticky] = useState(false);
     const [sideHeaderToggle, setSideHeaderToggle] = useState(false);
     const [mobileToggle, setMobileToggle] = useState(false);
@@ -24,9 +24,8 @@ export default function Header({variant}) {
     return (
         <>
             <header
-                className={`cs-site_header cs-style1 text-uppercase ${
-                    variant ? variant : ''
-                } cs-sticky_header ${isSticky ? 'cs-sticky_header_active' : ''}`}
+                className={`cs-site_header cs-style1 text-uppercase ${variant ? variant : ''
+                    } cs-sticky_header ${isSticky ? 'cs-sticky_header_active' : ''}`}
             >
                 <Div className="cs-main_header">
                     <Div className="container">
@@ -40,7 +39,7 @@ export default function Header({variant}) {
                                 <Div className="cs-nav cs-primary_font cs-medium">
                                     <ul
                                         className="cs-nav_list"
-                                        style={{display: `${mobileToggle ? 'block' : 'none'}`}}
+                                        style={{ display: `${mobileToggle ? 'block' : 'none'}` }}
                                     >
                                         <li>
                                             <Link href="/" onClick={() => setMobileToggle(false)}>
@@ -71,11 +70,6 @@ export default function Header({variant}) {
                                                 Portfolio
                                             </Link>
                                         </li>
-                                        <li>
-                                            <Link href="/blog" onClick={() => setMobileToggle(false)}>
-                                                Blog
-                                            </Link>
-                                        </li>
                                     </ul>
                                     <span
                                         className={
@@ -85,23 +79,23 @@ export default function Header({variant}) {
                                         }
                                         onClick={() => setMobileToggle(!mobileToggle)}
                                     >
-                    <span></span>
-                  </span>
+                                        <span></span>
+                                    </span>
                                 </Div>
                             </Div>
                             <Div className="cs-main_header_right">
                                 <Div className="cs-toolbox">
-                  <span
-                      className="cs-icon_btn"
-                      onClick={() => setSideHeaderToggle(!sideHeaderToggle)}
-                  >
-                    <span className="cs-icon_btn_in">
-                      <span/>
-                      <span/>
-                      <span/>
-                      <span/>
-                    </span>
-                  </span>
+                                    <span
+                                        className="cs-icon_btn"
+                                        onClick={() => setSideHeaderToggle(!sideHeaderToggle)}
+                                    >
+                                        <span className="cs-icon_btn_in">
+                                            <span />
+                                            <span />
+                                            <span />
+                                            <span />
+                                        </span>
+                                    </span>
                                 </Div>
                             </Div>
                         </Div>
@@ -123,20 +117,20 @@ export default function Header({variant}) {
                     onClick={() => setSideHeaderToggle(!sideHeaderToggle)}
                 />
                 <Div className="cs-side_header_in">
-                    <Div className="cs-side_header_shape"/>
+                    <Div className="cs-side_header_shape" />
                     <Link className="cs-site_branding" href="/">
                         <h3>Ariverse</h3>
                     </Link>
                     <Div className="cs-side_header_box">
                         <h2 className="cs-side_header_heading">
-                            Do you have a project in your <br/> mind? Keep connect us.
+                            Do you have a project in your <br /> mind? Keep connect us.
                         </h2>
                     </Div>
                     <Div className="cs-side_header_box">
-                        <ContactInfoWidget title="Contact Us" withIcon/>
+                        <ContactInfoWidget title="Contact Us" withIcon />
                     </Div>
                     <Div className="cs-side_header_box">
-                        <SocialWidget/>
+                        <SocialWidget />
                     </Div>
                 </Div>
             </Div>
