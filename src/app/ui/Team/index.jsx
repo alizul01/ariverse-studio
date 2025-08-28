@@ -7,7 +7,6 @@ export default function Team({
   memberImage,
   memberName,
   memberDesignation,
-  memberSocial,
 }) {
   return (
     <Div className="cs-team cs-style1">
@@ -20,23 +19,6 @@ export default function Team({
           <Link href="/team/team-details">{memberName}</Link>
         </h2>
         <Div className="cs-member_designation">{memberDesignation}</Div>
-      </Div>
-      <Div className="cs-member_social cs-primary_color">
-        {memberSocial.linkedin && (
-          <Link href={memberSocial.linkedin}>
-            <Icon icon="fa6-brands:linkedin-in" />
-          </Link>
-        )}
-        {memberSocial.twitter && (
-          <Link href={memberSocial.twitter}>
-            <Icon icon="fa-brands:twitter" />
-          </Link>
-        )}
-        {memberSocial.youtube && (
-          <Link href={memberSocial.youtube}>
-            <Icon icon="fa-brands:youtube" />
-          </Link>
-        )}
       </Div>
     </Div>
   );

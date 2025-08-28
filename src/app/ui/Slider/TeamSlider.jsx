@@ -6,9 +6,6 @@ import Team from '../Team';
 import teamData from "../../../../data/member";
 
 export default function TeamSlider() {
-  /** Team Member Data **/
-
-  /** Slider Settings **/
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <div
       {...props}
@@ -35,10 +32,10 @@ export default function TeamSlider() {
     </div>
   );
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     prevArrow: <SlickArrowLeft />,
     nextArrow: <SlickArrowRight />,
@@ -76,7 +73,6 @@ export default function TeamSlider() {
             memberImage={item.memberImage}
             memberName={item.memberName}
             memberDesignation={item.memberDesignation}
-            memberSocial={item.memberSocial}
           />
         </Div>
       ))}
