@@ -17,6 +17,7 @@ import Card from './ui/Card';
 import FunFact2 from "@/app/ui/FunFact/FunFact2";
 import ServiceList from "@/app/ui/ServiceList";
 import funfaceData from "../../data/funface";
+import { serviceData } from "../../data/services";
 import IconBoxStyle2 from './ui/IconBox/IconBoxStyle2';
 import IconBox from './ui/IconBox';
 
@@ -106,34 +107,16 @@ export default function Home() {
                         </div>
                         <div className="col-lg-7 offset-xl-1">
                             <div className="cs-iconbox_4_wrap">
-                                <IconBoxStyle2
-                                    title="Full Game Development Life Cycle"
-                                    subTitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totame."
-                                    iconUrl="/images/icons/game-controller.svg"
-                                    btnLink="/service"
-                                    btnText="Learn More"
-                                />
-                                <IconBoxStyle2
-                                    title="Urban Planning"
-                                    subTitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totame."
-                                    iconUrl="/images/icons/service_icon_5.svg"
-                                    btnLink="/service"
-                                    btnText="Learn More"
-                                />
-                                <IconBoxStyle2
-                                    title="Sustainable Design"
-                                    subTitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium lorema doloremque laudantium, totame."
-                                    iconUrl="/images/icons/service_icon_6.svg"
-                                    btnLink="/service"
-                                    btnText="Learn More"
-                                />
-                                <IconBoxStyle2
-                                    title="2D/3D Art Services"
-                                    subTitle="We offer high-quality 2D and 3D art services to bring your ideas to life."
-                                    iconUrl="/images/icons/service_icon_7.svg"
-                                    btnLink="/service"
-                                    btnText="Learn More"
-                                />
+                                {serviceData.map((service, index) => (
+                                    <IconBoxStyle2
+                                        key={index}
+                                        title={service.title}
+                                        subTitle={service.subtitle}
+                                        iconUrl={index === 0 ? "/images/icons/game-controller.svg" : `/images/icons/service_icon_${index + 5}.svg`}
+                                        btnLink={service.href}
+                                        btnText="Learn More"
+                                    />
+                                ))}
                             </div>
                         </div>
                     </div>
