@@ -5,7 +5,7 @@ import PageHeading from "@/app/ui/PageHeading";
 import SectionHeading from "@/app/ui/SectionHeading";
 import Spacing from "@/app/ui/Spacing";
 import Team from "@/app/ui/Team";
-import teamData from "../../data/member";
+import teamData from "../../../data/member";
 
 export default function TeamPage() {
   return (
