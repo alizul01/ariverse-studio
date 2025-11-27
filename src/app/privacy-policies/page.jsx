@@ -5,7 +5,7 @@ import Spacing from "@/app/ui/Spacing";
 import Div from "@/app/ui/Div";
 import SectionHeading from "@/app/ui/SectionHeading";
 import Link from "next/link";
-import portfolioData from "../../data/portfolio";
+import portfolioData from "../../../data/portfolio";
 
 export default function PrivacyPoliciesPage() {
   return (

@@ -5,7 +5,6 @@ import Div from "@/app/ui/Div";
 import PageHeading from "@/app/ui/PageHeading";
 import SectionHeading from "@/app/ui/SectionHeading";
 import Spacing from "@/app/ui/Spacing";
-import Image from "next/image";
 import { useParams } from 'next/navigation';
 import portfolioData from "../../../../data/portfolio";
 
