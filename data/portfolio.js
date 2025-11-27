@@ -72,7 +72,6 @@ const portfolioData = [
       lastUpdated: 'November 27, 2025',
       email: 'contact@ariversestudio.com',
       collectsData: true,
-      thirdPartyServices: ['Google', 'Facebook', 'Unity', 'InMobi']
     }
   },
 ];
