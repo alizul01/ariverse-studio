@@ -79,7 +79,7 @@ export default function PortfolioPage() {
               <Portfolio
                 title={item.title}
                 subtitle={item.subtitle}
-                href={item.href}
+                href={`/portfolio/${item.id}`}
                 src={item.src}
                 variant="cs-style1 cs-type1"
               />

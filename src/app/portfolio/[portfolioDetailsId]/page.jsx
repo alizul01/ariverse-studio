@@ -58,6 +58,10 @@ export default function PortfolioDetailsPage() {
             >
               <Spacing lg='40' md='20'/>
               <p>{portfolioItem.description}</p>
+              <Spacing lg='30' md='30'/>
+              {portfolioItem.href && portfolioItem.href !== '#' && (
+                 <Button btnLink={portfolioItem.href} btnText='Play Game' />
+              )}
             </SectionHeading>
           </Div>
           <Div className="col-lg-5 offset-lg-1">
