@@ -7,30 +7,8 @@ import SectionHeading from "@/app/ui/SectionHeading";
 import Spacing from "@/app/ui/Spacing";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
+import portfolioData from "../../../data/portfolio";
 
-const portfolioData = [
-  {
-    title: 'Nightwatch at The Gallery',
-    subtitle: 'See Details',
-    href: 'https://alizul01.itch.io/nightwatch-at-the-gallery',
-    src: 'https://img.itch.zone/aW1nLzE4ODYxNTk1LnBuZw==/original/gbu6MT.png',
-    category: 'games',
-  },
-  {
-    title: 'Alex and The Magical Mirror',
-    subtitle: 'See Details',
-    href: 'https://www.youtube.com/watch?v=VOXmSFzgI_s',
-    src: 'https://img.itch.zone/aW1nLzE3OTU1MTQ2LnBuZw==/315x250%23c/HK2CS6.png',
-    category: 'games',
-  },
-  {
-    title: 'Litter Factory',
-    subtitle: 'See Details',
-    href: 'https://ariversestudio.itch.io/litter-factory',
-    src: 'https://img.itch.zone/aW1nLzIxMTE3NzkyLnBuZw==/original/jyQX4G.png',
-    category: 'games',
-  },
-];
 const categoryMenu = [
   {
     title: 'Games',
