@@ -23,6 +23,17 @@ export default function RootLayout({children}) {
         <html lang="en">
         <head>
             <meta name="author" content={data_seo.author}/>
+            <meta name="description" content={data_seo.description}/>
+            <meta name="keywords" content={data_seo.keywords}/>
+            <meta property="og:title" content={data_seo.header}/>
+            <meta property="og:description" content={data_seo.description}/>
+            <meta property="og:image" content={data_seo.og_image}/>
+            <meta property="og:url" content={data_seo.site_url}/>
+            <meta property="og:type" content="website"/>
+            <meta name="twitter:card" content="summary_large_image"/>
+            <meta name="twitter:title" content={data_seo.header}/>
+            <meta name="twitter:description" content={data_seo.description}/>
+            <meta name="twitter:image" content={data_seo.og_image}/>
             <title>
                 {data_seo.header}
             </title>
