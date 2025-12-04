@@ -47,9 +47,9 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
             <Div className="col-lg-4 col-sm-6">
               <Div className="cs-footer_item">
                 <TextWidget
-                  logoSrc="/images/footer_logo.svg"
+                  logoSrc="/images/logo.png"
                   logoAlt="Logo"
-                  text="Welcome to Ariverse Studio. We're a indie game development studio based in Malang, Indonesia."
+                  text="Welcome to Ariverse Studio (PT Studio Karya Semesta). We're a indie game development studio based in Malang, Indonesia."
                 />
                 <SocialWidget />
               </Div>
@@ -71,7 +71,7 @@ export default function Footer({ copyrightText, logoSrc, logoAlt, text }) {
         <Div className="cs-bottom_footer">
           <Div className="cs-bottom_footer_left">
             <Div className="cs-copyright">
-              Copyright © {`${date}`} Ariverse.
+              Copyright © {`${date}`} PT Studio Karya Semesta.
             </Div>
           </Div>
           <Div className="cs-bottom_footer_right">
