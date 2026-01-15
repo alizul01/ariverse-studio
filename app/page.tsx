@@ -88,26 +88,35 @@ export default function Home() {
 
       {/* 4. Working Process */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-32 relative overflow-hidden">
-        <FadeIn className="text-center mb-24">
-          <div className="inline-block mb-4 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5">
+        {/* Background Decorative Element */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E2494B]/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
+
+        <FadeIn className="text-center mb-32">
+          <div className="inline-block mb-4 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
             <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">The Roadmap</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] tracking-tight">OUR PROCESS</h2>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#FCEBD7] tracking-tighter uppercase">Our Process</h2>
         </FadeIn>
 
         <div className="relative max-w-6xl mx-auto">
           {/* Central Animated Line (Desktop) */}
-          <div className="hidden md:block absolute top-[45px] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#61422D]/50 to-transparent -z-10">
+          <div className="hidden md:block absolute top-[45px] left-0 w-full h-[1px] bg-[#61422D]/30 -z-10">
             <motion.div
-              className="h-full bg-[#E2494B] shadow-[0_0_15px_rgba(226,73,75,0.5)]"
+              className="h-full bg-[#E2494B] relative"
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
               transition={{ duration: 2, ease: "easeInOut" }}
               viewport={{ once: true }}
-            />
+            >
+              <motion.div
+                className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#E2494B] shadow-[0_0_15px_#E2494B]"
+                animate={{ opacity: [0.4, 1, 0.4] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+            </motion.div>
           </div>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-4">
             {[
               {
                 step: "01",
@@ -135,26 +144,38 @@ export default function Home() {
               }
             ].map((item, index) => (
               <StaggerItem key={item.step} className="relative group">
-                <div className="flex flex-col items-center text-center px-4">
+                <div className="flex flex-col items-center text-center px-4 transition-transform duration-500 group-hover:-translate-y-2">
+                  {/* Huge Ghost Number Background */}
+                  <span className="absolute -top-12 left-1/2 -translate-x-1/2 text-8xl font-black text-[#FCEBD7]/5 select-none transition-all duration-700 group-hover:text-[#E2494B]/10 group-hover:-top-16">
+                    {item.step}
+                  </span>
+
                   {/* Icon Node */}
-                  <div className="relative mb-8">
-                    <div className="w-20 h-20 rounded-2xl bg-[#250804] border border-[#61422D]/30 flex items-center justify-center text-[#FCEBD7] group-hover:border-[#E2494B] group-hover:text-[#E2494B] transition-all duration-500 shadow-xl z-10 relative overflow-hidden">
+                  <div className="relative mb-10">
+                    <div className="w-24 h-24 rounded-[2rem] bg-[#250804]/80 backdrop-blur-xl border border-[#61422D]/30 flex items-center justify-center text-[#FCEBD7] group-hover:border-[#E2494B] group-hover:text-[#E2494B] group-hover:shadow-[0_0_30px_rgba(226,73,75,0.2)] transition-all duration-500 z-10 relative overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-br from-[#E2494B]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {item.icon}
+                      <div className="relative z-10 transform group-hover:scale-110 transition-transform duration-500">
+                        {item.icon}
+                      </div>
                     </div>
-                    {/* Step Number Badge */}
-                    <div className="absolute -top-3 -right-3 w-8 h-8 rounded-lg bg-[#E2494B] text-[#FCEBD7] text-xs font-bold flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                    {/* Step Number Badge - Fixed Z-Index */}
+                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-xl bg-[#E2494B] text-[#FCEBD7] text-sm font-black flex items-center justify-center shadow-[0_4px_15px_rgba(0,0,0,0.5)] transform rotate-12 group-hover:rotate-0 group-hover:scale-110 transition-all duration-500 z-20">
                       {item.step}
                     </div>
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-[#FCEBD7] mb-3 tracking-wide uppercase group-hover:text-[#E2494B] transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-[#FCEBD7]/50 text-sm leading-relaxed max-w-[200px] group-hover:text-[#FCEBD7]/80 transition-colors">
-                    {item.desc}
-                  </p>
+                  <div className="relative z-10">
+                    <h3 className="text-2xl font-bold text-[#FCEBD7] mb-3 tracking-wide uppercase transition-colors group-hover:text-[#E2494B]">
+                      {item.title}
+                    </h3>
+                    <p className="text-[#FCEBD7]/40 text-sm leading-relaxed max-w-[200px] group-hover:text-[#FCEBD7]/70 transition-colors mx-auto">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  {/* Bottom Glow */}
+                  <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#E2494B] opacity-0 group-hover:opacity-100 group-hover:w-20 transition-all duration-500 rounded-full" />
                 </div>
               </StaggerItem>
             ))}
