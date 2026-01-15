@@ -13,15 +13,13 @@ import {
   CubeTransparentIcon,
   AcademicCapIcon,
 } from "@heroicons/react/24/outline";
-import { createReader } from '@keystatic/core/reader';
-import keystaticConfig from '../../keystatic.config';
+import { reader } from "../../lib/keystatic";
 import GameShowcase from "../components/home/GameShowcase";
 import AboutVisuals from "../components/home/AboutVisuals";
 import ProcessTimeline from "../components/home/ProcessTimeline";
 
 
 export default async function Home() {
-  const reader = createReader(process.cwd(), keystaticConfig);
   const gamesData = await reader.collections.games.all();
   const games = gamesData.map((game) => ({
     title: game.entry.title,

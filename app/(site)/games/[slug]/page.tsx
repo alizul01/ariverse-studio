@@ -1,18 +1,19 @@
-"use client";
-
-import { games } from "../../../data/games";
-import { notFound, useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 import FadeIn from "../../../components/animations/FadeIn";
 import CTA from "../../../components/ui/CTA";
-import Link from "next/link";
-import { ArrowLeft, Gamepad2, Layers } from "lucide-react";
+import { Gamepad2, Layers } from "lucide-react";
 import React from "react";
-
 import PageHeader from "../../../components/ui/PageHeader";
+import { reader } from "../../../../lib/keystatic";
+import { DocumentRenderer } from '@keystatic/core/renderer';
 
-export default function GameDetailPage() {
-    const params = useParams();
-    const game = games.find((g) => g.slug === params.slug);
+interface GameDetailPageProps {
+    params: Promise<{ slug: string }>;
+}
+
+export default async function GameDetailPage({ params }: GameDetailPageProps) {
+    const { slug } = await params;
+    const game = await reader.collections.games.read(slug);
 
     if (!game) {
         notFound();
@@ -23,10 +24,10 @@ export default function GameDetailPage() {
             <PageHeader
                 title={game.title}
                 description={game.description}
-                backgroundImage={game.image}
+                backgroundImage={game.coverImage || ""}
                 breadcrumbs={[
                     { label: "Games", href: "/games" },
-                    { label: game.title, href: `/games/${game.slug}` }
+                    { label: game.title, href: `/games/${slug}` }
                 ]}
             />
 
@@ -36,17 +37,11 @@ export default function GameDetailPage() {
                     <FadeIn delay={0.2}>
                         <h2 className="text-3xl font-bold text-[#FCEBD7] mb-8 uppercase tracking-tight">Mission Briefing</h2>
                         <div className="prose prose-invert prose-lg max-w-none text-[#FCEBD7]/70">
-                            <p className="mb-6">
-                                Experience the pinnacle of interactive entertainment with {game.title}.
-                                Our team has meticulously crafted every detail to provide an unforgettable experience that pushes the boundaries of technology and storytelling.
-                            </p>
-                            <p className="mb-6 border-l-4 border-[#E2494B] pl-8 py-4 italic bg-[#E2494B]/5 rounded-r-xl">
-                                "A masterclass in {game.engine === 'Unreal Engine 5' ? 'visual fidelity' : 'innovative gameplay'}, proving once again that Ariverse Studio is at the forefront of the digital frontier."
-                            </p>
-                            <p>
-                                Join thousands of players in this groundbreaking journey. Whether you're exploring the stars or uncovering ancient secrets,
-                                {game.title} offers depth, challenge, and pure excitement.
-                            </p>
+                            {game.content ? (
+                                <DocumentRenderer document={await game.content()} />
+                            ) : (
+                                <p>No content available.</p>
+                            )}
                         </div>
                     </FadeIn>
                 </div>
@@ -96,3 +91,4 @@ export default function GameDetailPage() {
         </div>
     );
 }
+
