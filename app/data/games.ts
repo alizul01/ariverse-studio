@@ -10,38 +10,29 @@ export interface Game {
 
 export const games: Game[] = [
     {
-        title: "GALACTIC ODYSSEY",
-        description: "An epic space exploration RPG where you discover uncharted worlds and build your own stellar empire.",
-        slug: "galactic-odyssey",
-        image: "/images/games/galactic-odyssey.jpg",
-        platforms: ["PC", "PS5", "XBOX"],
+        title: "Litter Factory",
+        description: "A cozy yet chaotic co-op simulation game. Manage a busy recycling plant, sort trash with friends, and save the planet one piece of junk at a time.",
+        slug: "litter-factory",
+        image: "/images/games/litter-factory.jpg", // Pastikan file gambar ada
+        platforms: ["PC", "Switch"],
         engine: "Unreal Engine 5",
-        releaseDate: "2025"
+        releaseDate: "2026"
     },
     {
-        title: "ECHOES OF ELDORIA",
-        description: "A breathtaking open-world fantasy adventure with deep soul-like combat and ancient mysteries.",
-        slug: "echoes-of-eldoria",
-        image: "/images/games/eldoria.jpg",
-        platforms: ["PC", "Switch"],
-        engine: "Unity",
+        title: "Nightwatch at the Museum",
+        description: "A psychological horror experience. Surviving your first shift as a security guard where the exhibits don't just stay on display when the lights go out.",
+        slug: "nightwatch-museum",
+        image: "/images/games/nightwatch.jpg",
+        platforms: ["PC"],
+        engine: "Unreal Engine 5",
         releaseDate: "TBA"
     },
     {
-        title: "NEON VELOCITY",
-        description: "High-octane cyberpunk racing game featuring gravity-defying tracks and intense electronic soundtrack.",
-        slug: "neon-velocity",
-        image: "/images/games/neon-velocity.jpg",
-        platforms: ["PC", "PS5"],
-        engine: "Unreal Engine 5",
-        releaseDate: "2024"
-    },
-    {
-        title: "SHADOW PROTOCOL",
-        description: "A tactical stealth-action game set in a dystopian future where information is the ultimate weapon.",
-        slug: "shadow-protocol",
-        image: "/images/games/shadow.jpg",
-        platforms: ["PC", "XBOX"],
+        title: "Alex and the Magical Mirror",
+        description: "An enchanting fantasy adventure. Follow Alex's journey through a fractured world of reflections to uncover the truth behind the ancient mirror.",
+        slug: "alex-magical-mirror",
+        image: "/images/games/alex-mirror.jpg",
+        platforms: ["PC", "Android"],
         engine: "Unity",
         releaseDate: "Coming Soon"
     }
