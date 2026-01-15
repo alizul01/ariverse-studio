@@ -1,34 +1,43 @@
 export interface Service {
+    id: string;
     title: string;
     description: string;
     slug: string;
-    image: string; // Path to background image
-    icon?: string;
+    image: string;
+    capabilities: string[];
 }
 
 export const services: Service[] = [
     {
-        title: "Game Development Life Cycle",
-        description: "We offer end-to-end game development services, covering concept creation, prototyping, production, and post-launch support. Our Agile approach ensures your product meets the highest quality standards.",
+        id: "game-dev",
+        title: "Game Development",
+        description: "End-to-end production for PC, Console, and Mobile. We handle the entire life cycle from concept to post-launch orbit.",
         slug: "game-development",
-        image: "/images/services/game-dev-bg.jpg"
+        image: "/images/services/game-dev-bg.jpg",
+        capabilities: ["PC & Console", "UE5 / Unity", "Agile Production", "Multiplayer", "Live-Ops"]
     },
     {
-        title: "Gamification Services",
-        description: "We integrate game mechanics into your business, education, or training programs to enhance engagement, motivation, and user experience.",
+        id: "gamification",
+        title: "Studio Gamification",
+        description: "Transform business objectives into engaging interactive systems. We build tools that make work feel like exploration.",
         slug: "gamification",
-        image: "/images/services/gamification-bg.jpg"
+        image: "/images/services/gamification-bg.jpg",
+        capabilities: ["E-Learning", "Loyalty Systems", "Training Sims", "Behavioral Loops"]
     },
     {
-        title: "XR Development Services",
-        description: "Our team specializes in creating immersive Virtual Reality (VR) and Augmented Reality (AR) applications for education, culture, and entertainment.",
+        id: "xr",
+        title: "Extended Reality (XR)",
+        description: "Pushing the boundaries of spatial computing. We create immersive VR/AR experiences for the next frontier.",
         slug: "xr-development",
-        image: "/images/services/xr-bg.jpg"
+        image: "/images/services/xr-bg.jpg",
+        capabilities: ["VR Training", "AR Marketing", "Spatial Design", "Metaverse Ops", "Hardware R&D"]
     },
     {
-        title: "Game Based Learning Services",
-        description: "We provide interactive and engaging game-based learning solutions designed to make education and training both effective and enjoyable.",
+        id: "learning",
+        title: "Interactive Learning",
+        description: "Gamified educational platforms that inspire and educate through immersive storytelling and mechanics.",
         slug: "game-based-learning",
-        image: "/images/services/learning-bg.jpg"
+        image: "/images/services/learning-bg.jpg",
+        capabilities: ["Serious Games", "Simulations", "EdTech", "Scenario Based"]
     }
 ];
