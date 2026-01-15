@@ -48,13 +48,13 @@ export default function Home() {
       </FadeIn>
 
       {/* 2. About Highlight */}
-      <section className="max-w-4xl mx-auto px-4 md:px-6 text-center py-24 relative">
+      <section className="max-w-4xl mx-auto px-4 md:px-6 text-center py-32 relative">
         <FadeIn direction="up">
-          <div className="inline-block mb-6">
-            <span className="text-[#E2494B] font-bold tracking-[0.2em] text-sm md:text-base border-b-2 border-[#E2494B] pb-2 uppercase">Who We Are</span>
+          <div className="inline-block mb-6 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
+            <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">The Studio</span>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-[#FCEBD7] leading-tight mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] tracking-tight mb-8">
             Crafted with heart of explorer.
           </h2>
 
@@ -70,10 +70,15 @@ export default function Home() {
       </section>
 
       {/* 3. Our Services (Overview) */}
-      <section className="max-w-[1440px] mx-auto px-4 md:px-6">
-        <FadeIn className="flex justify-between items-end mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#FCEBD7]">OUR SERVICES</h2>
-          <Link href="/services" className="text-[#E2494B] hover:text-[#FCEBD7] transition-colors font-medium hover-underline-animation">VIEW ALL SERVICES</Link>
+      <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-32">
+        <FadeIn className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 text-center md:text-left">
+          <div>
+            <div className="inline-block mb-4 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
+              <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">Expertise</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] tracking-tight uppercase">Our Services</h2>
+          </div>
+          <Link href="/services" className="mt-8 md:mt-0 text-[#E2494B] hover:text-[#FCEBD7] transition-colors font-medium hover-underline-animation">VIEW ALL SERVICES</Link>
         </FadeIn>
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
@@ -184,9 +189,12 @@ export default function Home() {
       </section>
 
       {/* 5. Our Teams ("The Astronauts") */}
-      <section className="max-w-[1440px] mx-auto px-4 md:px-6">
-        <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#FCEBD7] mb-12">THE ASTRONAUTS</h2>
+      <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-32">
+        <FadeIn className="text-center md:text-left mb-16">
+          <div className="inline-block mb-4 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
+            <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">The Crew</span>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] tracking-tight uppercase">THE ASTRONAUTS</h2>
         </FadeIn>
         <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[1, 2, 3, 4].map((i) => (
