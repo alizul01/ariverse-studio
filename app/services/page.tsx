@@ -46,7 +46,7 @@ export default function ServicesPage() {
                             <div>
                                 <a
                                     href={`/services/${service.slug}`}
-                                    className="inline-flex items-center gap-2 border-b-2 border-[#96191A] text-[#FCEBD7] pb-1 font-bold tracking-wide hover:text-[#96191A] transition-colors"
+                                    className="inline-flex items-center gap-2 border-b-0 text-[#FCEBD7] pb-1 font-bold tracking-wide hover:text-[#96191A] transition-colors hover-underline-animation"
                                 >
                                     MORE INFO
                                 </a>

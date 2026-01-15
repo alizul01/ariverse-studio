@@ -34,3 +34,24 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent);
 }
+
+/* Animated Underline Utility */
+.hover-underline-animation {
+  position: relative;
+  text-decoration: none;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  width: 100%;
+}
