@@ -1,0 +1,10 @@
+{
+  "title": "Nightwatch at The Museum",
+  "description": "Nightwatch",
+  "coverImage": "/images/games/nightwatch-at-the-museum/coverImage.png",
+  "platforms": [
+    "PC"
+  ],
+  "engine": "Unity",
+  "releaseDate": "2026-04-16"
+}

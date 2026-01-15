@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import PageHeader from "../components/ui/PageHeader";
-import FadeIn from "../components/animations/FadeIn";
+import PageHeader from "../../components/ui/PageHeader";
+import FadeIn from "../../components/animations/FadeIn";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     CalendarIcon,

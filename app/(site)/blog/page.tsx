@@ -1,4 +1,4 @@
-import { reader } from "../../lib/keystatic";
+import { reader } from "../../../lib/keystatic";
 import BlogList, { BlogPost } from "./BlogList";
 
 export const revalidate = 60; // Optional: revalidate every 60 seconds

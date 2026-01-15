@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import PageHeader from "../components/ui/PageHeader";
-import FadeIn from "../components/animations/FadeIn";
-import StaggerContainer, { StaggerItem } from "../components/animations/StaggerContainer";
-import { jobs } from "../data/jobs";
+import PageHeader from "../../components/ui/PageHeader";
+import FadeIn from "../../components/animations/FadeIn";
+import StaggerContainer, { StaggerItem } from "../../components/animations/StaggerContainer";
+import { jobs } from "../../data/jobs";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     RocketLaunchIcon,
