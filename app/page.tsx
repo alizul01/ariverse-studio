@@ -12,7 +12,11 @@ import {
   MagnifyingGlassIcon,
   PencilSquareIcon,
   CpuChipIcon,
-  RocketLaunchIcon
+  RocketLaunchIcon,
+  Square3Stack3DIcon,
+  TrophyIcon,
+  CubeTransparentIcon,
+  AcademicCapIcon
 } from "@heroicons/react/24/outline";
 
 export default function Home() {
@@ -80,12 +84,48 @@ export default function Home() {
           </div>
           <Link href="/services" className="mt-8 md:mt-0 text-[#E2494B] hover:text-[#FCEBD7] transition-colors font-medium hover-underline-animation">VIEW ALL SERVICES</Link>
         </FadeIn>
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <StaggerItem key={index} className="bg-[#61422D]/10 border border-[#61422D]/30 p-8 rounded-2xl hover:bg-[#61422D]/20 transition-all cursor-pointer group">
-              <div className="w-12 h-12 bg-[#96191A] rounded-lg mb-6 group-hover:scale-110 transition-transform"></div>
-              <h3 className="text-xl font-bold text-[#FCEBD7] mb-3">{service.title}</h3>
-              <p className="text-[#FCEBD7]/70 line-clamp-3">{service.description}</p>
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { ...services[0], icon: <Square3Stack3DIcon className="w-8 h-8" /> },
+            { ...services[1], icon: <TrophyIcon className="w-8 h-8" /> },
+            { ...services[2], icon: <CubeTransparentIcon className="w-8 h-8" /> },
+            { ...services[3], icon: <AcademicCapIcon className="w-8 h-8" /> },
+          ].map((service, index) => (
+            <StaggerItem key={index}>
+              <Link href={`/services/${service.slug}`} className="block h-full">
+                <div className="group relative h-full bg-[#61422D]/10 border border-[#61422D]/20 p-10 rounded-[2.5rem] backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-[#E2494B]/50 hover:shadow-[0_20px_50px_rgba(226,73,75,0.1)] hover:-translate-y-2">
+                  {/* Glowing Background Accent */}
+                  <div className="absolute -right-8 -top-8 w-32 h-32 bg-[#E2494B]/5 rounded-full blur-3xl group-hover:bg-[#E2494B]/10 transition-colors duration-500" />
+
+                  {/* Icon Container */}
+                  <div className="relative mb-10">
+                    <div className="w-16 h-16 rounded-2xl bg-[#250804] border border-[#61422D]/30 flex items-center justify-center text-[#FCEBD7] group-hover:border-[#E2494B] group-hover:text-[#E2494B] group-hover:bg-[#E2494B]/5 transition-all duration-500">
+                      {service.icon}
+                    </div>
+                    {/* Floating Decorative Dot */}
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#E2494B] border-4 border-[#250804] scale-0 group-hover:scale-100 transition-transform duration-500 delay-100" />
+                  </div>
+
+                  {/* Text Content */}
+                  <div className="relative z-10">
+                    <h3 className="text-2xl font-bold text-[#FCEBD7] mb-4 group-hover:text-[#E2494B] transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="text-[#FCEBD7]/50 text-sm leading-relaxed mb-10 group-hover:text-[#FCEBD7]/80 transition-colors duration-300">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  {/* "Learn More" Animated Footer */}
+                  <div className="mt-auto flex items-center gap-2 text-[#E2494B] text-xs font-bold tracking-widest uppercase opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                    EXPLORE SERVICE
+                    <span className="text-xl">→</span>
+                  </div>
+
+                  {/* Subtle Border Glow (Bottom) */}
+                  <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#E2494B]/0 to-transparent group-hover:via-[#E2494B]/50 transition-all duration-700" />
+                </div>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerContainer>
