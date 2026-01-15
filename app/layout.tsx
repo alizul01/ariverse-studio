@@ -13,7 +13,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://ariverse-studio.com'),
   title: {
-    default: "Ariverse Studio | Interactive Entertainment",
+    default: "Ariverse Studio | Game Developer Malang Indonesia",
     template: "%s | Ariverse Studio"
   },
   description: "Crafting immersive digital experiences across the universe. Game Development, 3D Art, and Gamification.",
