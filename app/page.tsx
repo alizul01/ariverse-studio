@@ -6,6 +6,7 @@ import { Play } from "lucide-react";
 import FadeIn from "./components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "./components/animations/StaggerContainer";
 import { services } from "./data/services";
+import CTA from "./components/ui/CTA";
 
 export default function Home() {
   return (
@@ -116,15 +117,7 @@ export default function Home() {
       </section>
 
       {/* 7. CTA Section */}
-      <section className="max-w-[1440px] mx-auto px-4 md:px-6 text-center py-20">
-        <FadeIn direction="up">
-          <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] mb-6">READY TO LAUNCH?</h2>
-          <p className="text-xl text-[#FCEBD7]/70 mb-8 max-w-2xl mx-auto">Let's build the next big thing together. Contact our command center.</p>
-          <a href="mailto:contact@ariverse.com" className="inline-flex items-center justify-center bg-[#FCEBD7] text-[#250804] px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:scale-105 transition-all">
-            START MISSION
-          </a>
-        </FadeIn>
-      </section>
+      <CTA />
 
     </div>
   );
