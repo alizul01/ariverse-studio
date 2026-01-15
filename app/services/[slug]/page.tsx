@@ -17,6 +17,8 @@ export function generateStaticParams() {
     }));
 }
 
+import PageHeader from "../../components/ui/PageHeader";
+
 export default async function ServiceDetailPage(props: ServiceDetailProps) {
     const params = await props.params;
     const service = services.find((s) => s.slug === params.slug);
@@ -27,32 +29,15 @@ export default async function ServiceDetailPage(props: ServiceDetailProps) {
 
     return (
         <div className="pb-20">
-            {/* Hero Section */}
-            <div className="relative h-[60vh] min-h-[500px] w-full overflow-hidden">
-                {/* Background Image */}
-                <div className="absolute inset-0 bg-[#250804]">
-                    <div
-                        className="w-full h-full opacity-50 bg-cover bg-center"
-                        style={{
-                            backgroundImage: `url('${service.image || '/images/placeholders/service-placeholder.jpg'}')`,
-                            backgroundColor: '#250804'
-                        }}
-                    ></div>
-                </div>
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#250804] via-[#250804]/50 to-transparent"></div>
-
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 max-w-[1440px] mx-auto">
-                    <FadeIn direction="up">
-                        <Link href="/services" className="inline-flex items-center gap-2 text-[#FCEBD7]/70 hover:text-[#E2494B] mb-6 transition-colors font-medium hover-underline-animation">
-                            <ArrowLeft size={16} /> Back to Services
-                        </Link>
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#FCEBD7] mb-4">{service.title}</h1>
-                        <p className="text-xl md:text-2xl text-[#FCEBD7]/80 max-w-2xl">{service.description}</p>
-                    </FadeIn>
-                </div>
-            </div>
+            <PageHeader
+                title={service.title}
+                description={service.description}
+                backgroundImage={service.image}
+                breadcrumbs={[
+                    { label: "Services", href: "/services" },
+                    { label: service.title, href: `/services/${service.slug}` }
+                ]}
+            />
 
             {/* Main Content Area */}
             <div className="max-w-4xl mx-auto px-4 md:px-6 py-20">

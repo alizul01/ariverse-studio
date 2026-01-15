@@ -8,6 +8,8 @@ import Link from "next/link";
 import { ArrowLeft, Gamepad2, Layers } from "lucide-react";
 import React from "react";
 
+import PageHeader from "../../components/ui/PageHeader";
+
 export default function GameDetailPage() {
     const params = useParams();
     const game = games.find((g) => g.slug === params.slug);
@@ -18,48 +20,15 @@ export default function GameDetailPage() {
 
     return (
         <div className="pb-20">
-            {/* Hero Section */}
-            <div className="relative h-[70vh] min-h-[600px] w-full overflow-hidden">
-                {/* Background Image */}
-                <div className="absolute inset-0 bg-[#250804]">
-                    <div
-                        className="w-full h-full opacity-40 bg-cover bg-center"
-                        style={{
-                            backgroundImage: `url('${game.image}')`,
-                            backgroundColor: '#250804'
-                        }}
-                    ></div>
-                </div>
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#250804] via-[#250804]/60 to-transparent"></div>
-
-                {/* Content */}
-                <div className="absolute bottom-12 left-0 w-full px-4 md:px-12 max-w-[1440px] mx-auto">
-                    <FadeIn direction="up">
-                        <Link href="/games" className="inline-flex items-center gap-2 text-[#FCEBD7]/70 hover:text-[#E2494B] mb-8 transition-colors font-medium hover-underline-animation">
-                            <ArrowLeft size={16} /> BACK TO EXPLORATION
-                        </Link>
-
-                        <div className="flex flex-wrap gap-3 mb-6">
-                            {game.platforms.map(p => (
-                                <span key={p} className="px-4 py-1.5 bg-black/40 backdrop-blur-md rounded-full text-xs font-bold text-[#FCEBD7] border border-[#FCEBD7]/10 uppercase tracking-widest">
-                                    {p}
-                                </span>
-                            ))}
-                            <span className="px-4 py-1.5 bg-[#E2494B] rounded-full text-xs font-bold text-[#FCEBD7] uppercase tracking-widest">
-                                {game.engine}
-                            </span>
-                        </div>
-
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-[#FCEBD7] mb-6 leading-none uppercase tracking-tighter">
-                            {game.title}
-                        </h1>
-                        <p className="text-xl md:text-2xl text-[#FCEBD7]/80 max-w-3xl leading-relaxed">
-                            {game.description}
-                        </p>
-                    </FadeIn>
-                </div>
-            </div>
+            <PageHeader
+                title={game.title}
+                description={game.description}
+                backgroundImage={game.image}
+                breadcrumbs={[
+                    { label: "Games", href: "/games" },
+                    { label: game.title, href: `/games/${game.slug}` }
+                ]}
+            />
 
             {/* Main Content Area */}
             <div className="max-w-[1440px] mx-auto px-4 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-3 gap-16">
