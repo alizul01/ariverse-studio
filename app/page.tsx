@@ -3,13 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Play } from "lucide-react";
+import FadeIn from "./components/animations/FadeIn";
+import StaggerContainer, { StaggerItem } from "./components/animations/StaggerContainer";
+import { services } from "./data/services";
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-16 md:gap-24 pb-20">
 
       {/* 1. Hero Carousel */}
-      <section className="relative w-full max-w-[1382px] mx-auto mt-4 px-4 h-[500px] md:h-[722px] rounded-2xl overflow-hidden group">
+      <FadeIn className="relative w-full max-w-[1382px] mx-auto mt-4 px-4 h-[500px] md:h-[722px] rounded-2xl overflow-hidden group">
         {/* Placeholder for Carousel Logic */}
         <div className="absolute inset-0 bg-[#61422D]/20">
           {/* Background Image Placeholder */}
@@ -20,110 +23,107 @@ export default function Home() {
 
         {/* Bottom Bar */}
         <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-8 flex flex-col md:flex-row items-end justify-between">
-          <div>
+          <FadeIn delay={0.2} direction="up">
             <h3 className="text-3xl md:text-5xl font-bold text-[#FCEBD7] mb-2">GALACTIC ODYSSEY</h3>
             <div className="flex gap-4 mb-4 md:mb-0">
               <span className="text-[#FCEBD7]/80 text-sm border border-[#FCEBD7]/30 px-2 py-1 rounded">PC</span>
               <span className="text-[#FCEBD7]/80 text-sm border border-[#FCEBD7]/30 px-2 py-1 rounded">PS5</span>
               <span className="text-[#FCEBD7]/80 text-sm border border-[#FCEBD7]/30 px-2 py-1 rounded">XBOX</span>
             </div>
-          </div>
-          <button className="flex items-center gap-2 bg-[#96191A] text-[#FCEBD7] px-6 py-3 rounded-full font-bold hover:bg-[#96191A]/80 transition-all">
-            <Play fill="currentColor" size={16} /> WATCH TRAILER
-          </button>
+          </FadeIn>
+          <FadeIn delay={0.4} direction="left">
+            <button className="flex items-center gap-2 bg-[#96191A] text-[#FCEBD7] px-6 py-3 rounded-full font-bold hover:bg-[#96191A]/80 transition-all">
+              <Play fill="currentColor" size={16} /> WATCH TRAILER
+            </button>
+          </FadeIn>
         </div>
-      </section>
+      </FadeIn>
 
       {/* 2. About Highlight */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6 text-center">
-        <h2 className="text-[#96191A] font-bold tracking-widest mb-4">WHO WE ARE</h2>
-        <p className="text-2xl md:text-4xl font-bold text-[#FCEBD7] max-w-4xl mx-auto leading-tight mb-8">
-          We are explorers of the digital frontier, crafting universes where imagination meets technology. Ariverse Studio is dedicated to pushing the boundaries of interactive entertainment.
-        </p>
-        <Link href="/about" className="inline-block border-b border-[#96191A] text-[#FCEBD7] pb-1 hover:text-[#96191A] transition-colors">
-          READ MORE ABOUT US
-        </Link>
+        <FadeIn direction="up">
+          <h2 className="text-[#96191A] font-bold tracking-widest mb-4">WHO WE ARE</h2>
+          <p className="text-2xl md:text-4xl font-bold text-[#FCEBD7] max-w-4xl mx-auto leading-tight mb-8">
+            We are explorers of the digital frontier, crafting universes where imagination meets technology. Ariverse Studio is dedicated to pushing the boundaries of interactive entertainment.
+          </p>
+          <Link href="/about" className="inline-block border-b border-[#96191A] text-[#FCEBD7] pb-1 hover:text-[#96191A] transition-colors">
+            READ MORE ABOUT US
+          </Link>
+        </FadeIn>
       </section>
 
       {/* 3. Our Services (Overview) */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6">
-        <div className="flex justify-between items-end mb-12">
+        <FadeIn className="flex justify-between items-end mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#FCEBD7]">OUR SERVICES</h2>
           <Link href="/services" className="text-[#96191A] hover:text-[#FCEBD7] transition-colors font-medium">VIEW ALL SERVICES</Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Service Card 1 */}
-          <div className="bg-[#61422D]/10 border border-[#61422D]/30 p-8 rounded-2xl hover:bg-[#61422D]/20 transition-all cursor-pointer group">
-            <div className="w-12 h-12 bg-[#96191A] rounded-lg mb-6 group-hover:scale-110 transition-transform"></div>
-            <h3 className="text-xl font-bold text-[#FCEBD7] mb-3">Game Development</h3>
-            <p className="text-[#FCEBD7]/70">Full-cycle development using Unreal Engine 5 & Unity. From prototype to gold master.</p>
-          </div>
-          {/* Service Card 2 */}
-          <div className="bg-[#61422D]/10 border border-[#61422D]/30 p-8 rounded-2xl hover:bg-[#61422D]/20 transition-all cursor-pointer group">
-            <div className="w-12 h-12 bg-[#96191A] rounded-lg mb-6 group-hover:scale-110 transition-transform"></div>
-            <h3 className="text-xl font-bold text-[#FCEBD7] mb-3">3D Art & Animation</h3>
-            <p className="text-[#FCEBD7]/70">High-fidelity assets, character design, and motion capture integration.</p>
-          </div>
-          {/* Service Card 3 */}
-          <div className="bg-[#61422D]/10 border border-[#61422D]/30 p-8 rounded-2xl hover:bg-[#61422D]/20 transition-all cursor-pointer group">
-            <div className="w-12 h-12 bg-[#96191A] rounded-lg mb-6 group-hover:scale-110 transition-transform"></div>
-            <h3 className="text-xl font-bold text-[#FCEBD7] mb-3">Gamification</h3>
-            <p className="text-[#FCEBD7]/70">Turning business logic into engaging interactive experiences.</p>
-          </div>
-        </div>
+        </FadeIn>
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <StaggerItem key={index} className="bg-[#61422D]/10 border border-[#61422D]/30 p-8 rounded-2xl hover:bg-[#61422D]/20 transition-all cursor-pointer group">
+              <div className="w-12 h-12 bg-[#96191A] rounded-lg mb-6 group-hover:scale-110 transition-transform"></div>
+              <h3 className="text-xl font-bold text-[#FCEBD7] mb-3">{service.title}</h3>
+              <p className="text-[#FCEBD7]/70">{service.description}</p>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
       </section>
 
       {/* 4. Working Process */}
-      <section className="max-w-[1440px] mx-auto px-4 md:px-6 bg-[#61422D]/5 py-16 rounded-3xl">
+      <FadeIn className="max-w-[1440px] mx-auto px-4 md:px-6 bg-[#61422D]/5 py-16 rounded-3xl">
         <h2 className="text-3xl md:text-4xl font-bold text-[#FCEBD7] text-center mb-16">OUR PROCESS</h2>
-        <div className="relative flex flex-col md:flex-row justify-between items-center max-w-5xl mx-auto">
+        <StaggerContainer className="relative flex flex-col md:flex-row justify-between items-center max-w-5xl mx-auto">
           {/* Connecting Line (Desktop) */}
           <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-[#61422D]/30 -z-10 transform -translate-y-1/2"></div>
 
           {['Discovery', 'Design', 'Development', 'Launch'].map((step, index) => (
-            <div key={step} className="flex flex-col items-center bg-[#250804] p-4 rounded-xl z-10 w-40 md:w-auto mb-8 md:mb-0">
+            <StaggerItem key={step} className="flex flex-col items-center bg-[#250804] p-4 rounded-xl z-10 w-40 md:w-auto mb-8 md:mb-0">
               <div className="w-10 h-10 rounded-full bg-[#96191A] text-[#FCEBD7] flex items-center justify-center font-bold mb-4 border-4 border-[#250804]">
                 {index + 1}
               </div>
               <h3 className="text-[#FCEBD7] font-bold">{step}</h3>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
-      </section>
+        </StaggerContainer>
+      </FadeIn>
 
       {/* 5. Our Teams ("The Astronauts") */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#FCEBD7] mb-12">THE ASTRONAUTS</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <FadeIn>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#FCEBD7] mb-12">THE ASTRONAUTS</h2>
+        </FadeIn>
+        <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="group text-center">
+            <StaggerItem key={i} className="group text-center">
               <div className="w-full aspect-square bg-[#61422D] rounded-2xl mb-4 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
                 {/* Avatar Placeholder */}
               </div>
               <h3 className="text-[#FCEBD7] font-bold text-lg">Crew Member {i}</h3>
               <p className="text-[#96191A] text-sm">Valid Role</p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </section>
 
       {/* 6. Our Awards */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6">
-        <div className="border-t border-b border-[#61422D]/30 py-12 flex flex-wrap justify-between items-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+        <FadeIn className="border-t border-b border-[#61422D]/30 py-12 flex flex-wrap justify-between items-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
           <div className="text-2xl font-bold text-[#FCEBD7]">AWARD LOGO</div>
           <div className="text-2xl font-bold text-[#FCEBD7]">RECOGNITION</div>
           <div className="text-2xl font-bold text-[#FCEBD7]">BEST INDIE</div>
           <div className="text-2xl font-bold text-[#FCEBD7]">TOP STUDIO</div>
-        </div>
+        </FadeIn>
       </section>
 
       {/* 7. CTA Section */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6 text-center py-20">
-        <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] mb-6">READY TO LAUNCH?</h2>
-        <p className="text-xl text-[#FCEBD7]/70 mb-8 max-w-2xl mx-auto">Let's build the next big thing together. Contact our command center.</p>
-        <a href="mailto:contact@ariverse.com" className="inline-flex items-center justify-center bg-[#FCEBD7] text-[#250804] px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:scale-105 transition-all">
-          START MISSION
-        </a>
+        <FadeIn direction="up">
+          <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] mb-6">READY TO LAUNCH?</h2>
+          <p className="text-xl text-[#FCEBD7]/70 mb-8 max-w-2xl mx-auto">Let's build the next big thing together. Contact our command center.</p>
+          <a href="mailto:contact@ariverse.com" className="inline-flex items-center justify-center bg-[#FCEBD7] text-[#250804] px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:scale-105 transition-all">
+            START MISSION
+          </a>
+        </FadeIn>
       </section>
 
     </div>
