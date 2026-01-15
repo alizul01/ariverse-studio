@@ -40,7 +40,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-[#C47171] hover-underline-animation ${pathname === link.href ? "text-[#96191A] font-bold" : "text-[#FCEBD7]"
+              className={`text-sm font-medium transition-colors hover:text-[#E2494B] hover-underline-animation ${pathname === link.href ? "text-[#E2494B] font-bold" : "text-[#FCEBD7]"
                 }`}
             >
               {link.name}
