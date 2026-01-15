@@ -10,7 +10,7 @@ export default function ServicesPage() {
             {/* Header */}
             <FadeIn>
                 <div className="text-center max-w-3xl mx-auto mb-20">
-                    <h1 className="text-sm font-bold tracking-widest text-[#96191A] mb-4 uppercase">Our Services</h1>
+                    <h1 className="text-sm font-bold tracking-widest text-[#E2494B] mb-4 uppercase">Our Services</h1>
                     <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] mb-6">How can we Help?</h2>
                     <p className="text-xl text-[#FCEBD7]/70">
                         We transform your ideas into immersive digital realities using cutting-edge technology and creative expertise.
@@ -46,7 +46,7 @@ export default function ServicesPage() {
                             <div>
                                 <a
                                     href={`/services/${service.slug}`}
-                                    className="inline-flex items-center gap-2 border-b-0 text-[#FCEBD7] pb-1 font-bold tracking-wide hover:text-[#96191A] transition-colors hover-underline-animation"
+                                    className="inline-flex items-center gap-2 border-b-0 text-[#FCEBD7] pb-1 font-bold tracking-wide hover:text-[#E2494B] transition-colors hover-underline-animation"
                                 >
                                     MORE INFO
                                 </a>
@@ -65,7 +65,7 @@ export default function ServicesPage() {
                 <StaggerContainer className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
                     {technologies.map((tech, index) => (
                         <StaggerItem key={index}>
-                            <div className="px-6 py-3 rounded-full border border-[#FCEBD7]/20 bg-[#250804]/50 text-[#FCEBD7] font-medium hover:border-[#96191A] hover:text-[#96191A] transition-colors cursor-default">
+                            <div className="px-6 py-3 rounded-full border border-[#FCEBD7]/20 bg-[#250804]/50 text-[#FCEBD7] font-medium hover:border-[#E2494B] hover:text-[#E2494B] transition-colors cursor-default">
                                 {tech.name}
                             </div>
                         </StaggerItem>

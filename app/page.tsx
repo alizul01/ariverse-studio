@@ -44,7 +44,7 @@ export default function Home() {
       <section className="max-w-4xl mx-auto px-4 md:px-6 text-center py-24 relative">
         <FadeIn direction="up">
           <div className="inline-block mb-6">
-            <span className="text-[#96191A] font-bold tracking-[0.2em] text-sm md:text-base border-b-2 border-[#96191A] pb-2 uppercase">Who We Are</span>
+            <span className="text-[#E2494B] font-bold tracking-[0.2em] text-sm md:text-base border-b-2 border-[#E2494B] pb-2 uppercase">Who We Are</span>
           </div>
 
           <h2 className="text-3xl md:text-5xl font-bold text-[#FCEBD7] leading-tight mb-6">
@@ -55,7 +55,7 @@ export default function Home() {
             We blur the lines between imagination and reality, building digital universes that inspire and connect.
           </p>
 
-          <Link href="/about" className="group inline-flex items-center gap-2 text-[#FCEBD7] font-medium hover:text-[#96191A] transition-colors">
+          <Link href="/about" className="group inline-flex items-center gap-2 text-[#FCEBD7] font-medium hover:text-[#E2494B] transition-colors">
             READ OUR STORY
             <span className="transform group-hover:translate-x-1 transition-transform">→</span>
           </Link>
@@ -66,14 +66,14 @@ export default function Home() {
       <section className="max-w-[1440px] mx-auto px-4 md:px-6">
         <FadeIn className="flex justify-between items-end mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#FCEBD7]">OUR SERVICES</h2>
-          <Link href="/services" className="text-[#96191A] hover:text-[#FCEBD7] transition-colors font-medium">VIEW ALL SERVICES</Link>
+          <Link href="/services" className="text-[#E2494B] hover:text-[#FCEBD7] transition-colors font-medium hover-underline-animation">VIEW ALL SERVICES</Link>
         </FadeIn>
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <StaggerItem key={index} className="bg-[#61422D]/10 border border-[#61422D]/30 p-8 rounded-2xl hover:bg-[#61422D]/20 transition-all cursor-pointer group">
               <div className="w-12 h-12 bg-[#96191A] rounded-lg mb-6 group-hover:scale-110 transition-transform"></div>
               <h3 className="text-xl font-bold text-[#FCEBD7] mb-3">{service.title}</h3>
-              <p className="text-[#FCEBD7]/70">{service.description}</p>
+              <p className="text-[#FCEBD7]/70 line-clamp-3">{service.description}</p>
             </StaggerItem>
           ))}
         </StaggerContainer>

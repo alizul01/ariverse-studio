@@ -45,7 +45,7 @@ export default async function ServiceDetailPage(props: ServiceDetailProps) {
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 max-w-[1440px] mx-auto">
                     <FadeIn direction="up">
-                        <Link href="/services" className="inline-flex items-center gap-2 text-[#FCEBD7]/70 hover:text-[#96191A] mb-6 transition-colors font-medium">
+                        <Link href="/services" className="inline-flex items-center gap-2 text-[#FCEBD7]/70 hover:text-[#E2494B] mb-6 transition-colors font-medium hover-underline-animation">
                             <ArrowLeft size={16} /> Back to Services
                         </Link>
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#FCEBD7] mb-4">{service.title}</h1>

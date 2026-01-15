@@ -48,7 +48,7 @@ body {
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: var(--color-accent);
+  background-color: #E2494B;
   transition: width 0.3s ease-out;
 }
 
