@@ -84,5 +84,67 @@ export default config({
                 }),
             },
         }),
+        careers: collection({
+            label: 'Careers',
+            slugField: 'title',
+            path: 'src/content/careers/*',
+            format: { data: 'json' },
+            schema: {
+                title: fields.slug({ name: { label: 'Title' } }),
+                department: fields.select({
+                    label: 'Department',
+                    options: [
+                        { label: 'Engineering', value: 'Engineering' },
+                        { label: 'Design', value: 'Design' },
+                        { label: 'Art', value: 'Art' },
+                        { label: 'Production', value: 'Production' },
+                        { label: 'Marketing', value: 'Marketing' },
+                        { label: 'Operations', value: 'Operations' },
+                        { label: 'Other', value: 'Other' },
+                    ],
+                    defaultValue: 'Engineering',
+                }),
+                location: fields.text({ label: 'Location', defaultValue: 'Remote, Earth' }),
+                type: fields.select({
+                    label: 'Type',
+                    options: [
+                        { label: 'Full-time', value: 'Full-time' },
+                        { label: 'Contract', value: 'Contract' },
+                        { label: 'Part-time', value: 'Part-time' },
+                        { label: 'Freelance', value: 'Freelance' },
+                    ],
+                    defaultValue: 'Full-time',
+                }),
+                experience: fields.select({
+                    label: 'Experience Level',
+                    options: [
+                        { label: 'Junior', value: 'Junior' },
+                        { label: 'Mid-Level', value: 'Mid-Level' },
+                        { label: 'Senior', value: 'Senior' },
+                        { label: 'Lead', value: 'Lead' },
+                        { label: 'Director', value: 'Director' },
+                    ],
+                    defaultValue: 'Senior',
+                }),
+                status: fields.select({
+                    label: 'Status',
+                    options: [
+                        { label: 'Active', value: 'Active' },
+                        { label: 'Inactive', value: 'Inactive' },
+                    ],
+                    defaultValue: 'Active',
+                }),
+                content: fields.document({
+                    label: 'Job Description',
+                    formatting: true,
+                    dividers: true,
+                    links: true,
+                    images: {
+                        directory: 'public/images/careers',
+                        publicPath: '/images/careers/',
+                    },
+                }),
+            },
+        }),
     },
 });
