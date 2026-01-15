@@ -62,16 +62,6 @@ export default function CareersPage() {
 
             {/* 1. Why Join Us (Culture) */}
             <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-32">
-                <FadeIn className="text-center mb-16">
-                    <div className="inline-block mb-4 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
-                        <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">The Culture</span>
-                    </div>
-                    <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] tracking-tighter uppercase mb-6">Beyond the Code</h2>
-                    <p className="text-[#FCEBD7]/60 max-w-2xl mx-auto text-lg leading-relaxed">
-                        At Ariverse Studio, we don't just build games; we forge digital universes. Our culture is rooted in exploration, creativity, and the relentless pursuit of excellence.
-                    </p>
-                </FadeIn>
-
                 <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {[
                         {
