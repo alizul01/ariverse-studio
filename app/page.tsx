@@ -16,7 +16,10 @@ import {
   Square3Stack3DIcon,
   TrophyIcon,
   CubeTransparentIcon,
-  AcademicCapIcon
+  AcademicCapIcon,
+  CommandLineIcon,
+  GlobeAltIcon,
+  BeakerIcon
 } from "@heroicons/react/24/outline";
 
 export default function Home() {
@@ -51,26 +54,92 @@ export default function Home() {
         </div>
       </FadeIn>
 
-      {/* 2. About Highlight */}
-      <section className="max-w-4xl mx-auto px-4 md:px-6 text-center py-32 relative">
-        <FadeIn direction="up">
-          <div className="inline-block mb-6 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
-            <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">The Studio</span>
+      {/* 2. About Highlight (Cinematic Version) */}
+      <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-32 relative overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Left: Text Content */}
+          <div className="relative z-10 text-left lg:pr-12">
+            <FadeIn>
+              <div className="inline-block mb-8 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
+                <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">The Studio</span>
+              </div>
+
+              <h2 className="text-5xl md:text-7xl font-bold text-[#FCEBD7] tracking-tighter leading-[0.9] mb-8 uppercase">
+                Crafted with <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E2494B] to-[#FCEBD7]/50">Heart of Explorer.</span>
+              </h2>
+
+              <p className="text-xl text-[#FCEBD7]/60 leading-relaxed mb-12 max-w-xl">
+                We blur the lines between imagination and reality, building digital universes that inspire and connect human emotions through the frontier of interactive technology.
+              </p>
+
+              {/* Milestones / Stats */}
+              <div className="grid grid-cols-3 gap-8 mb-12 py-8 border-y border-[#61422D]/20">
+                {[
+                  { label: "Years Exp", value: "5+" },
+                  { label: "Projects", value: "24" },
+                  { label: "Passion", value: "100%" }
+                ].map((stat, i) => (
+                  <div key={i}>
+                    <div className="text-3xl font-black text-[#FCEBD7] mb-1">{stat.value}</div>
+                    <div className="text-[10px] text-[#E2494B] font-bold tracking-widest uppercase">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <Link href="/about" className="group relative inline-flex items-center gap-4 text-[#FCEBD7] font-bold tracking-widest text-sm py-4 px-8 border border-[#FCEBD7]/20 rounded-full hover:border-[#E2494B]/50 transition-all duration-500 overflow-hidden">
+                <span className="relative z-10 transition-colors group-hover:text-[#FCEBD7]">READ OUR STORY</span>
+                <span className="relative z-10 transform group-hover:translate-x-2 transition-transform duration-500">→</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#E2494B] to-transparent opacity-0 group-hover:opacity-20 transition-opacity" />
+              </Link>
+            </FadeIn>
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] tracking-tight mb-8">
-            Crafted with heart of explorer.
-          </h2>
+          {/* Right: Visual Logic Core */}
+          <div className="relative flex justify-center items-center h-[500px] lg:h-[600px]">
+            {/* Main Orb / Core */}
+            <motion.div
+              className="relative w-64 h-64 rounded-full bg-gradient-to-br from-[#E2494B] to-[#250804] shadow-[0_0_80px_rgba(226,73,75,0.3)] flex items-center justify-center overflow-hidden"
+              animate={{
+                scale: [1, 1.05, 1],
+                boxShadow: ["0 0 80px rgba(226,73,75,0.3)", "0 0 120px rgba(226,73,75,0.5)", "0 0 80px rgba(226,73,75,0.3)"]
+              }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
+              <GlobeAltIcon className="w-32 h-32 text-[#FCEBD7]/20 animate-pulse" />
+            </motion.div>
 
-          <p className="text-xl text-[#FCEBD7]/70 leading-relaxed mb-10 max-w-2xl mx-auto">
-            We blur the lines between imagination and reality, building digital universes that inspire and connect.
-          </p>
+            {/* Orbiting Elements */}
+            {[
+              { icon: <CommandLineIcon />, delay: 0, radius: 180, duration: 20 },
+              { icon: <RocketLaunchIcon />, delay: -5, radius: 220, duration: 25 },
+              { icon: <BeakerIcon />, delay: -10, radius: 150, duration: 18 }
+            ].map((orbit, i) => (
+              <motion.div
+                key={i}
+                className="absolute text-[#E2494B]/40"
+                style={{ width: 40, height: 40 }}
+                animate={{
+                  rotate: 360,
+                }}
+                transition={{ duration: orbit.duration, repeat: Infinity, ease: "linear", delay: orbit.delay }}
+              >
+                <div
+                  className="w-12 h-12 bg-[#250804] border border-[#E2494B]/20 rounded-xl flex items-center justify-center backdrop-blur-md shadow-2xl"
+                  style={{ transform: `translateY(-${orbit.radius}px)` }}
+                >
+                  <div className="w-6 h-6">{orbit.icon}</div>
+                </div>
+              </motion.div>
+            ))}
 
-          <Link href="/about" className="group inline-flex items-center gap-2 text-[#FCEBD7] font-medium hover:text-[#E2494B] transition-colors">
-            READ OUR STORY
-            <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-          </Link>
-        </FadeIn>
+            {/* Background Decorative Rings */}
+            <div className="absolute w-[400px] h-[400px] border border-[#61422D]/10 rounded-full -z-10" />
+            <div className="absolute w-[500px] h-[500px] border border-[#61422D]/5 rounded-full -z-10" />
+          </div>
+        </div>
       </section>
 
       {/* 3. Our Services (Overview) */}
