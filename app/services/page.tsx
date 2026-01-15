@@ -19,16 +19,38 @@ export default function ServicesPage() {
             </FadeIn>
 
             {/* Services List (Vertical) */}
-            <StaggerContainer className="flex flex-col gap-8 max-w-4xl mx-auto mb-32">
+            <StaggerContainer className="flex flex-col gap-8 max-w-[1440px] mx-auto mb-32">
                 {services.map((service, index) => (
-                    <StaggerItem key={index} className="bg-[#61422D]/10 border border-[#61422D]/30 p-8 md:p-10 rounded-3xl hover:bg-[#61422D]/20 transition-all cursor-pointer group flex flex-col md:flex-row gap-6 md:gap-8 items-start md:items-center">
-                        <div className="w-16 h-16 bg-[#96191A] rounded-2xl flex-shrink-0 group-hover:scale-110 transition-transform flex items-center justify-center text-[#FCEBD7] font-bold text-2xl">
-                            {/* Placeholder Icon */}
-                            {index + 1}
+                    <StaggerItem key={index} className="relative w-full overflow-hidden rounded-3xl h-[400px] md:h-[500px] group border border-[#61422D]/30">
+                        {/* Background Image Placeholder (In production use Next/Image) */}
+                        <div className="absolute inset-0 bg-[#250804]">
+                            {/* We will simulate the image with a different colored div for now since we don't have actual files,
+                                but the structure is ready for <Image src={service.image} ... /> */}
+                            <div
+                                className="w-full h-full opacity-40 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                                style={{
+                                    backgroundImage: `url('${service.image || '/images/placeholders/service-placeholder.jpg'}')`,
+                                    backgroundColor: '#250804' // Fallback color
+                                }}
+                            ></div>
                         </div>
-                        <div className="flex-grow">
-                            <h3 className="text-2xl md:text-3xl font-bold text-[#FCEBD7] mb-2">{service.title}</h3>
-                            <p className="text-lg text-[#FCEBD7]/70 leading-relaxed">{service.description}</p>
+
+                        {/* Gradient Overlay - Left to Right */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#250804] via-[#250804]/90 to-transparent"></div>
+
+                        {/* Content */}
+                        <div className="relative z-10 flex flex-col justify-center h-full px-8 md:px-16 max-w-3xl">
+                            <h3 className="text-4xl md:text-5xl font-bold text-[#FCEBD7] mb-4">{service.title}</h3>
+                            <p className="text-xl text-[#FCEBD7]/80 mb-8 leading-relaxed line-clamp-3">{service.description}</p>
+
+                            <div>
+                                <a
+                                    href={`/services/${service.slug}`}
+                                    className="inline-flex items-center gap-2 border-b-2 border-[#96191A] text-[#FCEBD7] pb-1 font-bold tracking-wide hover:text-[#96191A] transition-colors"
+                                >
+                                    MORE INFO
+                                </a>
+                            </div>
                         </div>
                     </StaggerItem>
                 ))}

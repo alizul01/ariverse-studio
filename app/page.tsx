@@ -41,14 +41,23 @@ export default function Home() {
       </FadeIn>
 
       {/* 2. About Highlight */}
-      <section className="max-w-[1440px] mx-auto px-4 md:px-6 text-center">
+      <section className="max-w-4xl mx-auto px-4 md:px-6 text-center py-24 relative">
         <FadeIn direction="up">
-          <h2 className="text-[#96191A] font-bold tracking-widest mb-4">WHO WE ARE</h2>
-          <p className="text-2xl md:text-4xl font-bold text-[#FCEBD7] max-w-4xl mx-auto leading-tight mb-8">
-            We are explorers of the digital frontier, crafting universes where imagination meets technology. Ariverse Studio is dedicated to pushing the boundaries of interactive entertainment.
+          <div className="inline-block mb-6">
+            <span className="text-[#96191A] font-bold tracking-[0.2em] text-sm md:text-base border-b-2 border-[#96191A] pb-2 uppercase">Who We Are</span>
+          </div>
+
+          <h2 className="text-3xl md:text-5xl font-bold text-[#FCEBD7] leading-tight mb-6">
+            Crafted with heart of explorer.
+          </h2>
+
+          <p className="text-xl text-[#FCEBD7]/70 leading-relaxed mb-10 max-w-2xl mx-auto">
+            We blur the lines between imagination and reality, building digital universes that inspire and connect.
           </p>
-          <Link href="/about" className="inline-block border-b border-[#96191A] text-[#FCEBD7] pb-1 hover:text-[#96191A] transition-colors">
-            READ MORE ABOUT US
+
+          <Link href="/about" className="group inline-flex items-center gap-2 text-[#FCEBD7] font-medium hover:text-[#96191A] transition-colors">
+            READ OUR STORY
+            <span className="transform group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </FadeIn>
       </section>
