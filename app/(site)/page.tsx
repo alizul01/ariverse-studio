@@ -1,15 +1,8 @@
-"use client";
-
-import Image from "next/image";
 import Link from "next/link";
-import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 import FadeIn from "../components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "../components/animations/StaggerContainer";
 import { services } from "../data/services";
-import { games } from "../data/games";
 import CTA from "../components/ui/CTA";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
 import {
   MagnifyingGlassIcon,
   PencilSquareIcon,
@@ -19,116 +12,33 @@ import {
   TrophyIcon,
   CubeTransparentIcon,
   AcademicCapIcon,
-  CommandLineIcon,
-  GlobeAltIcon,
-  BeakerIcon
 } from "@heroicons/react/24/outline";
+import { createReader } from '@keystatic/core/reader';
+import keystaticConfig from '../../keystatic.config';
+import GameShowcase from "../components/home/GameShowcase";
+import AboutVisuals from "../components/home/AboutVisuals";
+import ProcessTimeline from "../components/home/ProcessTimeline";
 
-export default function Home() {
-  const [current, setCurrent] = useState(0);
 
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % games.length);
-  const prevSlide = () => setCurrent((prev) => (prev === 0 ? games.length - 1 : prev - 1));
+export default async function Home() {
+  const reader = createReader(process.cwd(), keystaticConfig);
+  const gamesData = await reader.collections.games.all();
+  const games = gamesData.map((game) => ({
+    title: game.entry.title,
+    description: game.entry.description,
+    platforms: game.entry.platforms,
+    slug: game.slug,
+    image: game.entry.coverImage || "/images/placeholder.jpg",
+  }));
 
-  useEffect(() => {
-    const timer = setInterval(nextSlide, 5000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <div className="flex flex-col gap-16 md:gap-24 pb-20">
 
       {/* 1. Hero Carousel */}
-      <section className="relative w-full max-w-[1382px] mx-auto mt-4 px-4">
-        <div className="relative h-[500px] md:h-[722px] rounded-[2.5rem] overflow-hidden group">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="absolute inset-0"
-            >
-              {/* Game Background Image with Overlay */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] scale-100 group-hover:scale-110"
-                style={{ backgroundImage: `url(${games[current].image})` }}
-              >
-                {/* Visual Fix for missing images */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#250804]/90 via-[#250804]/40 to-transparent" />
-                <div className="absolute inset-0 bg-black/20" />
-              </div>
+      {/* 1. Hero Carousel */}
+      <GameShowcase games={games} />
 
-              {/* Content Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16">
-                <div className="max-w-3xl">
-                  <FadeIn delay={0.2} direction="up" key={`title-${current}`}>
-                    <div className="flex gap-2 mb-6">
-                      {games[current].platforms.map((platform) => (
-                        <span key={platform} className="px-3 py-1 rounded-full border border-[#FCEBD7]/20 bg-[#250804]/40 backdrop-blur-md text-[#FCEBD7]/80 text-[10px] font-bold tracking-widest">
-                          {platform}
-                        </span>
-                      ))}
-                    </div>
-                    <h2 className="text-5xl md:text-8xl font-black text-[#FCEBD7] leading-none mb-6 tracking-tighter uppercase italic">
-                      {games[current].title}
-                    </h2>
-                    <p className="text-xl text-[#FCEBD7]/70 mb-10 max-w-xl leading-relaxed">
-                      {games[current].description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-6 items-center">
-                      <Link
-                        href={`/games/${games[current].slug}`}
-                        className="group inline-flex items-center gap-3 bg-[#E2494B] text-[#FCEBD7] px-10 py-5 rounded-full font-black tracking-widest text-sm hover:bg-[#E2494B]/90 transition-all shadow-[0_10px_30px_rgba(226,73,75,0.3)]"
-                      >
-                        EXPLORE UNIVERSE
-                        <span className="transform group-hover:translate-x-2 transition-transform duration-300">→</span>
-                      </Link>
-
-                      <button className="inline-flex items-center gap-3 text-[#FCEBD7] font-bold tracking-widest text-sm hover:text-[#E2494B] transition-colors">
-                        <div className="w-12 h-12 rounded-full border border-[#FCEBD7]/20 flex items-center justify-center bg-[#FCEBD7]/5 backdrop-blur-sm group-hover:border-[#E2494B]/50">
-                          <Play fill="currentColor" size={14} className="ml-1" />
-                        </div>
-                        WATCH TRAILER
-                      </button>
-                    </div>
-                  </FadeIn>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation Controls */}
-          <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-6 pointer-events-none">
-            <button
-              onClick={prevSlide}
-              className="w-14 h-14 rounded-full border border-[#FCEBD7]/10 bg-[#250804]/20 backdrop-blur-md flex items-center justify-center text-[#FCEBD7] hover:bg-[#E2494B] hover:border-[#E2494B] transition-all duration-300 pointer-events-auto transform -translate-x-12 group-hover:translate-x-0 opacity-0 group-hover:opacity-100"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="w-14 h-14 rounded-full border border-[#FCEBD7]/10 bg-[#250804]/20 backdrop-blur-md flex items-center justify-center text-[#FCEBD7] hover:bg-[#E2494B] hover:border-[#E2494B] transition-all duration-300 pointer-events-auto transform translate-x-12 group-hover:translate-x-0 opacity-0 group-hover:opacity-100"
-            >
-              <ChevronRight size={24} />
-            </button>
-          </div>
-
-          {/* Slide Indicators */}
-          <div className="absolute bottom-10 right-10 flex gap-3">
-            {games.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`h-1.5 transition-all duration-500 rounded-full ${current === i ? "w-12 bg-[#E2494B]" : "w-3 bg-[#FCEBD7]/20 hover:bg-[#FCEBD7]/40"
-                  }`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 2. About Highlight (Cinematic Version) */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-32 relative overflow-hidden">
@@ -173,48 +83,8 @@ export default function Home() {
           </div>
 
           {/* Right: Visual Logic Core */}
-          <div className="relative flex justify-center items-center h-[500px] lg:h-[600px]">
-            {/* Main Orb / Core */}
-            <motion.div
-              className="relative w-64 h-64 rounded-full bg-gradient-to-br from-[#E2494B] to-[#250804] shadow-[0_0_80px_rgba(226,73,75,0.3)] flex items-center justify-center overflow-hidden"
-              animate={{
-                scale: [1, 1.05, 1],
-                boxShadow: ["0 0 80px rgba(226,73,75,0.3)", "0 0 120px rgba(226,73,75,0.5)", "0 0 80px rgba(226,73,75,0.3)"]
-              }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
-              <GlobeAltIcon className="w-32 h-32 text-[#FCEBD7]/20 animate-pulse" />
-            </motion.div>
-
-            {/* Orbiting Elements */}
-            {[
-              { icon: <CommandLineIcon />, delay: 0, radius: 180, duration: 20 },
-              { icon: <RocketLaunchIcon />, delay: -5, radius: 220, duration: 25 },
-              { icon: <BeakerIcon />, delay: -10, radius: 150, duration: 18 }
-            ].map((orbit, i) => (
-              <motion.div
-                key={i}
-                className="absolute text-[#E2494B]/40"
-                style={{ width: 40, height: 40 }}
-                animate={{
-                  rotate: 360,
-                }}
-                transition={{ duration: orbit.duration, repeat: Infinity, ease: "linear", delay: orbit.delay }}
-              >
-                <div
-                  className="w-12 h-12 bg-[#250804] border border-[#E2494B]/20 rounded-xl flex items-center justify-center backdrop-blur-md shadow-2xl"
-                  style={{ transform: `translateY(-${orbit.radius}px)` }}
-                >
-                  <div className="w-6 h-6">{orbit.icon}</div>
-                </div>
-              </motion.div>
-            ))}
-
-            {/* Background Decorative Rings */}
-            <div className="absolute w-[400px] h-[400px] border border-[#61422D]/10 rounded-full -z-10" />
-            <div className="absolute w-[500px] h-[500px] border border-[#61422D]/5 rounded-full -z-10" />
-          </div>
+          {/* Right: Visual Logic Core */}
+          <AboutVisuals />
         </div>
       </section>
 
@@ -290,21 +160,9 @@ export default function Home() {
 
         <div className="relative max-w-6xl mx-auto">
           {/* Central Animated Line (Desktop) */}
-          <div className="hidden md:block absolute top-[45px] left-0 w-full h-[1px] bg-[#61422D]/30 -z-10">
-            <motion.div
-              className="h-full bg-[#E2494B] relative"
-              initial={{ width: 0 }}
-              whileInView={{ width: "100%" }}
-              transition={{ duration: 2, ease: "easeInOut" }}
-              viewport={{ once: true }}
-            >
-              <motion.div
-                className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#E2494B] shadow-[0_0_15px_#E2494B]"
-                animate={{ opacity: [0.4, 1, 0.4] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-            </motion.div>
-          </div>
+          {/* Central Animated Line (Desktop) */}
+          <ProcessTimeline />
+
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-4">
             {[
