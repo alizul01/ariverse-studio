@@ -3,11 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Play, ChevronLeft, ChevronRight } from "lucide-react";
-import FadeIn from "./components/animations/FadeIn";
-import StaggerContainer, { StaggerItem } from "./components/animations/StaggerContainer";
-import { services } from "./data/services";
-import { games } from "./data/games";
-import CTA from "./components/ui/CTA";
+import FadeIn from "../components/animations/FadeIn";
+import StaggerContainer, { StaggerItem } from "../components/animations/StaggerContainer";
+import { services } from "../data/services";
+import { games } from "../data/games";
+import CTA from "../components/ui/CTA";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import {

@@ -1,14 +1,14 @@
 "use client";
 
-import { games } from "../../data/games";
+import { games } from "../../../data/games";
 import { notFound, useParams } from "next/navigation";
-import FadeIn from "../../components/animations/FadeIn";
-import CTA from "../../components/ui/CTA";
+import FadeIn from "../../../components/animations/FadeIn";
+import CTA from "../../../components/ui/CTA";
 import Link from "next/link";
 import { ArrowLeft, Gamepad2, Layers } from "lucide-react";
 import React from "react";
 
-import PageHeader from "../../components/ui/PageHeader";
+import PageHeader from "../../../components/ui/PageHeader";
 
 export default function GameDetailPage() {
     const params = useParams();

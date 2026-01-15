@@ -1,8 +1,8 @@
 "use client";
 
-import PageHeader from "../components/ui/PageHeader";
-import FadeIn from "../components/animations/FadeIn";
-import StaggerContainer, { StaggerItem } from "../components/animations/StaggerContainer";
+import PageHeader from "../../components/ui/PageHeader";
+import FadeIn from "../../components/animations/FadeIn";
+import StaggerContainer, { StaggerItem } from "../../components/animations/StaggerContainer";
 import { RocketLaunchIcon, HeartIcon, SparklesIcon, GlobeAltIcon, UsersIcon, FingerPrintIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 

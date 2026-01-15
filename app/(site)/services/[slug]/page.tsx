@@ -1,7 +1,7 @@
-import { services } from "../../data/services";
+import { services } from "../../../data/services";
 import { notFound } from "next/navigation";
-import FadeIn from "../../components/animations/FadeIn";
-import CTA from "../../components/ui/CTA";
+import FadeIn from "../../../components/animations/FadeIn";
+import CTA from "../../../components/ui/CTA";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -17,7 +17,7 @@ export function generateStaticParams() {
     }));
 }
 
-import PageHeader from "../../components/ui/PageHeader";
+import PageHeader from "../../../components/ui/PageHeader";
 
 export default async function ServiceDetailPage(props: ServiceDetailProps) {
     const params = await props.params;

@@ -1,9 +1,9 @@
-import { services } from "../data/services";
-import { technologies } from "../data/technologies";
-import FadeIn from "../components/animations/FadeIn";
-import StaggerContainer, { StaggerItem } from "../components/animations/StaggerContainer";
-import CTA from "../components/ui/CTA";
-import PageHeader from "../components/ui/PageHeader";
+import { services } from "../../data/services";
+import { technologies } from "../../data/technologies";
+import FadeIn from "../../components/animations/FadeIn";
+import StaggerContainer, { StaggerItem } from "../../components/animations/StaggerContainer";
+import CTA from "../../components/ui/CTA";
+import PageHeader from "../../components/ui/PageHeader";
 import {
     CpuChipIcon,
     GlobeAltIcon,
