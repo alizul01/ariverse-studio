@@ -6,7 +6,7 @@
   --color-accent: #96191A;
   --color-foreground: #FCEBD7;
 
-  --font-sans: var(--font-outfit);
+  --font-sans: var(--font-plus-jakarta);
 }
 
 body {
