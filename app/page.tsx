@@ -7,6 +7,13 @@ import FadeIn from "./components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "./components/animations/StaggerContainer";
 import { services } from "./data/services";
 import CTA from "./components/ui/CTA";
+import { motion } from "framer-motion";
+import {
+  MagnifyingGlassIcon,
+  PencilSquareIcon,
+  CpuChipIcon,
+  RocketLaunchIcon
+} from "@heroicons/react/24/outline";
 
 export default function Home() {
   return (
@@ -80,22 +87,80 @@ export default function Home() {
       </section>
 
       {/* 4. Working Process */}
-      <FadeIn className="max-w-[1440px] mx-auto px-4 md:px-6 bg-[#61422D]/5 py-16 rounded-3xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#FCEBD7] text-center mb-16">OUR PROCESS</h2>
-        <StaggerContainer className="relative flex flex-col md:flex-row justify-between items-center max-w-5xl mx-auto">
-          {/* Connecting Line (Desktop) */}
-          <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-[#61422D]/30 -z-10 transform -translate-y-1/2"></div>
+      <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-32 relative overflow-hidden">
+        <FadeIn className="text-center mb-24">
+          <div className="inline-block mb-4 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5">
+            <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">The Roadmap</span>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] tracking-tight">OUR PROCESS</h2>
+        </FadeIn>
 
-          {['Discovery', 'Design', 'Development', 'Launch'].map((step, index) => (
-            <StaggerItem key={step} className="flex flex-col items-center bg-[#250804] p-4 rounded-xl z-10 w-40 md:w-auto mb-8 md:mb-0">
-              <div className="w-10 h-10 rounded-full bg-[#96191A] text-[#FCEBD7] flex items-center justify-center font-bold mb-4 border-4 border-[#250804]">
-                {index + 1}
-              </div>
-              <h3 className="text-[#FCEBD7] font-bold">{step}</h3>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-      </FadeIn>
+        <div className="relative max-w-6xl mx-auto">
+          {/* Central Animated Line (Desktop) */}
+          <div className="hidden md:block absolute top-[45px] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#61422D]/50 to-transparent -z-10">
+            <motion.div
+              className="h-full bg-[#E2494B] shadow-[0_0_15px_rgba(226,73,75,0.5)]"
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              transition={{ duration: 2, ease: "easeInOut" }}
+              viewport={{ once: true }}
+            />
+          </div>
+
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
+            {[
+              {
+                step: "01",
+                title: 'Discovery',
+                desc: 'Unearthing the core essence and goals of your project.',
+                icon: <MagnifyingGlassIcon className="w-8 h-8" />
+              },
+              {
+                step: "02",
+                title: 'Design',
+                desc: 'Architecting immersive visuals and user experiences.',
+                icon: <PencilSquareIcon className="w-8 h-8" />
+              },
+              {
+                step: "03",
+                title: 'Development',
+                desc: 'Forging robust code and interactive mechanics.',
+                icon: <CpuChipIcon className="w-8 h-8" />
+              },
+              {
+                step: "04",
+                title: 'Launch',
+                desc: 'Deploying your universe to the digital frontier.',
+                icon: <RocketLaunchIcon className="w-8 h-8" />
+              }
+            ].map((item, index) => (
+              <StaggerItem key={item.step} className="relative group">
+                <div className="flex flex-col items-center text-center px-4">
+                  {/* Icon Node */}
+                  <div className="relative mb-8">
+                    <div className="w-20 h-20 rounded-2xl bg-[#250804] border border-[#61422D]/30 flex items-center justify-center text-[#FCEBD7] group-hover:border-[#E2494B] group-hover:text-[#E2494B] transition-all duration-500 shadow-xl z-10 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#E2494B]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      {item.icon}
+                    </div>
+                    {/* Step Number Badge */}
+                    <div className="absolute -top-3 -right-3 w-8 h-8 rounded-lg bg-[#E2494B] text-[#FCEBD7] text-xs font-bold flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                      {item.step}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-[#FCEBD7] mb-3 tracking-wide uppercase group-hover:text-[#E2494B] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-[#FCEBD7]/50 text-sm leading-relaxed max-w-[200px] group-hover:text-[#FCEBD7]/80 transition-colors">
+                    {item.desc}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
 
       {/* 5. Our Teams ("The Astronauts") */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6">

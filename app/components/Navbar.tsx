@@ -31,7 +31,7 @@ export default function Navbar() {
             height={40}
             className="w-10 h-10 object-contain"
           />
-          <span className="text-2xl font-bold tracking-tighter text-[#FCEBD7]">ARIVERSE</span>
+          <span className="text-xl font-bold tracking-tighter text-[#FCEBD7]">Ariverse Studio</span>
         </Link>
 
         {/* Desktop Nav */}
