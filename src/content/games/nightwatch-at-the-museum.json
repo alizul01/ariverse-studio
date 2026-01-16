@@ -1,10 +1,10 @@
 {
   "title": "Nightwatch at The Museum",
-  "description": "Nightwatch",
+  "description": "Play as a night security guard and uncover the secrets that are hidden in a museum, where ordinary patrols quickly turn into terrifying patrols.",
   "coverImage": "/images/games/nightwatch-at-the-museum/coverImage.png",
   "platforms": [
     "PC"
   ],
   "engine": "Unity",
-  "releaseDate": "2026-04-16"
+  "releaseDate": "2026-08-08"
 }
