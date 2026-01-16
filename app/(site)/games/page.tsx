@@ -4,6 +4,18 @@ import StaggerContainer, { StaggerItem } from "../../components/animations/Stagg
 import Link from "next/link";
 import PageHeader from "../../components/ui/PageHeader";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Our Games",
+    description: "Explore the immersive worlds created by Ariverse Studio. From RPGs to simulations, discover our latest releases and upcoming titles.",
+    openGraph: {
+        title: "Our Games | Ariverse Studio",
+        description: "Explore the immersive worlds created by Ariverse Studio. From RPGs to simulations, discover our latest releases and upcoming titles.",
+        url: 'https://ariverse-studio.com/games',
+    },
+};
+
 export default async function GamesPage() {
     const games = await reader.collections.games.all();
 

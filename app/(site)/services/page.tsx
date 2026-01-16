@@ -16,6 +16,18 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Services",
+    description: "Professional game development and gamification services. Unreal Engine, 3D Art, and immersive interactive experiences for your business.",
+    openGraph: {
+        title: "Services | Ariverse Studio",
+        description: "Professional game development and gamification services. Unreal Engine, 3D Art, and immersive interactive experiences for your business.",
+        url: 'https://ariverse-studio.com/services',
+    },
+};
+
 export default function ServicesPage() {
     const getServiceIcon = (id: string) => {
         switch (id) {
