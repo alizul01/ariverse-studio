@@ -26,11 +26,10 @@ export default function AboutPage() {
     ];
 
     const milestones = [
-        { year: "2021", event: "Studio Orbit Initialized in Jakarta." },
-        { year: "2022", event: "Launch of Project Aether (Alpha) and XR Research Wing." },
-        { year: "2023", event: "Expansion to 15+ specialized explorers across Game Ops & Design." },
-        { year: "2024", event: "First major partnership with Global XR publishers." },
-        { year: "2026", event: "Launching Echoes of Eldoria - our largest universe yet." }
+        { year: "2023", event: "Mission Start: Ariverse Studio founded in Malang." },
+        { year: "2024", event: "Achievement Unlocked: Won 'Best Indie' at Compfest." },
+        { year: "2025", event: "Level Up: Officially a Legal Entity." },
+        { year: "2026", event: "The Journey Continues: Expanding our universe and launching new titles." }
     ];
 
     return (
