@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import NextImage from "next/image";
 import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 import FadeIn from "../../components/animations/FadeIn";
 import { motion, AnimatePresence } from "framer-motion";
@@ -45,11 +46,16 @@ export default function GameShowcase({ games }: { games: Game[] }) {
                         className="absolute inset-0"
                     >
                         {/* Game Background Image with Overlay */}
-                        <div
-                            className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] scale-100 group-hover:scale-110"
-                            style={{ backgroundImage: `url(${games[current].image})` }}
-                        >
-                            {/* Visual Fix for missing images */}
+                        {/* Game Background Image with Next.js Image */}
+                        <div className="absolute inset-0">
+                            <NextImage
+                                src={games[current].image}
+                                alt={`${games[current].title} gameplay screenshot`}
+                                fill
+                                className="object-cover transition-transform duration-[10s] scale-100 group-hover:scale-110"
+                                priority
+                            />
+                            {/* Visual Overlays */}
                             <div className="absolute inset-0 bg-gradient-to-br from-[#250804]/90 via-[#250804]/40 to-transparent" />
                             <div className="absolute inset-0 bg-black/20" />
                         </div>

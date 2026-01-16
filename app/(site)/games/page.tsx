@@ -3,6 +3,7 @@ import FadeIn from "../../components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "../../components/animations/StaggerContainer";
 import Link from "next/link";
 import PageHeader from "../../components/ui/PageHeader";
+import NextImage from "next/image";
 
 import type { Metadata } from "next";
 
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Our Games | Ariverse Studio",
         description: "Explore the immersive worlds created by Ariverse Studio. From RPGs to simulations, discover our latest releases and upcoming titles.",
-        url: 'https://ariverse-studio.com/games',
+        url: 'https://ariversestudio.com//games',
     },
 };
 
@@ -34,17 +35,16 @@ export default async function GamesPage() {
                     {games.map((game, index) => (
                         <StaggerItem key={index} className="group cursor-pointer">
                             <Link href={`/games/${game.slug}`}>
-                                <div className="relative aspect-video overflow-hidden rounded-3xl border border-[#61422D]/30 bg-[#250804] mb-6">
-                                    <div
-                                        className="w-full h-full opacity-60 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                        style={{
-                                            backgroundImage: `url('${game.entry.coverImage}')`,
-                                            backgroundColor: '#250804'
-                                        }}
-                                    ></div>
+                                <div className="relative aspect-video overflow-hidden rounded-3xl border border-[#61422D]/30 bg-[#250804] mb-6 group-hover:border-[#E2494B]/50 transition-colors">
+                                    <NextImage
+                                        src={game.entry.coverImage || "/images/placeholders/game-cover.jpg"}
+                                        alt={`${game.entry.title} cover art`}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                                    />
 
                                     {/* Overlay Badges */}
-                                    <div className="absolute top-6 left-6 flex flex-wrap gap-2">
+                                    <div className="absolute top-6 left-6 flex flex-wrap gap-2 z-10">
                                         {game.entry.platforms.map(p => (
                                             <span key={p} className="px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-[10px] md:text-xs font-bold text-[#FCEBD7] border border-[#FCEBD7]/10 uppercase tracking-wider">
                                                 {p}
@@ -52,7 +52,7 @@ export default async function GamesPage() {
                                         ))}
                                     </div>
 
-                                    <div className="absolute top-6 right-6">
+                                    <div className="absolute top-6 right-6 z-10">
                                         <span className="px-3 py-1 bg-[#E2494B] rounded-full text-[10px] md:text-xs font-bold text-[#FCEBD7] uppercase tracking-wider shadow-lg">
                                             {game.entry.engine}
                                         </span>

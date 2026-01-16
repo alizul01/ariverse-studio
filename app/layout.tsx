@@ -11,7 +11,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ariverse-studio.com'),
+  metadataBase: new URL('https://ariversestudio.com/'),
   title: {
     default: "Ariverse Studio | Game Developer Malang Indonesia",
     template: "%s | Ariverse Studio"
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ariverse Studio",
     description: "Crafting immersive digital experiences.",
-    url: 'https://ariverse-studio.com',
+    url: 'https://ariversestudio.com/',
     siteName: 'Ariverse Studio',
     locale: 'en_US',
     type: 'website',

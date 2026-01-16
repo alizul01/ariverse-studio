@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Careers | Ariverse Studio",
         description: "Join the Ariverse Studio team. We are looking for talented developers, artists, and storytellers to build the future of gaming with us.",
-        url: 'https://ariverse-studio.com/careers',
+        url: 'https://ariversestudio.com//careers',
     },
 };
 

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "About Ariverse Studio",
         description: "Meet the team behind Ariverse Studio. We are a collective of explorers, creators, and engineers dedicated to forging the next generation of digital universes.",
-        url: 'https://ariverse-studio.com/about',
+        url: 'https://ariversestudio.com//about',
     },
 };
 

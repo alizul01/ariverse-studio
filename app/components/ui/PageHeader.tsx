@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import NextImage from "next/image";
 import FadeIn from "../animations/FadeIn";
 
 interface PageHeaderProps {
@@ -13,14 +14,15 @@ export default function PageHeader({ title, description, backgroundImage, breadc
     return (
         <div className="relative h-[40vh] min-h-[300px] w-full overflow-hidden flex items-end pb-12">
             {/* Background Image with Placeholder Fallback */}
+            {/* Background Image with Next.js Image */}
             <div className="absolute inset-0 bg-[#250804]">
-                <div
-                    className="w-full h-full opacity-30 bg-cover bg-center"
-                    style={{
-                        backgroundImage: `url('${backgroundImage || '/images/placeholders/header-placeholder.jpg'}')`,
-                        backgroundColor: '#250804'
-                    }}
-                ></div>
+                <NextImage
+                    src={backgroundImage || '/images/placeholders/header-placeholder.jpg'}
+                    alt={`${title} header background`}
+                    fill
+                    className="object-cover opacity-30"
+                    priority
+                />
             </div>
 
             {/* Gradient Overlay */}

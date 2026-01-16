@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Blog | Ariverse Studio",
         description: "Latest news, devlogs, and insights from Ariverse Studio. Stay updated on our game development journey and industry thoughts.",
-        url: 'https://ariverse-studio.com/blog',
+        url: 'https://ariversestudio.com//blog',
     },
 };
 
