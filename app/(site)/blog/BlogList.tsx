@@ -203,44 +203,6 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
                     </div>
                 </section>
 
-                {/* 3. Newsletter Section */}
-                <section className="py-32">
-                    <FadeIn>
-                        <div className="bg-[#E2494B] rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden">
-                            {/* Decorative Elements */}
-                            <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
-                            <div className="absolute bottom-0 right-0 w-96 h-96 bg-black/20 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2" />
-
-                            <div className="relative z-10 max-w-2xl mx-auto">
-                                <PaperAirplaneIcon className="w-16 h-16 text-white/20 mx-auto mb-8 animate-bounce" />
-                                <h2 className="text-4xl md:text-6xl font-black text-[#FCEBD7] tracking-tighter uppercase mb-6">
-                                    Subscribe to Orbit
-                                </h2>
-                                <p className="text-[#FCEBD7]/80 text-lg mb-12">
-                                    Get the freshest studio news and tech insights delivered directly to your transmission receiver.
-                                </p>
-
-                                <form className="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
-                                    <input
-                                        type="email"
-                                        placeholder="Enter your email"
-                                        className="flex-1 bg-white/10 border border-white/20 rounded-2xl px-6 py-4 text-[#FCEBD7] placeholder-[#FCEBD7]/50 focus:outline-none focus:bg-white/20 transition-all"
-                                        required
-                                    />
-                                    <button
-                                        type="submit"
-                                        className="bg-[#250804] text-[#FCEBD7] px-8 py-4 rounded-2xl font-black tracking-widest uppercase text-sm hover:scale-105 transition-transform shadow-xl"
-                                    >
-                                        Connect
-                                    </button>
-                                </form>
-                                <p className="mt-6 text-[#FCEBD7]/40 text-xs">
-                                    By subscribing, you agree to our Terms of Service and Privacy Policy.
-                                </p>
-                            </div>
-                        </div>
-                    </FadeIn>
-                </section>
             </div>
         </div>
     );
