@@ -50,14 +50,22 @@ export default function AboutPage() {
                         <div className="flex flex-col lg:flex-row items-center gap-16">
                             <div className="w-full lg:w-1/2">
                                 <div className="inline-block mb-4 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
-                                    <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">The Vision</span>
+                                    <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">Who We Are</span>
                                 </div>
-                                <h2 className="text-4xl md:text-7xl font-bold text-[#FCEBD7] tracking-tighter uppercase mb-8 leading-none">
-                                    Forging the <br /><span className="text-[#E2494B]">Infinite</span> Horizon
+                                <h2 className="text-4xl md:text-5xl font-bold text-[#FCEBD7] tracking-tighter uppercase mb-8 leading-none">
+                                    Indie Games Studio <br /><span className="text-[#E2494B]">From Malang</span>
                                 </h2>
-                                <p className="text-xl text-[#FCEBD7]/60 leading-relaxed mb-10">
-                                    Ariverse Studio was founded on a simple yet radical idea: that games shouldn't just be played—they should be inhabited. We blend high-fidelity technology with deep narrative roots to create experiences that stay with you long after the transmission ends.
-                                </p>
+                                <div className="text-lg text-[#FCEBD7]/70 leading-relaxed mb-10 space-y-6">
+                                    <p>
+                                        We turn ordinary into extraordinary through immersive storytelling, engaging gameplay, and unique experiences.
+                                    </p>
+                                    <p>
+                                        At Ariverse Studio, we are driven by our passion and vision for created immersive products that are not only entertaining but also impactful. We believe that games can be a <span className="text-[#E2494B] font-bold italic">powerful</span> medium for any message, and we are here to help you deliver it.
+                                    </p>
+                                    <p>
+                                        We believe that each of us is an astronaut, exploring the universe of creativity and imagination. We are here to turn the ordinary into extraordinary and make a difference.
+                                    </p>
+                                </div>
                                 <div className="flex items-center gap-6">
                                     <div className="flex flex-col">
                                         <span className="text-3xl font-bold text-[#FCEBD7]">24</span>
