@@ -12,6 +12,13 @@
 
 body {
   background-color: var(--color-background);
+  /* Overlay with 95% opacity of the background color to make the image very subtle */
+  background-image:
+    linear-gradient(rgba(37, 8, 4, 0.97), rgba(37, 8, 4, 0.97)),
+    url('/repeat_bg.png');
+  background-repeat: repeat;
+  background-position: 0 0, 20px 20px;
+  background-size: 100% auto;
   color: var(--color-foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
