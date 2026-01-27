@@ -146,5 +146,24 @@ export default config({
                 }),
             },
         }),
+        press: collection({
+            label: 'Press Coverage',
+            slugField: 'outlet',
+            path: 'src/content/press/*',
+            format: { data: 'json' },
+            schema: {
+                outlet: fields.slug({ name: { label: 'Outlet' } }),
+                title: fields.text({ label: 'Title' }),
+                quote: fields.text({ label: 'Quote', multiline: true }),
+                screenshot: fields.image({
+                    label: 'Screenshot',
+                    directory: 'public/images/press',
+                    publicPath: '/images/press/',
+                }),
+                link: fields.text({ label: 'Link' }),
+                date: fields.date({ label: 'Date' }),
+                isFeatured: fields.checkbox({ label: 'Featured', defaultValue: false }),
+            },
+        }),
     },
 });
