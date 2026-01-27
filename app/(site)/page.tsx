@@ -12,6 +12,10 @@ import {
   TrophyIcon,
   CubeTransparentIcon,
   AcademicCapIcon,
+  LightBulbIcon,
+  DocumentTextIcon,
+  BugAntIcon,
+  UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import { reader } from "../../lib/keystatic";
 import GameShowcase from "../components/home/GameShowcase";
@@ -152,34 +156,42 @@ export default async function Home() {
 
         <div className="relative max-w-6xl mx-auto">
           <ProcessTimeline />
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-4">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {[
               {
                 step: "01",
-                title: 'Discovery',
-                // Copywriting: Lebih praktis
-                desc: 'We start by understanding your vision, goals, and the core idea.',
-                icon: <MagnifyingGlassIcon className="w-8 h-8" />
+                title: 'Initiation',
+                desc: 'Initializing ideas, identifying target audiences, and creating the core concept.',
+                icon: <LightBulbIcon className="w-8 h-8" />
               },
               {
                 step: "02",
-                title: 'Design',
-                // Copywriting: Fokus ke visual & user
-                desc: 'Crafting the visual identity, art style, and player journey.',
-                icon: <PencilSquareIcon className="w-8 h-8" />
+                title: 'Pre-Production',
+                desc: 'Designing mechanics (GDD), crafting the art style, and prototyping.',
+                icon: <DocumentTextIcon className="w-8 h-8" />
               },
               {
                 step: "03",
-                title: 'Development',
-                // Copywriting: Fokus ke teknis tapi simpel
-                desc: 'Building the mechanics and systems with solid, scalable code.',
+                title: 'Production',
+                desc: 'The core phase: building assets, writing code, and integrating everything.',
                 icon: <CpuChipIcon className="w-8 h-8" />
               },
               {
                 step: "04",
+                title: 'Testing',
+                desc: 'Rigorous internal alpha testing to squash bugs and ensure stability.',
+                icon: <BugAntIcon className="w-8 h-8" />
+              },
+              {
+                step: "05",
+                title: 'Beta Release',
+                desc: 'Releasing to a limited audience for feedback and refining the experience.',
+                icon: <UserGroupIcon className="w-8 h-8" />
+              },
+              {
+                step: "06",
                 title: 'Launch',
-                // Copywriting: Fokus ke hasil
-                desc: 'Testing, polishing, and releasing your game to the world.',
+                desc: 'Finalizing the product and releasing it to the world.',
                 icon: <RocketLaunchIcon className="w-8 h-8" />
               }
             ].map((item, index) => (
@@ -205,7 +217,7 @@ export default async function Home() {
                     <h3 className="text-2xl font-bold text-[#FCEBD7] mb-3 tracking-wide uppercase transition-colors group-hover:text-[#E2494B]">
                       {item.title}
                     </h3>
-                    <p className="text-[#FCEBD7]/40 text-sm leading-relaxed max-w-[200px] group-hover:text-[#FCEBD7]/70 transition-colors mx-auto">
+                    <p className="text-[#FCEBD7]/40 text-sm leading-relaxed max-w-[250px] group-hover:text-[#FCEBD7]/70 transition-colors mx-auto">
                       {item.desc}
                     </p>
                   </div>
