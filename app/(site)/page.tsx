@@ -17,6 +17,7 @@ import { reader } from "../../lib/keystatic";
 import GameShowcase from "../components/home/GameShowcase";
 import AboutVisuals from "../components/home/AboutVisuals";
 import ProcessTimeline from "../components/home/ProcessTimeline";
+import PressCoverage from "../components/home/PressCoverage";
 
 export default async function Home() {
   const gamesData = await reader.collections.games.all();
@@ -238,16 +239,8 @@ export default async function Home() {
         </StaggerContainer>
       </section>
 
-      {/* 6. Our Awards (Bisa juga jadi "Trusted By" atau "Featured On" kalau Award belum ada) */}
-      <section className="max-w-[1440px] mx-auto px-4 md:px-6">
-        <FadeIn className="border-t border-b border-[#61422D]/30 py-12 flex flex-wrap justify-between items-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-          {/* Placeholder Text untuk logo */}
-          <div className="text-2xl font-bold text-[#FCEBD7]">INDIE GAME FEST</div>
-          <div className="text-2xl font-bold text-[#FCEBD7]">BEST ART</div>
-          <div className="text-2xl font-bold text-[#FCEBD7]">TOP 10 LOCAL</div>
-          <div className="text-2xl font-bold text-[#FCEBD7]">GAME JAM WINNER</div>
-        </FadeIn>
-      </section>
+      {/* 6. Press & Media Coverage */}
+      <PressCoverage />
 
       {/* 7. CTA Section */}
       <CTA />

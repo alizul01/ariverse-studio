@@ -11,6 +11,14 @@ interface GameDetailPageProps {
     params: Promise<{ slug: string }>;
 }
 
+// This function is required for static site generation with dynamic routes
+export async function generateStaticParams() {
+    const games = await reader.collections.games.all();
+    return games.map((game) => ({
+        slug: game.slug,
+    }));
+}
+
 export default async function GameDetailPage({ params }: GameDetailPageProps) {
     const { slug } = await params;
     const game = await reader.collections.games.read(slug);
