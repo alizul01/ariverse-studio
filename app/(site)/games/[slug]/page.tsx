@@ -11,12 +11,35 @@ interface GameDetailPageProps {
     params: Promise<{ slug: string }>;
 }
 
+import { Metadata } from "next";
+
 // This function is required for static site generation with dynamic routes
 export async function generateStaticParams() {
     const games = await reader.collections.games.all();
     return games.map((game) => ({
         slug: game.slug,
     }));
+}
+
+export async function generateMetadata({ params }: GameDetailPageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const game = await reader.collections.games.read(slug);
+
+    if (!game) {
+        return {
+            title: "Game Not Found",
+        };
+    }
+
+    return {
+        title: `${game.title} | Ariverse Studio`,
+        description: game.description || `Explore ${game.title}, a new immersive experience by Ariverse Studio.`,
+        openGraph: {
+            title: game.title,
+            description: game.description || `Explore ${game.title}, a new immersive experience by Ariverse Studio.`,
+            images: game.coverImage ? [game.coverImage] : [],
+        },
+    };
 }
 
 export default async function GameDetailPage({ params }: GameDetailPageProps) {

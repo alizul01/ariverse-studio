@@ -12,11 +12,34 @@ interface BlogPostProps {
     }>;
 }
 
+import { Metadata } from "next";
+
 export async function generateStaticParams() {
     const posts = await reader.collections.posts.all();
     return posts.map((post) => ({
         slug: post.slug,
     }));
+}
+
+export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
+    const { slug } = await params;
+    const post = await reader.collections.posts.read(slug);
+
+    if (!post) {
+        return {
+            title: "Post Not Found",
+        };
+    }
+
+    return {
+        title: `${post.title} | Ariverse Studio Blog`,
+        description: `Read ${post.title} on Ariverse Studio Blog.`,
+        openGraph: {
+            title: post.title,
+            description: `Read ${post.title} on Ariverse Studio Blog.`,
+            images: post.coverImage ? [post.coverImage] : [],
+        },
+    };
 }
 
 export default async function BlogPostPage(props: BlogPostProps) {
