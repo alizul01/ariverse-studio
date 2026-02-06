@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import FadeIn from "../components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "../components/animations/StaggerContainer";
 import { services } from "../data/services";
@@ -31,6 +32,13 @@ export default async function Home() {
     platforms: game.entry.platforms,
     slug: game.slug,
     image: game.entry.coverImage || "/images/placeholder.jpg",
+  }));
+
+  const crewData = await reader.collections.crew.all();
+  const crew = crewData.map((member) => ({
+    name: member.entry.name,
+    role: member.entry.role,
+    photo: member.entry.photo,
   }));
 
   return (
@@ -151,7 +159,7 @@ export default async function Home() {
           <div className="inline-block mb-4 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
             <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">How We Work</span>
           </div>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#FCEBD7] tracking-tighter uppercase">Our Process</h2>
+          <h2 className="te xt-4xl md:text-6xl lg:text-7xl font-bold text-[#FCEBD7] tracking-tighter uppercase">Our Process</h2>
         </FadeIn>
 
         <div className="relative max-w-6xl mx-auto">
@@ -239,13 +247,20 @@ export default async function Home() {
         </FadeIn>
         {/* Placeholder Teams - Nanti diganti real data */}
         <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[1, 2, 3, 4].map((i) => (
+          {crew.map((member, i) => (
             <StaggerItem key={i} className="group text-center">
-              <div className="w-full aspect-square bg-[#61422D] rounded-2xl mb-4 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                {/* Image Placeholder */}
+              <div className="w-full aspect-square bg-[#61422D] rounded-2xl mb-4 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500 relative">
+                {member.photo && (
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
+                )}
               </div>
-              <h3 className="text-[#FCEBD7] font-bold text-lg">Crew Member {i}</h3>
-              <p className="text-[#96191A] text-sm">Game Developer</p>
+              <h3 className="text-[#FCEBD7] font-bold text-lg">{member.name}</h3>
+              <p className="text-[#96191A] text-sm">{member.role}</p>
             </StaggerItem>
           ))}
         </StaggerContainer>

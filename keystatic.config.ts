@@ -165,5 +165,20 @@ export default config({
                 isFeatured: fields.checkbox({ label: 'Featured', defaultValue: false }),
             },
         }),
+        crew: collection({
+            label: 'Crew',
+            slugField: 'name',
+            path: 'src/content/crew/*',
+            format: { data: 'json' },
+            schema: {
+                name: fields.slug({ name: { label: 'Name' } }),
+                role: fields.text({ label: 'Jabatan' }),
+                photo: fields.image({
+                    label: 'Foto',
+                    directory: 'public/images/crew',
+                    publicPath: '/images/crew/',
+                }),
+            },
+        }),
     },
 });
