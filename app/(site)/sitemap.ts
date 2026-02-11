@@ -48,12 +48,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     try {
         const games = await reader.collections.games.all();
         const posts = await reader.collections.posts.all();
+        const careers = await reader.collections.careers.all();
 
         // Add Games
         games.forEach(game => {
             routes.push({
                 url: `${baseUrl}/games/${game.slug}`,
-                lastModified: new Date(), // Ideally this comes from content
+                lastModified: game.entry.releaseDate ? new Date(game.entry.releaseDate) : new Date(),
                 changeFrequency: 'monthly',
                 priority: 0.8,
             })
@@ -68,6 +69,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 priority: 0.6,
             })
         });
+
+        // Add Careers (listing is a static route, but if individual pages exist in the future)
+        if (careers.length > 0) {
+            // Update the careers listing page lastModified based on newest career post
+            const careersRoute = routes.find(r => r.url === `${baseUrl}/careers`);
+            if (careersRoute) {
+                careersRoute.lastModified = new Date();
+            }
+        }
 
     } catch (error) {
         console.error("Error generating dynamic sitemap:", error);
