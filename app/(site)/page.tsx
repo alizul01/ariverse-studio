@@ -72,8 +72,8 @@ export default async function Home() {
               {/* Milestones / Stats - Label lebih realistis */}
               <div className="grid grid-cols-3 gap-8 mb-12 py-8 border-y border-[#61422D]/20">
                 {[
-                  { label: "Years Active", value: "5+" },
-                  { label: "Shipped Games", value: "24" },
+                  { label: "Years Active", value: "3+" },
+                  { label: "Shipped Games", value: "12+" },
                   { label: "Studio Vibes", value: "100%" } // "Passion" diganti Vibes biar lebih fun
                 ].map((stat, i) => (
                   <div key={i}>

@@ -50,7 +50,7 @@ export const pressAssets: PressAsset[] = [
 export const studioInfo = {
     foundingDate: "January 2021",
     location: "Jakarta, Indonesia (Remote First)",
-    teamSize: "24 Explorers",
+    teamSize: "15 Explorers",
     founder: "Ali Zulfikar",
     mission: "To forge digital universes that challenge reality and inspire exploration.",
     activeProjects: ["Echoes of Eldoria", "Neon Velocity", "Project Aether"]
