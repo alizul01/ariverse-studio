@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { reader } from '../../lib/keystatic'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = 'https://ariversestudio.com/' // Placeholder domain
+    const baseUrl = 'https://ariversestudio.com' // Production domain
 
     // Base routes
     const routes: MetadataRoute.Sitemap = [
