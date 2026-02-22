@@ -3,7 +3,7 @@
 import PageHeader from "../../components/ui/PageHeader";
 import FadeIn from "../../components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "../../components/animations/StaggerContainer";
-import { RocketLaunchIcon, HeartIcon, SparklesIcon, GlobeAltIcon, UsersIcon, FingerPrintIcon } from "@heroicons/react/24/outline";
+import { HeartIcon, SparklesIcon, GlobeAltIcon, UsersIcon, FingerPrintIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -84,11 +84,12 @@ export default function AboutPage() {
                             </div>
                             <div className="w-full lg:w-1/2 relative group">
                                 <div className="aspect-square relative rounded-[4rem] overflow-hidden border border-[#61422D]/30">
-                                    <div className="absolute inset-0 bg-[#E2494B]/10 animate-pulse" />
-                                    <div className="absolute inset-0 flex items-center justify-center">
-                                        <RocketLaunchIcon className="w-40 h-40 text-[#E2494B] opacity-20 group-hover:scale-110 transition-transform duration-700" />
-                                    </div>
-                                    {/* For production use actual studio/team image here */}
+                                    <Image
+                                        src="/images/crew/team-illustration.webp"
+                                        alt="Ariverse Studio Team Illustration"
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                    />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#250804] to-transparent" />
                                 </div>
                                 <div className="absolute -inset-8 bg-[#E2494B]/5 blur-3xl -z-10 rounded-full" />
