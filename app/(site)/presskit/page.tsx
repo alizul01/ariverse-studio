@@ -40,7 +40,7 @@ export default function PresskitPage() {
                                     The Explorer's Media Kit
                                 </h2>
                                 <p className="text-[#FCEBD7]/60 text-lg mb-10">
-                                    Download the complete studio package including high-res logos, team photos, and the latest project media (582 MB).
+                                    Download the complete studio package including high-res logos, project media, and studio fact sheets (78 MB).
                                 </p>
                                 <button className="bg-[#E2494B] text-[#FCEBD7] px-12 py-5 rounded-full font-black tracking-widest text-sm hover:scale-105 transition-transform shadow-[0_10px_40px_rgba(226,73,75,0.4)] uppercase">
                                     Download All Assets (.ZIP)
@@ -116,20 +116,28 @@ export default function PresskitPage() {
                                         <p className="text-[#FCEBD7] font-bold text-lg">{studioInfo.location}</p>
                                     </div>
                                     <div className="space-y-2">
-                                        <p className="text-[10px] font-black text-[#E2494B] tracking-[0.2em] uppercase">Team Size</p>
-                                        <p className="text-[#FCEBD7] font-bold text-lg">{studioInfo.teamSize}</p>
-                                    </div>
-                                    <div className="space-y-2">
-                                        <p className="text-[10px] font-black text-[#E2494B] tracking-[0.2em] uppercase">Founder</p>
+                                        <p className="text-[10px] font-black text-[#E2494B] tracking-[0.2em] uppercase">Founder & CEO</p>
                                         <p className="text-[#FCEBD7] font-bold text-lg">{studioInfo.founder}</p>
                                     </div>
 
                                     <div className="pt-8 border-t border-[#61422D]/20 space-y-4">
-                                        <p className="text-[10px] font-black text-[#E2494B] tracking-[0.2em] uppercase">Active Frontiers</p>
+                                        <p className="text-[10px] font-black text-[#E2494B] tracking-[0.2em] uppercase">Active Projects</p>
                                         <div className="flex flex-wrap gap-2">
                                             {studioInfo.activeProjects.map((project, i) => (
                                                 <span key={i} className="px-3 py-1 rounded-md bg-[#61422D]/10 border border-[#61422D]/20 text-[#FCEBD7]/70 text-[10px] font-bold uppercase tracking-widest">
                                                     {project}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <p className="text-[10px] font-black text-[#E2494B] tracking-[0.2em] uppercase">Tech Stack</p>
+                                        <div className="flex flex-wrap gap-2">
+                                            {/* @ts-ignore - techStack might not be in interface yet but we added it to object */}
+                                            {studioInfo.techStack?.map((tech: string, i: number) => (
+                                                <span key={i} className="px-3 py-1 rounded-md bg-[#61422D]/10 border border-[#61422D]/20 text-[#FCEBD7]/70 text-[10px] font-bold uppercase tracking-widest">
+                                                    {tech}
                                                 </span>
                                             ))}
                                         </div>

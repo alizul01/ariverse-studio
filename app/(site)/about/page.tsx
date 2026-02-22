@@ -16,7 +16,7 @@ export default function AboutPage() {
         {
             icon: <GlobeAltIcon className="w-8 h-8" />,
             title: "Global Perspective",
-            description: "Based in Jakarta, but operating on a galactic scale. We build experiences that resonate across cultures and borders."
+            description: "Based in Malang, but operating on a galactic scale. We build experiences that resonate across cultures and borders."
         },
         {
             icon: <HeartIcon className="w-8 h-8" />,
