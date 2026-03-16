@@ -2,10 +2,9 @@ import { notFound } from "next/navigation";
 import FadeIn from "../../../components/animations/FadeIn";
 import CTA from "../../../components/ui/CTA";
 import { Gamepad2, Layers } from "lucide-react";
-import React from "react";
 import PageHeader from "../../../components/ui/PageHeader";
 import { reader } from "../../../../lib/keystatic";
-import { DocumentRenderer } from '@keystatic/core/renderer';
+import DocumentContent from "../../../components/ui/DocumentContent";
 
 interface GameDetailPageProps {
     params: Promise<{ slug: string }>;
@@ -67,11 +66,11 @@ export default async function GameDetailPage({ params }: GameDetailPageProps) {
                 <div className="lg:col-span-2">
                     <FadeIn delay={0.2}>
                         <h2 className="text-3xl font-bold text-[#FCEBD7] mb-8 uppercase tracking-tight">Mission Briefing</h2>
-                        <div className="prose prose-invert prose-lg max-w-none text-[#FCEBD7]/70">
+                        <div className="max-w-none">
                             {game.content ? (
-                                <DocumentRenderer document={await game.content()} />
+                                <DocumentContent document={await game.content()} />
                             ) : (
-                                <p>No content available.</p>
+                                <p className="text-[#FCEBD7]/50">No content available.</p>
                             )}
                         </div>
                     </FadeIn>

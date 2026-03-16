@@ -56,23 +56,20 @@ export default async function Home() {
                 <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">Who We Are</span>
               </div>
 
-              {/* Copywriting: Lebih direct dan powerful */}
               <h2 className="text-5xl md:text-7xl font-bold text-[#FCEBD7] tracking-tighter leading-[0.9] mb-8 uppercase">
                 We Build Worlds, <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E2494B] to-[#FCEBD7]/50">You Play the Story.</span>
               </h2>
 
-              {/* Copywriting: Bahasa natural, tidak terlalu "AI poetry" */}
               <p className="text-xl text-[#FCEBD7]/60 leading-relaxed mb-12 max-w-xl">
-                Ariverse Studio is where creative chaos meets technical precision. We are a team of developers and artists dedicated to crafting immersive gaming experiences that stay with you long after the game is over.
+                Ariverse Studio is an indie game studio from Malang, Indonesia. We make games rooted in local culture — built for the world.
               </p>
 
-              {/* Milestones / Stats - Label lebih realistis */}
               <div className="grid grid-cols-3 gap-8 mb-12 py-8 border-y border-[#61422D]/20">
                 {[
-                  { label: "Years Active", value: "3+" },
-                  { label: "Shipped Games", value: "12+" },
-                  { label: "Studio Vibes", value: "100%" } // "Passion" diganti Vibes biar lebih fun
+                  { label: "Founded", value: "2021" },
+                  { label: "Based In", value: "Malang" },
+                  { label: "Passion", value: "100%" },
                 ].map((stat, i) => (
                   <div key={i}>
                     <div className="text-3xl font-black text-[#FCEBD7] mb-1">{stat.value}</div>
@@ -108,7 +105,6 @@ export default async function Home() {
           </Link>
         </FadeIn>
 
-        {/* Note: Pastikan description di file data/services.ts juga sudah tidak kaku ya */}
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             { ...services[0], icon: <Square3Stack3DIcon className="w-8 h-8" /> },
@@ -157,7 +153,7 @@ export default async function Home() {
           <div className="inline-block mb-4 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
             <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">How We Work</span>
           </div>
-          <h2 className="te xt-4xl md:text-6xl lg:text-7xl font-bold text-[#FCEBD7] tracking-tighter uppercase">Our Process</h2>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#FCEBD7] tracking-tighter uppercase">Our Process</h2>
         </FadeIn>
 
         <div className="relative max-w-6xl mx-auto">
@@ -243,7 +239,6 @@ export default async function Home() {
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] tracking-tight uppercase">THE ASTRONAUTS</h2>
         </FadeIn>
-        {/* Placeholder Teams - Nanti diganti real data */}
         <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {crew.map((member, i) => (
             <StaggerItem key={i} className="group text-center">
