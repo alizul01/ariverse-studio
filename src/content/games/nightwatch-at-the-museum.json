@@ -1,10 +1,11 @@
 {
   "title": "Nightwatch at The Museum",
-  "description": "Play as a night security guard and uncover the secrets that are hidden in a museum, where ordinary patrols quickly turn into terrifying patrols.",
+  "description": "Play as Raja, a new security guard at a Javanese cultural heritage museum in Indonesia, 2003. What begins as routine night patrols slowly descends into a psychological horror experience that tests your sanity — and your choices determine Raja's fate.",
   "coverImage": "/images/games/nightwatch-at-the-museum/coverImage.png",
   "platforms": [
     "PC"
   ],
   "engine": "Unity",
+  "status": "coming-soon",
   "releaseDate": "2026-08-08"
 }
