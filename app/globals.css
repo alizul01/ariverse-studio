@@ -62,3 +62,37 @@ body {
 .hover-underline-animation:hover::after {
   width: 100%;
 }
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  [data-reduce-motion="true"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Skip Link for Keyboard Users */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #E2494B;
+  color: #FCEBD7;
+  padding: 8px 16px;
+  z-index: 10000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 0;
+}

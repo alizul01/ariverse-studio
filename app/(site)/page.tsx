@@ -5,8 +5,6 @@ import StaggerContainer, { StaggerItem } from "../components/animations/StaggerC
 import { services } from "../data/services";
 import CTA from "../components/ui/CTA";
 import {
-  MagnifyingGlassIcon,
-  PencilSquareIcon,
   CpuChipIcon,
   RocketLaunchIcon,
   Square3Stack3DIcon,
@@ -117,8 +115,8 @@ export default async function Home() {
             { ...services[1], icon: <TrophyIcon className="w-8 h-8" /> },
             { ...services[2], icon: <CubeTransparentIcon className="w-8 h-8" /> },
             { ...services[3], icon: <AcademicCapIcon className="w-8 h-8" /> },
-          ].map((service, index) => (
-            <StaggerItem key={index}>
+          ].map((service) => (
+            <StaggerItem key={service.slug}>
               <Link href={`/services/${service.slug}`} className="block h-full">
                 <div className="group relative h-full bg-[#61422D]/10 border border-[#61422D]/20 p-10 rounded-[2.5rem] backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-[#E2494B]/50 hover:shadow-[0_20px_50px_rgba(226,73,75,0.1)] hover:-translate-y-2">
                   <div className="absolute -right-8 -top-8 w-32 h-32 bg-[#E2494B]/5 rounded-full blur-3xl group-hover:bg-[#E2494B]/10 transition-colors duration-500" />
@@ -202,7 +200,7 @@ export default async function Home() {
                 desc: 'Finalizing the product and releasing it to the world.',
                 icon: <RocketLaunchIcon className="w-8 h-8" />
               }
-            ].map((item, index) => (
+            ].map((item) => (
               <StaggerItem key={item.step} className="relative group">
                 <div className="flex flex-col items-center text-center px-4 transition-transform duration-500 group-hover:-translate-y-2">
                   <span className="absolute -top-12 left-1/2 -translate-x-1/2 text-8xl font-black text-[#FCEBD7]/5 select-none transition-all duration-700 group-hover:text-[#E2494B]/10 group-hover:-top-16">

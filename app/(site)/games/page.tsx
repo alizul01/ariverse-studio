@@ -1,9 +1,9 @@
 import { reader } from "../../../lib/keystatic";
-import FadeIn from "../../components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "../../components/animations/StaggerContainer";
 import Link from "next/link";
 import PageHeader from "../../components/ui/PageHeader";
 import NextImage from "next/image";
+import GameStatusBadge from "../../components/ui/GameStatusBadge";
 
 import type { Metadata } from "next";
 
@@ -56,6 +56,11 @@ export default async function GamesPage() {
                                         <span className="px-3 py-1 bg-[#E2494B] rounded-full text-[10px] md:text-xs font-bold text-[#FCEBD7] uppercase tracking-wider shadow-lg">
                                             {game.entry.engine}
                                         </span>
+                                    </div>
+
+                                    {/* Status Badge */}
+                                    <div className="absolute bottom-6 left-6 z-10">
+                                        <GameStatusBadge status={(game.entry as Record<string, unknown>).status as string} />
                                     </div>
                                 </div>
 

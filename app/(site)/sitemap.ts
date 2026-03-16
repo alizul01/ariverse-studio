@@ -4,7 +4,7 @@ import { reader } from '../../lib/keystatic'
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://ariversestudio.com' // Production domain
 
-    // Base routes
+    // Base static routes
     const routes: MetadataRoute.Sitemap = [
         {
             url: baseUrl,
@@ -42,6 +42,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             changeFrequency: 'monthly',
             priority: 0.7,
         },
+        {
+            url: `${baseUrl}/presskit`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/privacy-policy`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.5,
+        },
     ]
 
     // Fetch dynamic content
@@ -49,6 +61,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const games = await reader.collections.games.all();
         const posts = await reader.collections.posts.all();
         const careers = await reader.collections.careers.all();
+
+        // Add Services (from static data)
+        const { services } = await import('../data/services');
+        services.forEach(service => {
+            routes.push({
+                url: `${baseUrl}/services/${service.slug}`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.7,
+            })
+        });
 
         // Add Games
         games.forEach(game => {

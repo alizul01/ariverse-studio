@@ -1,9 +1,9 @@
 import { reader } from "../../../../lib/keystatic";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import PageHeader from "../../../components/ui/PageHeader";
+import ScrollProgress from "../../../components/ui/ScrollProgress";
 import { DocumentRenderer } from '@keystatic/core/renderer';
 
 interface BlogPostProps {
@@ -56,6 +56,7 @@ export default async function BlogPostPage(props: BlogPostProps) {
 
     return (
         <div className="pb-40">
+            <ScrollProgress />
             <PageHeader
                 title={post.title}
                 description="Latest transmission from the studio."

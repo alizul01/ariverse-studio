@@ -2,8 +2,6 @@ import { services } from "../../../data/services";
 import { notFound } from "next/navigation";
 import FadeIn from "../../../components/animations/FadeIn";
 import CTA from "../../../components/ui/CTA";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 
 interface ServiceDetailProps {
     params: Promise<{

@@ -46,6 +46,16 @@ export default config({
                     ],
                     defaultValue: 'Unreal Engine 5',
                 }),
+                status: fields.select({
+                    label: 'Development Status',
+                    options: [
+                        { label: 'In Development', value: 'in-development' },
+                        { label: 'Coming Soon', value: 'coming-soon' },
+                        { label: 'Released', value: 'released' },
+                        { label: 'Early Access', value: 'early-access' },
+                    ],
+                    defaultValue: 'in-development',
+                }),
                 releaseDate: fields.date({ label: 'Release Date' }),
                 content: fields.document({
                     label: 'Content',

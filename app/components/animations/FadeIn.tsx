@@ -24,7 +24,7 @@ export default function FadeIn({ children, delay = 0, direction = "up", classNam
             x: 0,
             transition: {
                 duration: 0.8,
-                ease: [0.22, 1, 0.36, 1], // Custom ease for premium feel
+                ease: [0.22, 1, 0.36, 1],
                 delay: delay,
             }
         }
@@ -37,6 +37,7 @@ export default function FadeIn({ children, delay = 0, direction = "up", classNam
             viewport={{ once: true, margin: "-100px" }}
             variants={variants}
             className={className}
+            data-reduce-motion="true"
         >
             {children}
         </motion.div>

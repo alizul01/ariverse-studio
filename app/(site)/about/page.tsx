@@ -3,7 +3,7 @@
 import PageHeader from "../../components/ui/PageHeader";
 import FadeIn from "../../components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "../../components/animations/StaggerContainer";
-import { HeartIcon, SparklesIcon, GlobeAltIcon, UsersIcon, FingerPrintIcon } from "@heroicons/react/24/outline";
+import { HeartIcon, SparklesIcon, GlobeAltIcon, UsersIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -38,7 +38,7 @@ export default function AboutPage() {
                 title="Our Story"
                 description="We are a collective of explorers, creators, and engineers dedicated to forging the next generation of digital universes."
                 breadcrumbs={[{ label: "About", href: "/about" }]}
-                backgroundImage="/images/placeholders/about-header.jpg"
+                backgroundImage="/images/header/about-header.jpg"
             />
 
             <div className="max-w-[1440px] mx-auto px-4 md:px-6 mt-32">
@@ -115,7 +115,7 @@ export default function AboutPage() {
                                 </div>
                                 <h3 className="text-2xl font-bold text-[#FCEBD7] mb-4 uppercase tracking-tight">{v.title}</h3>
                                 <p className="text-[#FCEBD7]/60 leading-relaxed italic font-sans text-sm">
-                                    "{v.description}"
+                                    &quot;{v.description}&quot;
                                 </p>
                             </StaggerItem>
                         ))}
@@ -126,7 +126,7 @@ export default function AboutPage() {
                 <section className="py-40">
                     <div className="flex flex-col lg:flex-row gap-20">
                         <div className="lg:w-1/3">
-                            <h2 className="text-4xl font-bold text-[#FCEBD7] tracking-tighter uppercase sticky top-32">The Orbit <br /><span className="text-[#E2494B]">Timeline</span></h2>
+                            <h2 className="text-4xl font-bold text-[#FCEBD7] tracking-tighter uppercase sticky top-32">The Orbit<br /><span className="text-[#E2494B]">Timeline</span></h2>
                         </div>
                         <div className="lg:w-2/3 space-y-12 relative border-l border-[#FCEBD7]/10 ml-4 lg:ml-0 pl-10 pr-4">
                             {milestones.map((m, i) => (
@@ -153,7 +153,7 @@ export default function AboutPage() {
                         </div>
                         <h2 className="text-4xl md:text-6xl font-black text-[#FCEBD7] tracking-tighter uppercase mb-6">Join the Mission</h2>
                         <p className="text-[#FCEBD7]/60 max-w-2xl mx-auto text-lg mb-12">
-                            We're always looking for brilliant minds to help us build what's next. Whether you're a designer, developer, or dreamer—there's a place for you in our orbit.
+                            We&apos;re always looking for brilliant minds to help us build what&apos;s next. Whether you&apos;re a designer, developer, or dreamer—there&apos;s a place for you in our orbit.
                         </p>
                         <a
                             href="/careers"

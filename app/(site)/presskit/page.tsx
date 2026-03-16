@@ -13,7 +13,6 @@ import {
     Squares2X2Icon,
     ArrowDownTrayIcon
 } from "@heroicons/react/24/outline";
-import Image from "next/image";
 
 export default function PresskitPage() {
     return (
@@ -37,7 +36,7 @@ export default function PresskitPage() {
                             <div className="relative z-10 max-w-2xl mx-auto">
                                 <CloudArrowDownIcon className="w-16 h-16 text-[#E2494B] mx-auto mb-8 animate-bounce" />
                                 <h2 className="text-3xl md:text-5xl font-black text-[#FCEBD7] tracking-tighter uppercase mb-6">
-                                    The Explorer's Media Kit
+                                    The Explorer&apos;s Media Kit
                                 </h2>
                                 <p className="text-[#FCEBD7]/60 text-lg mb-10">
                                     Download the complete studio package including high-res logos, project media, and studio fact sheets (78 MB).
@@ -134,7 +133,6 @@ export default function PresskitPage() {
                                     <div className="space-y-4">
                                         <p className="text-[10px] font-black text-[#E2494B] tracking-[0.2em] uppercase">Tech Stack</p>
                                         <div className="flex flex-wrap gap-2">
-                                            {/* @ts-ignore - techStack might not be in interface yet but we added it to object */}
                                             {studioInfo.techStack?.map((tech: string, i: number) => (
                                                 <span key={i} className="px-3 py-1 rounded-md bg-[#61422D]/10 border border-[#61422D]/20 text-[#FCEBD7]/70 text-[10px] font-bold uppercase tracking-widest">
                                                     {tech}

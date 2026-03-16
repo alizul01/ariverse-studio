@@ -8,7 +8,6 @@ import {
     CalendarIcon,
     ClockIcon,
     ChevronRightIcon,
-    PaperAirplaneIcon,
     ArrowUpRightIcon
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
@@ -130,11 +129,12 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
                         <h2 className="text-4xl font-bold text-[#FCEBD7] tracking-tighter uppercase">Transmissions</h2>
 
                         {/* Category Filters */}
-                        <div className="flex flex-wrap justify-center gap-3">
+                        <div className="flex flex-wrap justify-center gap-3" role="group" aria-label="Filter blog posts by category">
                             {categories.map((cat) => (
                                 <button
                                     key={cat}
                                     onClick={() => setActiveTab(cat)}
+                                    aria-pressed={activeTab === cat}
                                     className={`px-6 py-2 rounded-full text-[10px] font-black tracking-widest uppercase transition-all duration-300 border ${activeTab === cat
                                         ? "bg-[#E2494B] border-[#E2494B] text-[#FCEBD7] shadow-[0_5px_15px_rgba(226,73,75,0.3)]"
                                         : "border-[#FCEBD7]/10 text-[#FCEBD7]/40 hover:border-[#FCEBD7]/30"

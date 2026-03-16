@@ -108,11 +108,12 @@ export default function CareersClient({ jobs }: CareersClientProps) {
                     </div>
 
                     {/* Filter Tabs */}
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <div className="flex flex-wrap justify-center gap-4" role="group" aria-label="Filter jobs by department">
                         {departments.map((dept) => (
                             <button
                                 key={dept}
                                 onClick={() => setActiveTab(dept)}
+                                aria-pressed={activeTab === dept}
                                 className={`px-6 py-2 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 border ${activeTab === dept
                                     ? "bg-[#E2494B] border-[#E2494B] text-[#FCEBD7] shadow-[0_5px_15px_rgba(226,73,75,0.3)]"
                                     : "border-[#FCEBD7]/10 text-[#FCEBD7]/40 hover:border-[#FCEBD7]/30"
@@ -185,9 +186,9 @@ export default function CareersClient({ jobs }: CareersClientProps) {
                 <FadeIn direction="up">
                     <div className="bg-[#61422D]/5 border border-[#61422D]/20 p-16 rounded-[3rem] backdrop-blur-xl relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-br from-[#E2494B]/10 to-transparent pointer-events-none" />
-                        <h2 className="text-3xl md:text-5xl font-bold text-[#FCEBD7] mb-6 relative z-10">Don't see your path?</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold text-[#FCEBD7] mb-6 relative z-10">Don&apos;t see your path?</h2>
                         <p className="text-lg text-[#FCEBD7]/60 mb-10 max-w-xl mx-auto relative z-10">
-                            If you're an explorer with a unique skillset, we still want to hear from you. We're always looking for geniuses to join the crew.
+                            If you&apos;re an explorer with a unique skillset, we still want to hear from you. We&apos;re always looking for geniuses to join the crew.
                         </p>
                         <button
                             onClick={() => handleApply()}
@@ -202,13 +203,19 @@ export default function CareersClient({ jobs }: CareersClientProps) {
             {/* 4. Application Modal */}
             <AnimatePresence>
                 {showModal && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
+                    <div 
+                        className="fixed inset-0 z-[100] flex items-center justify-center px-4"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="modal-title"
+                    >
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => !isSubmitting && setShowModal(false)}
                             className="absolute inset-0 bg-[#250804]/80 backdrop-blur-xl"
+                            aria-hidden="true"
                         />
 
                         <motion.div
@@ -221,7 +228,9 @@ export default function CareersClient({ jobs }: CareersClientProps) {
                             <div className="relative p-8 md:p-12 border-b border-[#61422D]/20">
                                 <button
                                     onClick={() => setShowModal(false)}
-                                    className="absolute top-8 right-8 text-[#FCEBD7]/40 hover:text-[#E2494B] transition-colors"
+                                    disabled={isSubmitting}
+                                    aria-label="Close modal"
+                                    className="absolute top-8 right-8 text-[#FCEBD7]/40 hover:text-[#E2494B] transition-colors disabled:opacity-50"
                                 >
                                     <XMarkIcon className="w-8 h-8" />
                                 </button>
@@ -231,7 +240,7 @@ export default function CareersClient({ jobs }: CareersClientProps) {
                                         {selectedJob ? `Applying for ${selectedJob.department}` : "General Application"}
                                     </span>
                                 </div>
-                                <h2 className="text-3xl md:text-4xl font-black text-[#FCEBD7] tracking-tighter uppercase">
+                                <h2 id="modal-title" className="text-3xl md:text-4xl font-black text-[#FCEBD7] tracking-tighter uppercase">
                                     {selectedJob ? selectedJob.title : "Join the Expedition"}
                                 </h2>
                             </div>
@@ -256,26 +265,27 @@ export default function CareersClient({ jobs }: CareersClientProps) {
                                             key="form"
                                             onSubmit={handleSubmit}
                                             className="space-y-6"
+                                            aria-label="Job application form"
                                         >
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="space-y-2">
-                                                    <label className="text-[10px] font-black text-[#E2494B] tracking-widest uppercase">Full Name</label>
-                                                    <input required type="text" placeholder="John Explorer" className="w-full bg-[#61422D]/10 border border-[#61422D]/20 rounded-xl px-4 py-4 text-[#FCEBD7] placeholder-[#FCEBD7]/20 outline-none focus:border-[#E2494B]/50 transition-all" />
+                                                    <label htmlFor="applicant-name" className="text-[10px] font-black text-[#E2494B] tracking-widest uppercase">Full Name</label>
+                                                    <input id="applicant-name" name="name" required type="text" placeholder="John Explorer" className="w-full bg-[#61422D]/10 border border-[#61422D]/20 rounded-xl px-4 py-4 text-[#FCEBD7] placeholder-[#FCEBD7]/20 outline-none focus:border-[#E2494B]/50 transition-all" />
                                                 </div>
                                                 <div className="space-y-2">
-                                                    <label className="text-[10px] font-black text-[#E2494B] tracking-widest uppercase">Email Address</label>
-                                                    <input required type="email" placeholder="john@ariverse.com" className="w-full bg-[#61422D]/10 border border-[#61422D]/20 rounded-xl px-4 py-4 text-[#FCEBD7] placeholder-[#FCEBD7]/20 outline-none focus:border-[#E2494B]/50 transition-all" />
+                                                    <label htmlFor="applicant-email" className="text-[10px] font-black text-[#E2494B] tracking-widest uppercase">Email Address</label>
+                                                    <input id="applicant-email" name="email" required type="email" placeholder="john@ariverse.com" className="w-full bg-[#61422D]/10 border border-[#61422D]/20 rounded-xl px-4 py-4 text-[#FCEBD7] placeholder-[#FCEBD7]/20 outline-none focus:border-[#E2494B]/50 transition-all" />
                                                 </div>
                                             </div>
 
                                             <div className="space-y-2">
-                                                <label className="text-[10px] font-black text-[#E2494B] tracking-widest uppercase">Portfolio / LinkedIn URL</label>
-                                                <input required type="url" placeholder="https://..." className="w-full bg-[#61422D]/10 border border-[#61422D]/20 rounded-xl px-4 py-4 text-[#FCEBD7] placeholder-[#FCEBD7]/20 outline-none focus:border-[#E2494B]/50 transition-all" />
+                                                <label htmlFor="applicant-portfolio" className="text-[10px] font-black text-[#E2494B] tracking-widest uppercase">Portfolio / LinkedIn URL</label>
+                                                <input id="applicant-portfolio" name="portfolio" required type="url" placeholder="https://..." className="w-full bg-[#61422D]/10 border border-[#61422D]/20 rounded-xl px-4 py-4 text-[#FCEBD7] placeholder-[#FCEBD7]/20 outline-none focus:border-[#E2494B]/50 transition-all" />
                                             </div>
 
                                             <div className="space-y-2">
-                                                <label className="text-[10px] font-black text-[#E2494B] tracking-widest uppercase">Why join the Ariverse?</label>
-                                                <textarea rows={4} placeholder="Tell us about your passion for digital universes..." className="w-full bg-[#61422D]/10 border border-[#61422D]/20 rounded-xl px-4 py-4 text-[#FCEBD7] placeholder-[#FCEBD7]/20 outline-none focus:border-[#E2494B]/50 transition-all resize-none" />
+                                                <label htmlFor="applicant-message" className="text-[10px] font-black text-[#E2494B] tracking-widest uppercase">Why join the Ariverse?</label>
+                                                <textarea id="applicant-message" name="message" rows={4} placeholder="Tell us about your passion for digital universes..." className="w-full bg-[#61422D]/10 border border-[#61422D]/20 rounded-xl px-4 py-4 text-[#FCEBD7] placeholder-[#FCEBD7]/20 outline-none focus:border-[#E2494B]/50 transition-all resize-none" />
                                             </div>
 
                                             <button

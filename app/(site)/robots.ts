@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://ariversestudio.com//sitemap.xml', // Assuming domain, user can change later
+        sitemap: 'https://ariversestudio.com/sitemap.xml',
     }
 }

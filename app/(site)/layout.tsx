@@ -3,6 +3,8 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import NewsletterSignup from "../components/NewsletterSignup";
+import BackToTop from "../components/ui/BackToTop";
 import "../globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -38,11 +40,16 @@ export default function SiteLayout({
 }>) {
     return (
         <div className={`${plusJakartaSans.variable} ${plusJakartaSans.className} antialiased min-h-screen flex flex-col`}>
+            <a href="#main-content" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#E2494B] focus:text-[#FCEBD7] focus:px-4 focus:py-2 focus:rounded-md focus:font-bold">
+                Skip to main content
+            </a>
             <Navbar />
-            <main className="grow">
+            <main id="main-content" className="grow">
                 {children}
             </main>
+            <NewsletterSignup />
             <Footer />
+            <BackToTop />
             <Analytics />
         </div>
     );

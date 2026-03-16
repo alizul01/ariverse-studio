@@ -20,7 +20,13 @@ export default function AboutVisuals() {
                 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay" />
+                <div 
+                    className="absolute inset-0 opacity-20 mix-blend-overlay"
+                    style={{
+                        backgroundImage: `url('https://grainy-gradients.vercel.app/${"noise.svg"}')`,
+                        backgroundSize: 'cover'
+                    }}
+                />
                 <GlobeAltIcon className="w-32 h-32 text-[#FCEBD7]/20 animate-pulse" />
             </motion.div>
 

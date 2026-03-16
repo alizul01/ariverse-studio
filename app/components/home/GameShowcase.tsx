@@ -5,7 +5,7 @@ import NextImage from "next/image";
 import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 import FadeIn from "../../components/animations/FadeIn";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export interface Game {
     title: string;
@@ -20,14 +20,19 @@ export interface Game {
 export default function GameShowcase({ games }: { games: Game[] }) {
     const [current, setCurrent] = useState(0);
 
-    const nextSlide = () => setCurrent((prev) => (prev + 1) % games.length);
-    const prevSlide = () => setCurrent((prev) => (prev === 0 ? games.length - 1 : prev - 1));
+    const nextSlide = useCallback(() => {
+        setCurrent((prev) => (prev + 1) % games.length);
+    }, [games.length]);
+
+    const prevSlide = useCallback(() => {
+        setCurrent((prev) => (prev === 0 ? games.length - 1 : prev - 1));
+    }, [games.length]);
 
     useEffect(() => {
         if (games.length <= 1) return;
         const timer = setInterval(nextSlide, 5000);
         return () => clearInterval(timer);
-    }, [games.length]);
+    }, [games.length, nextSlide]);
 
     if (!games || games.length === 0) {
         return null; // Or a loading state / fallback
