@@ -1,7 +1,12 @@
 import { ImageResponse } from 'next/og'
 import { reader } from '../../../../lib/keystatic'
 
-export const runtime = 'nodejs'
+export const dynamic = 'force-static'
+
+export async function generateStaticParams() {
+    const posts = await reader.collections.posts.all()
+    return posts.map((post) => ({ slug: post.slug }))
+}
 
 export const alt = 'Blog Post Preview'
 export const size = {

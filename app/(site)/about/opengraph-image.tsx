@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const runtime = 'nodejs'
+export const dynamic = 'force-static'
 
 export const alt = 'About Ariverse Studio - Indie Game Studio from Malang'
 export const size = {

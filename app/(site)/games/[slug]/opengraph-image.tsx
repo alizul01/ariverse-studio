@@ -1,7 +1,12 @@
 import { ImageResponse } from 'next/og'
 import { reader } from '../../../../lib/keystatic'
 
-export const runtime = 'nodejs'
+export const dynamic = 'force-static'
+
+export async function generateStaticParams() {
+    const games = await reader.collections.games.all()
+    return games.map((game) => ({ slug: game.slug }))
+}
 
 export const alt = 'Game Preview'
 export const size = {
