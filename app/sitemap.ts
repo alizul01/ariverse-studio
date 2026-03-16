@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { reader } from '../../lib/keystatic'
+import { reader } from '../lib/keystatic'
 
 export const dynamic = 'force-static'
 
@@ -65,7 +65,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const careers = await reader.collections.careers.all();
 
         // Add Services (from static data)
-        const { services } = await import('../data/services');
+        const { services } = await import('./data/services');
         services.forEach(service => {
             routes.push({
                 url: `${baseUrl}/services/${service.slug}`,
