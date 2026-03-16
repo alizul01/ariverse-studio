@@ -1,28 +1,13 @@
-05:15:51.971 
-  3 |
-05:15:51.972 
-  4 | export const dynamic = 'force-static'
-05:15:51.972 
-  5 |
-05:15:51.972 
-05:15:51.972 
-05:15:51.972 
-05:15:51.973 
-Import trace:
-05:15:51.973 
-  App Route:
-05:15:51.973 
-    ./app/sitemap.ts
-05:15:51.973 
-    ./app/sitemap--route-entry.js
-05:15:51.973 
-05:15:51.973 
-https://nextjs.org/docs/messages/module-not-found
-05:15:51.974 
-05:15:51.974 
-05:15:51.974 
-    at <unknown> (./app/sitemap.ts:2:1)
-05:15:51.974 
-    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
-05:15:52.084 
+Error: export const dynamic = "force-static"/export const revalidate not configured on route "/robots.txt" with "output: export". See more info here: https://nextjs.org/docs/advanced-features/static-html-export
+    at module evaluation (.next/server/chunks/[root-of-the-server]__f82cec3b._.js:16:896)
+    at instantiateModule (.next/server/chunks/[turbopack]_runtime.js:740:9)
+    at instantiateRuntimeModule (.next/server/chunks/[turbopack]_runtime.js:768:12)
+    at getOrInstantiateRuntimeModule (.next/server/chunks/[turbopack]_runtime.js:781:12)
+    at Object.m (.next/server/chunks/[turbopack]_runtime.js:790:18)
+    at Object.<anonymous> (.next/server/app/robots.txt/route.js:6:3)
+> Build error occurred
+Error: Failed to collect page data for /robots.txt
+    at ignore-listed frames {
+  type: 'Error'
+}
 Error: Command "npm run build" exited with 1
