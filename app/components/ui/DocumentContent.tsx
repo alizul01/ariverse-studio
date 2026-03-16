@@ -61,20 +61,14 @@ const renderers: DocumentRendererProps['renderers'] = {
         ),
         list: ({ type, children }) =>
             type === 'ordered' ? (
-                <ol className="space-y-3 mb-6 pl-6 list-decimal marker:text-[#E2494B] marker:font-bold">
+                <ol className="space-y-3 mb-6 pl-6 list-decimal marker:text-[#E2494B] marker:font-bold [&_li]:text-[#FCEBD7]/70 [&_li]:text-base [&_li]:leading-relaxed">
                     {children}
                 </ol>
             ) : (
-                <ul className="space-y-3 mb-6 pl-0 list-none">
+                <ul className="space-y-2 mb-6 pl-0 list-none [&_li]:flex [&_li]:items-start [&_li]:gap-3 [&_li]:text-[#FCEBD7]/70 [&_li]:text-base [&_li]:leading-relaxed [&_li]:before:content-[''] [&_li]:before:mt-[0.6em] [&_li]:before:w-1.5 [&_li]:before:h-1.5 [&_li]:before:rounded-full [&_li]:before:bg-[#E2494B] [&_li]:before:shrink-0">
                     {children}
                 </ul>
             ),
-        listItem: ({ children }) => (
-            <li className="flex items-start gap-3 text-[#FCEBD7]/70 text-base leading-relaxed">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#E2494B] shrink-0" />
-                <span>{children}</span>
-            </li>
-        ),
         code: ({ children }) => (
             <pre className="bg-[#61422D]/10 border border-[#61422D]/20 rounded-2xl p-6 my-6 overflow-x-auto">
                 <code className="text-[#FCEBD7]/80 text-sm font-mono leading-relaxed">{children}</code>
