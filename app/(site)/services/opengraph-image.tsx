@@ -102,55 +102,63 @@ export default async function Image() {
                         Unreal Engine, 3D Art, and immersive interactive experiences.
                     </div>
 
-                    {/* Services Grid */}
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, width: '100%', maxWidth: 800 }}>
-                        <div style={{ 
-                            background: 'rgba(226,73,75,0.08)', 
-                            border: '1px solid rgba(226,73,75,0.2)',
-                            borderRadius: '20px',
-                            padding: '20px 28px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: 16,
-                        }}>
-                            <span style={{ fontSize: 32 }}>🎮</span>
-                            <span style={{ fontSize: 20, fontWeight: 'bold' }}>Game Development</span>
+                    {/* Services Grid - using flexbox instead of grid for OG image compatibility */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 20, width: '100%', maxWidth: 800 }}>
+                        <div style={{ display: 'flex', flexDirection: 'row', gap: 20 }}>
+                            <div style={{ 
+                                background: 'rgba(226,73,75,0.08)', 
+                                border: '1px solid rgba(226,73,75,0.2)',
+                                borderRadius: '20px',
+                                padding: '20px 28px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 16,
+                                flex: 1,
+                            }}>
+                                <span style={{ fontSize: 32 }}>🎮</span>
+                                <span style={{ fontSize: 20, fontWeight: 'bold' }}>Game Development</span>
+                            </div>
+                            <div style={{ 
+                                background: 'rgba(226,73,75,0.08)', 
+                                border: '1px solid rgba(226,73,75,0.2)',
+                                borderRadius: '20px',
+                                padding: '20px 28px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 16,
+                                flex: 1,
+                            }}>
+                                <span style={{ fontSize: 32 }}>🎯</span>
+                                <span style={{ fontSize: 20, fontWeight: 'bold' }}>Gamification</span>
+                            </div>
                         </div>
-                        <div style={{ 
-                            background: 'rgba(226,73,75,0.08)', 
-                            border: '1px solid rgba(226,73,75,0.2)',
-                            borderRadius: '20px',
-                            padding: '20px 28px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: 16,
-                        }}>
-                            <span style={{ fontSize: 32 }}>🎯</span>
-                            <span style={{ fontSize: 20, fontWeight: 'bold' }}>Gamification</span>
-                        </div>
-                        <div style={{ 
-                            background: 'rgba(226,73,75,0.08)', 
-                            border: '1px solid rgba(226,73,75,0.2)',
-                            borderRadius: '20px',
-                            padding: '20px 28px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: 16,
-                        }}>
-                            <span style={{ fontSize: 32 }}>🥽</span>
-                            <span style={{ fontSize: 20, fontWeight: 'bold' }}>XR Development</span>
-                        </div>
-                        <div style={{ 
-                            background: 'rgba(226,73,75,0.08)', 
-                            border: '1px solid rgba(226,73,75,0.2)',
-                            borderRadius: '20px',
-                            padding: '20px 28px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: 16,
-                        }}>
-                            <span style={{ fontSize: 32 }}>📚</span>
-                            <span style={{ fontSize: 20, fontWeight: 'bold' }}>Interactive Learning</span>
+                        <div style={{ display: 'flex', flexDirection: 'row', gap: 20 }}>
+                            <div style={{ 
+                                background: 'rgba(226,73,75,0.08)', 
+                                border: '1px solid rgba(226,73,75,0.2)',
+                                borderRadius: '20px',
+                                padding: '20px 28px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 16,
+                                flex: 1,
+                            }}>
+                                <span style={{ fontSize: 32 }}>🥽</span>
+                                <span style={{ fontSize: 20, fontWeight: 'bold' }}>XR Development</span>
+                            </div>
+                            <div style={{ 
+                                background: 'rgba(226,73,75,0.08)', 
+                                border: '1px solid rgba(226,73,75,0.2)',
+                                borderRadius: '20px',
+                                padding: '20px 28px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 16,
+                                flex: 1,
+                            }}>
+                                <span style={{ fontSize: 32 }}>📚</span>
+                                <span style={{ fontSize: 20, fontWeight: 'bold' }}>Interactive Learning</span>
+                            </div>
                         </div>
                     </div>
                 </div>

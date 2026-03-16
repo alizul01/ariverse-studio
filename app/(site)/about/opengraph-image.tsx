@@ -78,6 +78,7 @@ export default async function Image() {
                     </div>
 
                     <div style={{ 
+                        display: 'flex',
                         fontSize: 32, 
                         opacity: 0.9, 
                         maxWidth: 800, 
@@ -99,17 +100,17 @@ export default async function Image() {
 
                     {/* Stats Row */}
                     <div style={{ display: 'flex', gap: 48, marginTop: 48 }}>
-                        <div style={{ textAlign: 'center' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             <div style={{ fontSize: 48, fontWeight: 'bold', color: '#FCEBD7' }}>24</div>
                             <div style={{ fontSize: 14, color: '#E2494B', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', marginTop: 8 }}>Explorers</div>
                         </div>
                         <div style={{ width: 2, height: 60, background: 'rgba(252,235,215,0.2)' }} />
-                        <div style={{ textAlign: 'center' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             <div style={{ fontSize: 48, fontWeight: 'bold', color: '#FCEBD7' }}>03</div>
                             <div style={{ fontSize: 14, color: '#E2494B', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', marginTop: 8 }}>Active Worlds</div>
                         </div>
                         <div style={{ width: 2, height: 60, background: 'rgba(252,235,215,0.2)' }} />
-                        <div style={{ textAlign: 'center' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             <div style={{ fontSize: 48, fontWeight: 'bold', color: '#FCEBD7' }}>05+</div>
                             <div style={{ fontSize: 14, color: '#E2494B', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', marginTop: 8 }}>Years Orbit</div>
                         </div>
