@@ -1,4 +1,3 @@
-import React from 'react';
 import FadeIn from '../animations/FadeIn';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
@@ -25,8 +24,13 @@ export default async function PressCoverage() {
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E2494B]/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
 
             <FadeIn className="mb-16 text-center md:text-left">
-                <div className="inline-block mb-4 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
-                    <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">In The News</span>
+                <div className="inline-flex items-stretch mb-4 rounded-xl border border-[#61422D]/40 overflow-hidden">
+                    <div className="flex items-center justify-center px-3 py-2 bg-[#61422D]/30">
+                        <Image src="/emoticon/cry.png" alt="" width={24} height={24} className="object-contain" />
+                    </div>
+                    <div className="flex items-center px-4 py-2 bg-[#61422D]/10">
+                        <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">In The News</span>
+                    </div>
                 </div>
                 <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] tracking-tight uppercase">Press Coverage</h2>
             </FadeIn>

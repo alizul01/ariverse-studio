@@ -52,8 +52,13 @@ export default async function Home() {
           {/* Left: Text Content */}
           <div className="relative z-10 text-left lg:pr-12">
             <FadeIn>
-              <div className="inline-block mb-8 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
-                <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">Who We Are</span>
+              <div className="inline-flex items-stretch mb-8 rounded-xl border border-[#61422D]/40 overflow-hidden">
+                <div className="flex items-center justify-center px-3 py-2 bg-[#61422D]/30">
+                  <Image src="/emoticon/happy.png" alt="" width={24} height={24} className="object-contain" />
+                </div>
+                <div className="flex items-center px-4 py-2 bg-[#61422D]/10">
+                  <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">Who We Are</span>
+                </div>
               </div>
 
               <h2 className="text-5xl md:text-7xl font-bold text-[#FCEBD7] tracking-tighter leading-[0.9] mb-8 uppercase">
@@ -95,8 +100,13 @@ export default async function Home() {
       <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-32">
         <FadeIn className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 text-center md:text-left">
           <div>
-            <div className="inline-block mb-4 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
-              <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">What We Do</span>
+            <div className="inline-flex items-stretch mb-4 rounded-xl border border-[#61422D]/40 overflow-hidden">
+              <div className="flex items-center justify-center px-3 py-2 bg-[#61422D]/30">
+                <Image src="/emoticon/stary%20eyes.png" alt="" width={24} height={24} className="object-contain" />
+              </div>
+              <div className="flex items-center px-4 py-2 bg-[#61422D]/10">
+                <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">What We Do</span>
+              </div>
             </div>
             <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] tracking-tight uppercase">Our Services</h2>
           </div>
@@ -150,8 +160,13 @@ export default async function Home() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E2494B]/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
 
         <FadeIn className="text-center mb-32">
-          <div className="inline-block mb-4 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
-            <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">How We Work</span>
+          <div className="inline-flex items-stretch mb-4 rounded-xl border border-[#61422D]/40 overflow-hidden">
+            <div className="flex items-center justify-center px-3 py-2 bg-[#61422D]/30">
+              <Image src="/emoticon/confused.png" alt="" width={24} height={24} className="object-contain" />
+            </div>
+            <div className="flex items-center px-4 py-2 bg-[#61422D]/10">
+              <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">How We Work</span>
+            </div>
           </div>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#FCEBD7] tracking-tighter uppercase">Our Process</h2>
         </FadeIn>
@@ -234,8 +249,13 @@ export default async function Home() {
       {/* 5. Our Teams */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-32">
         <FadeIn className="text-center md:text-left mb-16">
-          <div className="inline-block mb-4 px-4 py-1 rounded-full border border-[#E2494B]/30 bg-[#E2494B]/5 backdrop-blur-sm">
-            <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">The Crew</span>
+          <div className="inline-flex items-stretch mb-4 rounded-xl border border-[#61422D]/40 overflow-hidden">
+            <div className="flex items-center justify-center px-3 py-2 bg-[#61422D]/30">
+              <Image src="/emoticon/blink.png" alt="" width={24} height={24} className="object-contain" />
+            </div>
+            <div className="flex items-center px-4 py-2 bg-[#61422D]/10">
+              <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">The Crew</span>
+            </div>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] tracking-tight uppercase">THE ASTRONAUTS</h2>
         </FadeIn>
