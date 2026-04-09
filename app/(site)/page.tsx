@@ -6,6 +6,7 @@ import { services } from "../data/services";
 import CTA from "../components/ui/CTA";
 import { reader } from "../../lib/keystatic";
 import GameShowcase from "../components/home/GameShowcase";
+import HeroSection from "../components/home/HeroSection";
 import AboutVisuals from "../components/home/AboutVisuals";
 import PressCoverage from "../components/home/PressCoverage";
 
@@ -39,48 +40,90 @@ export default async function Home() {
     <div className="flex flex-col pb-20">
 
       {/* 1. Hero */}
-      <GameShowcase games={games} />
+      <HeroSection />
 
-      {/* 2. About */}
-      <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-24 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {/* 2. Who We Are */}
+      <div className="relative w-full py-28">
 
-          <div className="relative z-10 lg:pr-12">
+        {/* Grid background */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: `linear-gradient(rgba(150,25,26,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(150,25,26,0.06) 1px, transparent 1px)`,
+            backgroundSize: "72px 72px",
+          }}
+        />
+
+        <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+            {/* Left: copy */}
             <FadeIn>
-              <div className="inline-flex items-stretch mb-8 rounded-xl border border-[#61422D]/40 overflow-hidden">
-                <div className="flex items-center justify-center px-3 py-2 bg-[#61422D]/30">
-                  <Image src="/emoticon/happy.png" alt="" width={24} height={24} className="object-contain" />
-                </div>
-                <div className="flex items-center px-4 py-2 bg-[#61422D]/10">
-                  <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">Who We Are</span>
-                </div>
+              {/* Eyebrow */}
+              <div className="flex items-center gap-3 mb-10">
+                <span className="w-8 h-px bg-accent" />
+                <span className="text-accent text-xs font-bold tracking-[0.35em] uppercase">Who We Are</span>
               </div>
 
-              <h2 className="text-5xl md:text-7xl font-bold text-[#FCEBD7] tracking-tighter leading-[0.9] mb-8 uppercase">
-                We Build Worlds, <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E2494B] to-[#FCEBD7]/50">
-                  You Play the Story.
-                </span>
+              {/* Headline */}
+              <h2 className="text-5xl md:text-6xl xl:text-7xl font-black text-foreground tracking-tighter leading-[0.92] mb-7 uppercase">
+                Built in Indonesia,
+                <br />
+                <span
+                  className="text-transparent"
+                  style={{
+                    backgroundImage: "linear-gradient(135deg, #96191A 0%, #E2494B 55%, #96191A 100%)",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                  }}
+                >
+                  Made for
+                </span>{" "}
+                <span className="text-foreground/30">the World.</span>
               </h2>
 
-              <p className="text-xl text-[#FCEBD7]/60 leading-relaxed mb-10 max-w-xl">
+              {/* Description */}
+              <p className="text-lg text-foreground/55 leading-relaxed mb-12 max-w-lg">
                 Ariverse Studio is an indie game studio from Malang, Indonesia.
-                We make games rooted in local culture — built for the world.
+                We make games rooted in local culture — stories that feel
+                familiar to locals and intriguing to the world.
               </p>
 
+              {/* Stats row — no boxes, just dividers */}
+              <div className="flex items-stretch divide-x divide-foreground/10 mb-12">
+                {[
+                  { num: "2024", label: "Founded" },
+                  { num: "Malang", label: "Based In" },
+                  { num: "Horror", label: "Genre" },
+                ].map((s, i) => (
+                  <div key={s.label} className={`flex flex-col gap-1.5 ${i === 0 ? "pr-8" : "px-8"}`}>
+                    <span className="text-foreground font-black text-xl tracking-tight leading-none">{s.num}</span>
+                    <span className="text-foreground/30 text-[9px] tracking-[0.3em] uppercase font-bold">{s.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA */}
               <Link
                 href="/about"
-                className="group inline-flex items-center gap-3 text-[#FCEBD7] font-bold tracking-widest text-sm py-3 px-6 border border-[#FCEBD7]/20 rounded-xl hover:border-[#E2494B]/60 hover:text-[#E2494B] transition-all duration-300"
+                className="group inline-flex items-center gap-3 text-foreground font-bold tracking-widest text-xs py-3.5 px-7 border border-foreground/15 rounded-full hover:border-accent/50 hover:text-accent transition-all duration-300"
               >
                 MEET THE TEAM
                 <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
               </Link>
             </FadeIn>
-          </div>
 
-          <AboutVisuals />
+            {/* Right: editorial quote */}
+            <AboutVisuals />
+
+          </div>
         </div>
-      </section>
+      </div>
+
+      {/* 3. Game Showcase */}
+      <div className="py-8">
+        <GameShowcase games={games} />
+      </div>
 
       {/* 3. Services — editorial index */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-20 w-full">

@@ -55,7 +55,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[#250804]/90 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur-md border-b border-secondary/60">
       <div className="max-w-[1440px] mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -66,7 +66,7 @@ export default function Navbar() {
             height={40}
             className="w-10 h-10 object-contain"
           />
-          <span className="text-xl font-bold tracking-tighter text-[#FCEBD7]">Ariverse Studio</span>
+          <span className="text-xl font-bold tracking-tighter text-foreground">Ariverse Studio</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -75,7 +75,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-[#E2494B] hover-underline-animation ${pathname === link.href ? "text-[#E2494B] font-bold" : "text-[#FCEBD7]"
+              className={`text-sm font-medium transition-colors hover:text-accent hover-underline-animation ${pathname === link.href ? "text-accent font-bold" : "text-foreground"
                 }`}
             >
               {link.name}
@@ -87,7 +87,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <Link
             href="/presskit"
-            className="px-5 py-2 rounded-full bg-[#96191A] text-[#FCEBD7] font-medium hover:bg-[#96191A]/80 transition-all flex items-center gap-2"
+            className="px-5 py-2 rounded-full bg-accent text-background font-medium hover:bg-accent/80 transition-all flex items-center gap-2"
           >
             Presskit
           </Link>
@@ -95,7 +95,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <motion.button
-          className="md:hidden text-[#FCEBD7] relative z-50"
+          className="md:hidden text-foreground relative z-50"
           onClick={() => setIsOpen(!isOpen)}
           whileTap={{ scale: 0.9 }}
           aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -121,7 +121,7 @@ export default function Navbar() {
         {isOpen && (
           <motion.div
             id="mobile-menu"
-            className="md:hidden fixed inset-0 top-20 bg-[#250804]/98 backdrop-blur-lg z-40"
+            className="md:hidden fixed inset-0 top-20 bg-background/98 backdrop-blur-lg z-40"
             variants={menuVariants}
             initial="closed"
             animate="open"
@@ -132,7 +132,7 @@ export default function Navbar() {
                 <motion.div key={link.name} variants={itemVariants}>
                   <Link
                     href={link.href}
-                    className={`block text-2xl font-bold py-3 border-b border-[#61422D]/20 transition-colors ${pathname === link.href ? "text-[#E2494B]" : "text-[#FCEBD7]"}`}
+                    className={`block text-2xl font-bold py-3 border-b border-secondary/30 transition-colors ${pathname === link.href ? "text-accent" : "text-foreground"}`}
                     onClick={() => setIsOpen(false)}
                   >
                     {link.name}
@@ -142,7 +142,7 @@ export default function Navbar() {
               <motion.div variants={itemVariants} className="mt-4">
                 <Link
                   href="/presskit"
-                  className="block w-full text-center py-4 bg-[#96191A] rounded-xl text-[#FCEBD7] font-bold text-lg hover:bg-[#96191A]/80 transition-colors"
+                  className="block w-full text-center py-4 bg-accent rounded-xl text-background font-bold text-lg hover:bg-accent/80 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Presskit

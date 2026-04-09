@@ -2,19 +2,18 @@
 /* Forced rebuild */
 
 @theme {
-  --color-background: #250804;
-  --color-secondary: #61422D;
+  --color-background: #F5F0E8;
+  --color-secondary: #D6C9B6;
   --color-accent: #96191A;
-  --color-foreground: #FCEBD7;
+  --color-foreground: #101010;
 
   --font-sans: var(--font-plus-jakarta);
 }
 
 body {
   background-color: var(--color-background);
-  /* Overlay with 95% opacity of the background color to make the image very subtle */
   background-image:
-    linear-gradient(rgba(37, 8, 4, 0.98), rgba(37, 8, 4, 0.98)),
+    linear-gradient(rgba(245, 240, 232, 0.98), rgba(245, 240, 232, 0.98)),
     url('/repeat_bg.png');
   background-repeat: repeat;
   background-position: 0 0, 20px 20px;
@@ -34,7 +33,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-secondary);
+  background: #C0B09A;
   border-radius: 4px;
 }
 
@@ -86,7 +85,7 @@ body {
   top: -40px;
   left: 0;
   background: #E2494B;
-  color: #FCEBD7;
+  color: #F5F0E8;
   padding: 8px 16px;
   z-index: 10000;
   text-decoration: none;
