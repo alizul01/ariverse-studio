@@ -32,7 +32,7 @@ export default async function PressCoverage() {
                         <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">In The News</span>
                     </div>
                 </div>
-                <h2 className="text-4xl md:text-6xl font-bold text-[#FCEBD7] tracking-tight uppercase">Press Coverage</h2>
+                <h2 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight uppercase">Press Coverage</h2>
             </FadeIn>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -50,7 +50,7 @@ export default async function PressCoverage() {
                                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                                         />
                                     ) : (
-                                        <div className="text-[#FCEBD7]/20 text-6xl font-black uppercase tracking-tighter">Feature</div>
+                                        <div className="text-foreground/30 text-6xl font-black uppercase tracking-tighter">Feature</div>
                                     )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#250804] to-transparent opacity-60 z-10" />
                                 </div>
@@ -58,12 +58,12 @@ export default async function PressCoverage() {
                                 <div className="p-8 md:p-12 relative z-20">
                                     <div className="flex items-center justify-between mb-6">
                                         <span className="text-[#E2494B] font-bold tracking-widest uppercase text-sm">{featured.entry.outlet}</span>
-                                        <ArrowTopRightOnSquareIcon className="w-5 h-5 text-[#FCEBD7]/50 group-hover:text-[#E2494B] transition-colors" />
+                                        <ArrowTopRightOnSquareIcon className="w-5 h-5 text-foreground/50 group-hover:text-[#E2494B] transition-colors" />
                                     </div>
-                                    <h3 className="text-3xl md:text-4xl font-bold text-[#FCEBD7] mb-4 leading-tight group-hover:text-[#E2494B] transition-colors">
+                                    <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight group-hover:text-[#E2494B] transition-colors">
                                         {featured.entry.title}
                                     </h3>
-                                    <p className="text-[#FCEBD7]/60 leading-relaxed line-clamp-3">
+                                    <p className="text-foreground/60 leading-relaxed line-clamp-3">
                                         {featured.entry.quote}
                                     </p>
                                 </div>
@@ -80,7 +80,7 @@ export default async function PressCoverage() {
                                 <div className="bg-[#61422D]/5 border border-[#61422D]/10 p-6 rounded-[2rem] backdrop-blur-sm transition-all duration-300 hover:bg-[#61422D]/10 hover:border-[#E2494B]/30 hover:translate-x-2">
                                     <div className="flex gap-6 items-start">
                                         {item.entry.screenshot && (
-                                            <div className="relative w-32 aspect-square rounded-2xl overflow-hidden shrink-0 border border-[#FCEBD7]/10">
+                                            <div className="relative w-32 aspect-square rounded-2xl overflow-hidden shrink-0 border border-foreground/10">
                                                 <Image
                                                     src={item.entry.screenshot}
                                                     alt={item.entry.outlet}
@@ -91,11 +91,11 @@ export default async function PressCoverage() {
                                         )}
                                         <div className="flex-1 min-w-0">
                                             <div className="flex items-center justify-between gap-4 mb-2">
-                                                <span className="text-[#FCEBD7] font-bold truncate">{item.entry.outlet}</span>
-                                                <span className="text-[#FCEBD7]/30 text-xs font-mono shrink-0">{item.entry.date}</span>
+                                                <span className="text-foreground font-bold truncate">{item.entry.outlet}</span>
+                                                <span className="text-foreground/30 text-xs font-mono shrink-0">{item.entry.date}</span>
                                             </div>
                                             <blockquote className="relative">
-                                                <p className="text-[#FCEBD7]/70 italic text-sm line-clamp-3 pl-2 border-l-2 border-[#E2494B]/30 group-hover:border-[#E2494B] transition-colors">
+                                                <p className="text-foreground/70 italic text-sm line-clamp-3 pl-2 border-l-2 border-[#E2494B]/30 group-hover:border-[#E2494B] transition-colors">
                                                     {item.entry.quote}
                                                 </p>
                                             </blockquote>

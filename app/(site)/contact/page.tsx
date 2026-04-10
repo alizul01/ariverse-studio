@@ -65,7 +65,7 @@ export default function ContactPage() {
     ];
 
     const inputClasses =
-        "w-full bg-[#250804] border border-[#61422D]/30 rounded-xl px-5 py-4 text-[#FCEBD7] placeholder-[#FCEBD7]/30 focus:outline-none focus:border-[#E2494B]/60 focus:ring-1 focus:ring-[#E2494B]/30 transition-all text-sm";
+        "w-full bg-background border border-foreground/30 rounded-xl px-5 py-4 text-foreground placeholder-foreground/30 focus:outline-none focus:border-accent/60 focus:ring-1 focus:ring-accent/30 transition-all text-sm";
 
     return (
         <div className="pb-40">
@@ -82,10 +82,10 @@ export default function ContactPage() {
                     <FadeIn className="lg:col-span-2" direction="left">
                         <div className="space-y-8">
                             <div>
-                                <h2 className="text-3xl font-bold text-[#FCEBD7] tracking-tight uppercase mb-4">
+                                <h2 className="text-3xl font-bold text-foreground tracking-tight uppercase mb-4">
                                     Get in Touch
                                 </h2>
-                                <p className="text-[#FCEBD7]/60 leading-relaxed">
+                                <p className="text-foreground/60 leading-relaxed">
                                     Whether you&apos;re interested in our game development services, looking for a collaboration, 
                                     or just want to say hello — drop us a message.
                                 </p>
@@ -94,17 +94,17 @@ export default function ContactPage() {
                             <div className="space-y-6">
                                 {contactInfo.map((item) => (
                                     <div key={item.label} className="flex items-start gap-4">
-                                        <div className="w-12 h-12 rounded-xl bg-[#E2494B]/10 border border-[#E2494B]/20 flex items-center justify-center shrink-0">
-                                            <item.icon className="w-5 h-5 text-[#E2494B]" />
+                                        <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
+                                            <item.icon className="w-5 h-5 text-accent" />
                                         </div>
                                         <div>
-                                            <p className="text-[10px] font-bold uppercase tracking-widest text-[#FCEBD7]/40 mb-1">{item.label}</p>
+                                            <p className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 mb-1">{item.label}</p>
                                             {item.href ? (
-                                                <a href={item.href} className="text-[#FCEBD7] font-medium hover:text-[#E2494B] transition-colors">
+                                                <a href={item.href} className="text-foreground font-medium hover:text-accent transition-colors">
                                                     {item.value}
                                                 </a>
                                             ) : (
-                                                <p className="text-[#FCEBD7] font-medium">{item.value}</p>
+                                                <p className="text-foreground font-medium">{item.value}</p>
                                             )}
                                         </div>
                                     </div>
@@ -112,10 +112,10 @@ export default function ContactPage() {
                             </div>
 
                             {/* Decorative card */}
-                            <div className="bg-[#E2494B]/5 border border-[#E2494B]/10 rounded-2xl p-6 mt-8">
-                                <p className="text-[#FCEBD7]/80 text-sm leading-relaxed">
-                                    💡 <strong className="text-[#E2494B]">Looking for game dev services?</strong> Check out our{" "}
-                                    <a href="/services" className="text-[#E2494B] underline underline-offset-4 hover:text-[#FCEBD7]">services page</a>{" "}
+                            <div className="bg-accent/5 border border-accent/10 rounded-2xl p-6 mt-8">
+                                <p className="text-foreground/80 text-sm leading-relaxed">
+                                    💡 <strong className="text-accent">Looking for game dev services?</strong> Check out our{" "}
+                                    <a href="/services" className="text-accent underline underline-offset-4 hover:text-foreground">services page</a>{" "}
                                     for detailed information about what we offer.
                                 </p>
                             </div>
@@ -124,7 +124,7 @@ export default function ContactPage() {
 
                     {/* Contact Form */}
                     <FadeIn className="lg:col-span-3" direction="right">
-                        <div className="bg-[#250804] border border-[#61422D]/20 rounded-[2rem] p-8 md:p-10">
+                        <div className="bg-background border border-foreground/20 rounded-[2rem] p-8 md:p-10">
                             <AnimatePresence mode="wait">
                                 {status === "success" ? (
                                     <motion.div
@@ -137,11 +137,11 @@ export default function ContactPage() {
                                         <div className="w-20 h-20 mx-auto rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center mb-6">
                                             <CheckCircle className="w-10 h-10 text-green-400" />
                                         </div>
-                                        <h3 className="text-2xl font-bold text-[#FCEBD7] mb-3">Message Sent!</h3>
-                                        <p className="text-[#FCEBD7]/60 mb-8">Your email client should have opened. We&apos;ll get back to you within 48 hours.</p>
+                                        <h3 className="text-2xl font-bold text-foreground mb-3">Message Sent!</h3>
+                                        <p className="text-foreground/60 mb-8">Your email client should have opened. We&apos;ll get back to you within 48 hours.</p>
                                         <button
                                             onClick={() => setStatus("idle")}
-                                            className="text-[#E2494B] font-bold text-sm uppercase tracking-widest hover:text-[#FCEBD7] transition-colors"
+                                            className="text-accent font-bold text-sm uppercase tracking-widest hover:text-foreground transition-colors"
                                         >
                                             Send Another Message →
                                         </button>
@@ -157,7 +157,7 @@ export default function ContactPage() {
                                     >
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div>
-                                                <label htmlFor="name" className="block text-[10px] font-bold uppercase tracking-widest text-[#FCEBD7]/40 mb-2">
+                                                <label htmlFor="name" className="block text-[10px] font-bold uppercase tracking-widest text-foreground/40 mb-2">
                                                     Full Name *
                                                 </label>
                                                 <input
@@ -172,7 +172,7 @@ export default function ContactPage() {
                                                 />
                                             </div>
                                             <div>
-                                                <label htmlFor="email" className="block text-[10px] font-bold uppercase tracking-widest text-[#FCEBD7]/40 mb-2">
+                                                <label htmlFor="email" className="block text-[10px] font-bold uppercase tracking-widest text-foreground/40 mb-2">
                                                     Email Address *
                                                 </label>
                                                 <input
@@ -190,7 +190,7 @@ export default function ContactPage() {
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div>
-                                                <label htmlFor="type" className="block text-[10px] font-bold uppercase tracking-widest text-[#FCEBD7]/40 mb-2">
+                                                <label htmlFor="type" className="block text-[10px] font-bold uppercase tracking-widest text-foreground/40 mb-2">
                                                     Inquiry Type
                                                 </label>
                                                 <select
@@ -206,7 +206,7 @@ export default function ContactPage() {
                                                 </select>
                                             </div>
                                             <div>
-                                                <label htmlFor="subject" className="block text-[10px] font-bold uppercase tracking-widest text-[#FCEBD7]/40 mb-2">
+                                                <label htmlFor="subject" className="block text-[10px] font-bold uppercase tracking-widest text-foreground/40 mb-2">
                                                     Subject *
                                                 </label>
                                                 <input
@@ -223,7 +223,7 @@ export default function ContactPage() {
                                         </div>
 
                                         <div>
-                                            <label htmlFor="message" className="block text-[10px] font-bold uppercase tracking-widest text-[#FCEBD7]/40 mb-2">
+                                            <label htmlFor="message" className="block text-[10px] font-bold uppercase tracking-widest text-foreground/40 mb-2">
                                                 Message *
                                             </label>
                                             <textarea
@@ -248,7 +248,7 @@ export default function ContactPage() {
                                         <button
                                             type="submit"
                                             disabled={status === "submitting"}
-                                            className="w-full md:w-auto inline-flex items-center justify-center gap-3 bg-[#E2494B] text-[#FCEBD7] px-10 py-4 rounded-full font-bold tracking-widest text-sm hover:bg-[#E2494B]/90 transition-all shadow-[0_10px_30px_rgba(226,73,75,0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
+                                            className="w-full md:w-auto inline-flex items-center justify-center gap-3 bg-accent text-foreground px-10 py-4 rounded-full font-bold tracking-widest text-sm hover:bg-accent/90 transition-all shadow-[0_10px_30px_rgba(226,73,75,0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
                                         >
                                             {status === "submitting" ? (
                                                 <>

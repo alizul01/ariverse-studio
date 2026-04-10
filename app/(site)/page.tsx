@@ -121,52 +121,62 @@ export default async function Home() {
       </div>
 
       {/* 3. Game Showcase */}
-      <div className="py-8">
-        <GameShowcase games={games} />
-      </div>
+      <GameShowcase games={games} />
 
-      {/* 3. Services — editorial index */}
+      {/* 3. Services — card grid */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-20 w-full">
-        <FadeIn className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+        <FadeIn className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div>
-            <div className="inline-flex items-stretch mb-4 rounded-xl border border-[#61422D]/40 overflow-hidden">
-              <div className="flex items-center justify-center px-3 py-2 bg-[#61422D]/30">
+            <div className="inline-flex items-stretch mb-4 rounded-xl border border-foreground/10 overflow-hidden">
+              <div className="flex items-center justify-center px-3 py-2 bg-foreground/5">
                 <Image src="/emoticon/stary%20eyes.png" alt="" width={24} height={24} className="object-contain" />
               </div>
-              <div className="flex items-center px-4 py-2 bg-[#61422D]/10">
-                <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">What We Do</span>
+              <div className="flex items-center px-4 py-2 bg-foreground/[0.03]">
+                <span className="text-accent text-xs font-bold tracking-[0.3em] uppercase">What We Do</span>
               </div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#FCEBD7] tracking-tight uppercase">Our Services</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight uppercase">Our Services</h2>
+            <p className="text-foreground/45 mt-3 max-w-md text-sm leading-relaxed">
+              From concept to launch — we bring games and interactive experiences to life.
+            </p>
           </div>
           <Link
             href="/services"
-            className="text-[#FCEBD7]/40 hover:text-[#E2494B] transition-colors text-sm font-bold tracking-widest uppercase shrink-0"
+            className="text-foreground/40 hover:text-accent transition-colors text-sm font-bold tracking-widest uppercase shrink-0"
           >
             All Services →
           </Link>
         </FadeIn>
 
-        <div className="border-t border-[#61422D]/30">
-          {[
-            { ...services[0], num: "01" },
-            { ...services[1], num: "02" },
-            { ...services[2], num: "03" },
-            { ...services[3], num: "04" },
-          ].map((service) => (
-            <FadeIn key={service.slug}>
-              <Link href={`/services/${service.slug}`}>
-                <div className="group flex items-center gap-6 md:gap-10 py-6 border-b border-[#61422D]/30 hover:pl-3 transition-all duration-300">
-                  <span className="text-[#FCEBD7]/20 font-mono text-sm w-6 shrink-0">{service.num}</span>
-                  <h3 className="text-xl md:text-2xl font-bold text-[#FCEBD7] group-hover:text-[#E2494B] transition-colors duration-200 w-52 shrink-0">
-                    {service.title}
-                  </h3>
-                  <p className="text-[#FCEBD7]/40 text-sm leading-relaxed hidden md:block flex-1">
-                    {service.description}
-                  </p>
-                  <span className="text-[#E2494B] font-bold transform group-hover:translate-x-2 transition-transform duration-300 ml-auto shrink-0">
-                    →
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {services.map((service, i) => (
+            <FadeIn key={service.slug} delay={i * 0.08}>
+              <Link href={`/services/${service.slug}`} className="block h-full">
+                <div className="group relative h-full border border-foreground/10 rounded-2xl p-8 hover:border-accent/40 hover:bg-accent/[0.03] transition-all duration-300 overflow-hidden">
+                  {/* Watermark number */}
+                  <span className="absolute top-5 right-6 text-8xl font-black text-foreground/[0.04] leading-none select-none pointer-events-none">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
+
+                  <div className="relative z-10">
+                    <h3 className="text-xl md:text-2xl font-black text-foreground group-hover:text-accent transition-colors duration-200 uppercase tracking-tight mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-foreground/50 text-sm leading-relaxed mb-6 max-w-sm">
+                      {service.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {service.capabilities.map((cap) => (
+                        <span
+                          key={cap}
+                          className="text-[10px] font-bold tracking-widest uppercase text-foreground/40 border border-foreground/10 px-3 py-1 rounded-full group-hover:border-accent/25 group-hover:text-accent/70 transition-colors"
+                        >
+                          {cap}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="text-accent font-bold text-sm inline-block transform group-hover:translate-x-1.5 transition-transform duration-200">→</span>
+                  </div>
                 </div>
               </Link>
             </FadeIn>
@@ -185,7 +195,7 @@ export default async function Home() {
               <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">How We Work</span>
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#FCEBD7] tracking-tighter uppercase">How We Make Games</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tighter uppercase">How We Make Games</h2>
         </FadeIn>
 
         <div className="grid grid-cols-2 lg:grid-cols-3 border border-[#61422D]/30 rounded-2xl overflow-hidden">
@@ -198,10 +208,10 @@ export default async function Home() {
                 lg:[&:nth-child(n+4)]:border-b-0
                 [&:nth-child(n+5)]:border-b-0">
                 <span className="text-[#E2494B] font-mono text-xs tracking-widest block mb-4">{item.step}</span>
-                <h3 className="text-lg md:text-xl font-bold text-[#FCEBD7] mb-3 uppercase tracking-wide group-hover:text-[#E2494B] transition-colors duration-200">
+                <h3 className="text-lg md:text-xl font-bold text-foreground mb-3 uppercase tracking-wide group-hover:text-[#E2494B] transition-colors duration-200">
                   {item.title}
                 </h3>
-                <p className="text-[#FCEBD7]/40 text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-foreground/40 text-sm leading-relaxed">{item.desc}</p>
               </div>
             </FadeIn>
           ))}
@@ -219,7 +229,7 @@ export default async function Home() {
               <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">The Crew</span>
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#FCEBD7] tracking-tight uppercase">The Astronauts</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight uppercase">The Astronauts</h2>
         </FadeIn>
 
         <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -230,7 +240,7 @@ export default async function Home() {
                   <Image src={member.photo} alt={member.name} fill className="object-cover" />
                 )}
               </div>
-              <h3 className="text-[#FCEBD7] font-bold">{member.name}</h3>
+              <h3 className="text-foreground font-bold">{member.name}</h3>
               <p className="text-[#E2494B] text-sm">{member.role}</p>
             </StaggerItem>
           ))}

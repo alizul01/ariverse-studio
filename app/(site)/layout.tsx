@@ -3,7 +3,6 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import NewsletterSignup from "../components/NewsletterSignup";
 import BackToTop from "../components/ui/BackToTop";
 import "../globals.css";
 
@@ -47,7 +46,6 @@ export default function SiteLayout({
             <main id="main-content" className="grow">
                 {children}
             </main>
-            <NewsletterSignup />
             <Footer />
             <BackToTop />
             <Analytics />

@@ -12,7 +12,6 @@ interface GameDetailPageProps {
 
 import { Metadata } from "next";
 
-// This function is required for static site generation with dynamic routes
 export async function generateStaticParams() {
     const games = await reader.collections.games.all();
     return games.map((game) => ({
@@ -25,9 +24,7 @@ export async function generateMetadata({ params }: GameDetailPageProps): Promise
     const game = await reader.collections.games.read(slug);
 
     if (!game) {
-        return {
-            title: "Game Not Found",
-        };
+        return { title: "Game Not Found" };
     }
 
     return {
@@ -63,52 +60,55 @@ export default async function GameDetailPage({ params }: GameDetailPageProps) {
 
             {/* Main Content Area */}
             <div className="max-w-[1440px] mx-auto px-4 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-3 gap-16">
+
+                {/* Left: content */}
                 <div className="lg:col-span-2">
                     <FadeIn delay={0.2}>
-                        <h2 className="text-3xl font-bold text-[#FCEBD7] mb-8 uppercase tracking-tight">Mission Briefing</h2>
+                        <h2 className="text-3xl font-bold text-foreground mb-8 uppercase tracking-tight">Mission Briefing</h2>
                         <div className="max-w-none">
                             {game.content ? (
                                 <DocumentContent document={await game.content()} />
                             ) : (
-                                <p className="text-[#FCEBD7]/50">No content available.</p>
+                                <p className="text-foreground/40">No content available.</p>
                             )}
                         </div>
                     </FadeIn>
                 </div>
 
+                {/* Right: sidebar */}
                 <div className="flex flex-col gap-8">
                     <FadeIn delay={0.4} direction="left">
-                        <div className="bg-[#61422D]/10 border border-[#61422D]/20 p-10 rounded-[2rem] backdrop-blur-sm">
-                            <h3 className="text-xl font-bold text-[#FCEBD7] mb-8 uppercase tracking-widest flex items-center gap-3">
-                                <Gamepad2 className="text-[#E2494B]" /> Spec Sheet
+                        <div className="bg-[#101010]/4 border border-foreground/8 p-10 rounded-[2rem]">
+                            <h3 className="text-xl font-bold text-foreground mb-8 uppercase tracking-widest flex items-center gap-3">
+                                <Gamepad2 className="text-accent" /> Spec Sheet
                             </h3>
                             <div className="space-y-6">
-                                <div className="pb-6 border-b border-[#FCEBD7]/10">
-                                    <p className="text-[#FCEBD7]/40 text-xs uppercase mb-2 tracking-widest">Platforms</p>
-                                    <p className="text-[#FCEBD7] font-bold text-lg">{game.platforms.join(', ')}</p>
+                                <div className="pb-6 border-b border-foreground/8">
+                                    <p className="text-foreground/40 text-xs uppercase mb-2 tracking-widest">Platforms</p>
+                                    <p className="text-foreground font-bold text-lg">{game.platforms.join(', ')}</p>
                                 </div>
-                                <div className="pb-6 border-b border-[#FCEBD7]/10">
-                                    <p className="text-[#FCEBD7]/40 text-xs uppercase mb-2 tracking-widest">Engine</p>
-                                    <p className="text-[#FCEBD7] font-bold text-lg">{game.engine}</p>
+                                <div className="pb-6 border-b border-foreground/8">
+                                    <p className="text-foreground/40 text-xs uppercase mb-2 tracking-widest">Engine</p>
+                                    <p className="text-foreground font-bold text-lg">{game.engine}</p>
                                 </div>
-                                <div className="pb-6 border-b border-[#FCEBD7]/10">
-                                    <p className="text-[#FCEBD7]/40 text-xs uppercase mb-2 tracking-widest">Status</p>
-                                    <p className="text-[#E2494B] font-bold text-lg">{game.releaseDate || 'In Development'}</p>
+                                <div className="pb-6 border-b border-foreground/8">
+                                    <p className="text-foreground/40 text-xs uppercase mb-2 tracking-widest">Status</p>
+                                    <p className="text-accent font-bold text-lg">{game.releaseDate || 'In Development'}</p>
                                 </div>
                                 <div>
-                                    <p className="text-[#FCEBD7]/40 text-xs uppercase mb-2 tracking-widest">Genre</p>
-                                    <p className="text-[#FCEBD7] font-bold text-lg">Interactive Experience</p>
+                                    <p className="text-foreground/40 text-xs uppercase mb-2 tracking-widest">Genre</p>
+                                    <p className="text-foreground font-bold text-lg">Interactive Experience</p>
                                 </div>
                             </div>
                         </div>
                     </FadeIn>
 
                     <FadeIn delay={0.6} direction="left">
-                        <div className="bg-[#E2494B] p-10 rounded-[2rem] text-[#FCEBD7] hover:scale-[1.02] transition-transform cursor-pointer">
+                        <div className="bg-accent p-10 rounded-[2rem] text-white hover:scale-[1.02] transition-transform cursor-pointer">
                             <Layers className="mb-6" size={32} />
                             <h3 className="text-2xl font-bold mb-2">Request Presskit</h3>
-                            <p className="text-[#FCEBD7]/80 text-sm mb-6">Access high-res assets and professional studio information.</p>
-                            <div className="font-bold border-b-2 border-[#FCEBD7] inline-block pb-1">DOWNLOAD NOW</div>
+                            <p className="text-white/70 text-sm mb-6">Access high-res assets and professional studio information.</p>
+                            <div className="font-bold border-b-2 border-white inline-block pb-1">DOWNLOAD NOW</div>
                         </div>
                     </FadeIn>
                 </div>
@@ -121,4 +121,3 @@ export default async function GameDetailPage({ params }: GameDetailPageProps) {
         </div>
     );
 }
-
