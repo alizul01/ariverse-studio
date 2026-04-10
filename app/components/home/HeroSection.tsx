@@ -37,9 +37,9 @@ export default function HeroSection() {
 
         {/* Eyebrow */}
         <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
           className="flex items-center gap-3"
         >
           <span className="w-8 h-px bg-accent/60" />
@@ -51,9 +51,9 @@ export default function HeroSection() {
 
         {/* Main headline */}
         <motion.h1
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.1, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
           className="leading-none"
         >
           <span className="block text-[2.4rem] md:text-6xl xl:text-7xl font-black tracking-tighter uppercase text-foreground leading-[0.95]">
@@ -67,9 +67,9 @@ export default function HeroSection() {
 
         {/* Tagline — hidden on very small screens */}
         <motion.p
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.22 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.18 }}
           className="hidden sm:block text-xs md:text-sm text-foreground/45 tracking-wide max-w-xs leading-relaxed"
         >
           Games rooted in local culture — stories that feel familiar to locals, intriguing to the world.
@@ -77,9 +77,9 @@ export default function HeroSection() {
 
         {/* CTA row */}
         <motion.div
-          initial={{ opacity: 0, y: 8 }}
+          initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.32 }}
+          transition={{ duration: 0.4, delay: 0.26 }}
           className="flex items-center gap-2.5 md:gap-3 mt-1 flex-wrap justify-center"
         >
           <Link
@@ -99,9 +99,9 @@ export default function HeroSection() {
 
       {/* Floating tags — left (desktop only) */}
       <motion.div
-        initial={{ opacity: 0, x: -16 }}
+        initial={{ opacity: 0 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
+        transition={{ duration: 0.4, delay: 0.4 }}
         className="absolute left-8 top-1/2 -translate-y-1/4 z-10 flex-col gap-2.5 hidden lg:flex"
       >
         {["Horror", "Adventure", "Story-Driven"].map((tag) => (
@@ -113,9 +113,9 @@ export default function HeroSection() {
 
       {/* Floating tags — right (desktop only) */}
       <motion.div
-        initial={{ opacity: 0, x: 16 }}
+        initial={{ opacity: 0 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: 0.65 }}
+        transition={{ duration: 0.4, delay: 0.45 }}
         className="absolute right-8 top-1/2 -translate-y-1/4 z-10 flex-col gap-2.5 items-end hidden lg:flex"
       >
         {["Indonesian Dev", "Local Culture", "PC & Mobile"].map((tag) => (
@@ -127,9 +127,9 @@ export default function HeroSection() {
 
       {/* Character image */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         className="absolute bottom-0 left-1/2 -translate-x-1/2 z-0 w-[min(770px,105vw)] h-[48vh] sm:h-[58vh] md:h-[65vh] lg:h-[72vh]"
       >
         <Image
@@ -145,7 +145,7 @@ export default function HeroSection() {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.7 }}
+        transition={{ duration: 0.4, delay: 0.35 }}
         className="absolute bottom-5 md:bottom-6 left-1/2 -translate-x-1/2 z-10 flex items-center divide-x divide-foreground/10 bg-background/75 backdrop-blur-md border border-foreground/10 rounded-xl md:rounded-2xl px-1 md:px-2 py-1.5 md:py-2 shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
       >
         {[

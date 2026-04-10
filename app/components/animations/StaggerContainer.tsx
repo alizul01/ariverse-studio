@@ -10,7 +10,7 @@ interface StaggerContainerProps {
     staggerDelay?: number;
 }
 
-export default function StaggerContainer({ children, delay = 0, className = "", staggerDelay = 0.1 }: StaggerContainerProps) {
+export default function StaggerContainer({ children, delay = 0, className = "", staggerDelay = 0.07 }: StaggerContainerProps) {
 
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
@@ -38,11 +38,11 @@ export default function StaggerContainer({ children, delay = 0, className = "", 
 
 export const StaggerItem = ({ children, className = "" }: { children: ReactNode, className?: string }) => {
     const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 0, y: 10 },
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.5, ease: "easeOut" }
+            transition: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }
         }
     };
     return (

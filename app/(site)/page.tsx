@@ -184,34 +184,66 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 4. Process — bordered grid */}
+      {/* 4. Process — timeline */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-20 w-full">
-        <FadeIn className="mb-12">
-          <div className="inline-flex items-stretch mb-4 rounded-xl border border-[#61422D]/40 overflow-hidden">
-            <div className="flex items-center justify-center px-3 py-2 bg-[#61422D]/30">
-              <Image src="/emoticon/confused.png" alt="" width={24} height={24} className="object-contain" />
+        <FadeIn className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-5 h-px bg-accent" />
+              <span className="text-accent text-[10px] font-black tracking-[0.35em] uppercase">How We Work</span>
             </div>
-            <div className="flex items-center px-4 py-2 bg-[#61422D]/10">
-              <span className="text-[#E2494B] text-xs font-bold tracking-[0.3em] uppercase">How We Work</span>
-            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tighter uppercase leading-none">
+              How We<br />Make Games
+            </h2>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tighter uppercase">How We Make Games</h2>
+          <p className="text-foreground/35 text-sm max-w-[220px] leading-relaxed md:text-right">
+            A structured orbit from raw idea to shipped product.
+          </p>
         </FadeIn>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 border border-[#61422D]/30 rounded-2xl overflow-hidden">
+        {/* Desktop: horizontal timeline */}
+        <div className="hidden md:block">
+          {/* Top connector line */}
+          <div className="relative mb-0">
+            <div className="absolute top-[10px] left-[10px] right-[10px] h-px bg-foreground/10" />
+            <div className="grid grid-cols-3 lg:grid-cols-6 gap-0">
+              {steps.map((item, i) => (
+                <FadeIn key={item.step} delay={i * 0.08}>
+                  <div className="group relative pt-0 pr-8 lg:pr-6 xl:pr-8">
+                    {/* Timeline dot */}
+                    <div className="w-5 h-5 rounded-full border-2 border-foreground/15 bg-background group-hover:border-accent group-hover:bg-accent/10 transition-all duration-300 mb-7 relative z-10 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-foreground/20 group-hover:bg-accent transition-colors duration-300" />
+                    </div>
+                    <span className="text-[9px] font-black font-mono tracking-[0.25em] text-accent/60 block mb-2">
+                      {item.step}
+                    </span>
+                    <h3 className="text-[13px] font-black uppercase tracking-tight text-foreground mb-2 group-hover:text-accent transition-colors duration-200">
+                      {item.title}
+                    </h3>
+                    <p className="text-[11px] text-foreground/40 leading-relaxed">{item.desc}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile: vertical timeline */}
+        <div className="md:hidden relative pl-8">
+          <div className="absolute left-[9px] top-2 bottom-2 w-px bg-foreground/10" />
           {steps.map((item, i) => (
-            <FadeIn key={item.step} delay={i * 0.07}>
-              <div className="group p-8 md:p-10 border-b border-r border-[#61422D]/30 hover:bg-[#61422D]/10 transition-colors duration-300 h-full
-                [&:nth-child(2n)]:border-r-0
-                lg:[&:nth-child(2n)]:border-r
-                lg:[&:nth-child(3n)]:border-r-0
-                lg:[&:nth-child(n+4)]:border-b-0
-                [&:nth-child(n+5)]:border-b-0">
-                <span className="text-[#E2494B] font-mono text-xs tracking-widest block mb-4">{item.step}</span>
-                <h3 className="text-lg md:text-xl font-bold text-foreground mb-3 uppercase tracking-wide group-hover:text-[#E2494B] transition-colors duration-200">
+            <FadeIn key={item.step} delay={i * 0.06}>
+              <div className="group relative mb-9 last:mb-0">
+                <div className="absolute -left-[27px] top-0.5 w-[18px] h-[18px] rounded-full border-2 border-foreground/15 bg-background flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 rounded-full bg-foreground/20" />
+                </div>
+                <span className="text-[9px] font-black font-mono tracking-[0.25em] text-accent/60 block mb-1">
+                  {item.step}
+                </span>
+                <h3 className="text-base font-black uppercase tracking-tight text-foreground mb-1.5">
                   {item.title}
                 </h3>
-                <p className="text-foreground/40 text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-xs text-foreground/40 leading-relaxed">{item.desc}</p>
               </div>
             </FadeIn>
           ))}

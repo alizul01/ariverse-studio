@@ -3,7 +3,7 @@
 import PageHeader from "../../components/ui/PageHeader";
 import FadeIn from "../../components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "../../components/animations/StaggerContainer";
-import { HeartIcon, SparklesIcon, GlobeAltIcon, UsersIcon } from "@heroicons/react/24/outline";
+import { HeartIcon, SparklesIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -142,27 +142,6 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                {/* 4. Leadership Section */}
-                <section className="py-32 text-center">
-                    <FadeIn>
-                        <div className="inline-block mb-10 w-24 h-24 rounded-full border border-accent/30 p-2 relative">
-                            <div className="absolute inset-0 bg-accent/10 rounded-full animate-ping opacity-20" />
-                            <div className="w-full h-full rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center">
-                                <UsersIcon className="w-10 h-10 text-accent" />
-                            </div>
-                        </div>
-                        <h2 className="text-4xl md:text-6xl font-black text-foreground tracking-tighter uppercase mb-6">Join the Mission</h2>
-                        <p className="text-foreground/60 max-w-2xl mx-auto text-lg mb-12">
-                            We&apos;re always looking for brilliant minds to help us build what&apos;s next. Whether you&apos;re a designer, developer, or dreamer—there&apos;s a place for you in our orbit.
-                        </p>
-                        <a
-                            href="/careers"
-                            className="inline-block bg-accent text-foreground px-10 py-4 rounded-full font-black tracking-widest uppercase text-sm hover:scale-110 transition-transform shadow-2xl"
-                        >
-                            View Open Roles
-                        </a>
-                    </FadeIn>
-                </section>
 
             </div>
         </div>

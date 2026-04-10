@@ -15,16 +15,16 @@ export default function FadeIn({ children, delay = 0, direction = "up", classNam
     const variants: Variants = {
         hidden: {
             opacity: 0,
-            y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
-            x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
+            y: direction === "up" ? 16 : direction === "down" ? -16 : 0,
+            x: direction === "left" ? 16 : direction === "right" ? -16 : 0,
         },
         visible: {
             opacity: 1,
             y: 0,
             x: 0,
             transition: {
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 0.5,
+                ease: [0.25, 0.1, 0.25, 1],
                 delay: delay,
             }
         }
