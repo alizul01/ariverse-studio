@@ -45,7 +45,6 @@ export default function ServicesPage() {
                 title="Our Services"
                 description="We transform your ideas into immersive digital realities using cutting-edge technology and creative expertise."
                 breadcrumbs={[{ label: "Services", href: "/services" }]}
-                backgroundImage="/images/placeholders/services-header.jpg"
             />
 
             <div className="max-w-[1440px] mx-auto px-4 md:px-6 mt-20">

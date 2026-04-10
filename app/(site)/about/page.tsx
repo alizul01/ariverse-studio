@@ -38,7 +38,6 @@ export default function AboutPage() {
                 title="Our Story"
                 description="We are a collective of explorers, creators, and engineers dedicated to forging the next generation of digital universes."
                 breadcrumbs={[{ label: "About", href: "/about" }]}
-                backgroundImage="/images/header/about-header.jpg"
             />
 
             <div className="max-w-[1440px] mx-auto px-4 md:px-6 mt-32">

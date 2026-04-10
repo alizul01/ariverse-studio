@@ -23,12 +23,12 @@ export default function Footer() {
                             Crafting immersive digital experiences across the universe.
                         </p>
                         <a
-                            href="mailto:hello@ariversestudio.com"
-                            aria-label="Email us at hello@ariversestudio.com"
+                            href="mailto:contact@ariversestudio.com"
+                            aria-label="Email us at contact@ariversestudio.com"
                             className="inline-flex items-center gap-2 text-sm text-accent hover:text-background/80 transition-colors"
                         >
                             <Mail className="w-4 h-4" />
-                            hello@ariversestudio.com
+                            contact@ariversestudio.com
                         </a>
                     </div>
 
@@ -49,7 +49,7 @@ export default function Footer() {
                             <li><Link href="/about" className="hover:text-accent transition-colors">About Us</Link></li>
                             <li><Link href="/blog" className="hover:text-accent transition-colors">Blog</Link></li>
                             <li><Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link></li>
-                            <li><a href="mailto:hello@ariversestudio.com" className="hover:text-accent transition-colors">Contact</a></li>
+                            <li><a href="mailto:contact@ariversestudio.com" className="hover:text-accent transition-colors">Contact</a></li>
                         </ul>
                     </div>
 

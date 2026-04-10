@@ -51,7 +51,6 @@ export default async function GameDetailPage({ params }: GameDetailPageProps) {
             <PageHeader
                 title={game.title}
                 description={game.description}
-                backgroundImage={game.coverImage || ""}
                 breadcrumbs={[
                     { label: "Games", href: "/games" },
                     { label: game.title, href: `/games/${slug}` }

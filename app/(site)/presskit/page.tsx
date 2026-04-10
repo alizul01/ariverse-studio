@@ -21,7 +21,6 @@ export default function PresskitPage() {
                 title="Presskit"
                 description="Everything you need to cover Ariverse Studio. High-res assets, studio facts, and media resources."
                 breadcrumbs={[{ label: "Presskit", href: "/presskit" }]}
-                backgroundImage="/images/placeholders/press-header.jpg"
             />
 
             <div className="max-w-[1440px] mx-auto px-4 md:px-6">

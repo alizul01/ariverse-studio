@@ -8,7 +8,6 @@ export default function BlogLoading() {
                 title="Blog"
                 description="Latest news from orbit. Stay updated with our latest developments, tech insights, and studio culture."
                 breadcrumbs={[{ label: "Blog", href: "/blog" }]}
-                backgroundImage="/images/placeholders/blog-header.jpg"
             />
             <div className="max-w-[1440px] mx-auto px-4 md:px-6">
                 <section className="mt-20">

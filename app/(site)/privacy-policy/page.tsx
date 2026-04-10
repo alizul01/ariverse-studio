@@ -30,7 +30,6 @@ export default function PrivacyPolicyPage() {
                 title="Privacy Policy"
                 description="Our commitment to protecting your digital identity across the Ariverse."
                 breadcrumbs={[{ label: "Privacy Policy", href: "/privacy-policy" }]}
-                backgroundImage="/images/placeholders/legal-header.jpg"
             />
 
             <div className="max-w-[1440px] mx-auto px-4 md:px-6">

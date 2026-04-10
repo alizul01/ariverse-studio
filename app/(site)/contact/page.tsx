@@ -40,7 +40,7 @@ export default function ContactPage() {
             `Name: ${form.name}\nEmail: ${form.email}\nType: ${form.type}\n\n${form.message}`
         );
         
-        window.location.href = `mailto:hello@ariversestudio.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+        window.location.href = `mailto:contact@ariversestudio.com?subject=${mailtoSubject}&body=${mailtoBody}`;
         
         // Simulate success after opening mail client
         setTimeout(() => {
@@ -59,7 +59,7 @@ export default function ContactPage() {
     ];
 
     const contactInfo = [
-        { icon: Mail, label: "Email", value: "hello@ariversestudio.com", href: "mailto:hello@ariversestudio.com" },
+        { icon: Mail, label: "Email", value: "contact@ariversestudio.com", href: "mailto:contact@ariversestudio.com" },
         { icon: MapPin, label: "Location", value: "Malang, Indonesia", href: null },
         { icon: Clock, label: "Response Time", value: "Within 48 hours", href: null },
     ];
@@ -73,7 +73,6 @@ export default function ContactPage() {
                 title="Contact Us"
                 description="Have a question or want to collaborate? We'd love to hear from you."
                 breadcrumbs={[{ label: "Contact", href: "/contact" }]}
-                backgroundImage="/images/placeholders/contact-header.jpg"
             />
 
             <div className="max-w-[1440px] mx-auto px-4 md:px-6 mt-20">

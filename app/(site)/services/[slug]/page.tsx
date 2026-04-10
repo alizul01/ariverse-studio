@@ -30,7 +30,6 @@ export default async function ServiceDetailPage(props: ServiceDetailProps) {
             <PageHeader
                 title={service.title}
                 description={service.description}
-                backgroundImage={service.image}
                 breadcrumbs={[
                     { label: "Services", href: "/services" },
                     { label: service.title, href: `/services/${service.slug}` }

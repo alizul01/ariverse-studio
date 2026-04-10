@@ -46,7 +46,6 @@ export default function Navbar() {
             ? {
                 backgroundColor: "rgba(245,240,232,0.92)",
                 backdropFilter: "blur(20px)",
-                WebkitBackdropFilter: "blur(20px)",
                 borderRadius: "9999px",
                 boxShadow: "0 2px 20px rgba(16,16,16,0.08), 0 0 0 1px rgba(16,16,16,0.07)",
                 paddingLeft: "1.25rem",
@@ -55,7 +54,6 @@ export default function Navbar() {
             : {
                 backgroundColor: "rgba(245,240,232,0)",
                 backdropFilter: "blur(0px)",
-                WebkitBackdropFilter: "blur(0px)",
                 borderRadius: "0px",
                 boxShadow: "none",
                 paddingLeft: "0px",
