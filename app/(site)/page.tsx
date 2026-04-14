@@ -43,7 +43,7 @@ export default async function Home() {
       <HeroSection />
 
       {/* 2. Who We Are */}
-      <div className="relative w-full py-28">
+      <div className="relative w-full py-16 md:py-20">
 
         {/* Grid background */}
         <div
