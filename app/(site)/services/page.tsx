@@ -1,4 +1,4 @@
-import { services } from "../../data/services";
+import { reader } from "../../../lib/keystatic";
 import { technologies } from "../../data/technologies";
 import FadeIn from "../../components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "../../components/animations/StaggerContainer";
@@ -28,16 +28,18 @@ export const metadata: Metadata = {
     },
 };
 
-export default function ServicesPage() {
-    const getServiceIcon = (id: string) => {
-        switch (id) {
-            case 'game-dev': return <RocketLaunchIcon className="w-8 h-8" />;
-            case 'gamification': return <VariableIcon className="w-8 h-8" />;
-            case 'xr': return <GlobeAltIcon className="w-8 h-8" />;
-            case 'learning': return <AcademicCapIcon className="w-8 h-8" />;
-            default: return <CpuChipIcon className="w-8 h-8" />;
-        }
-    };
+function getServiceIcon(icon: string) {
+    switch (icon) {
+        case 'rocket': return <RocketLaunchIcon className="w-8 h-8" />;
+        case 'variable': return <VariableIcon className="w-8 h-8" />;
+        case 'globe': return <GlobeAltIcon className="w-8 h-8" />;
+        case 'academic': return <AcademicCapIcon className="w-8 h-8" />;
+        default: return <CpuChipIcon className="w-8 h-8" />;
+    }
+}
+
+export default async function ServicesPage() {
+    const services = await reader.collections.services.all();
 
     return (
         <div className="pb-40">
@@ -52,27 +54,29 @@ export default function ServicesPage() {
                 {/* Cinematic Services List */}
                 <div className="space-y-40 mb-40">
                     {services.map((service, index) => (
-                        <FadeIn key={service.id} direction={index % 2 === 0 ? "left" : "right"}>
+                        <FadeIn key={service.slug} direction={index % 2 === 0 ? "left" : "right"}>
                             <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-24 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
                                 {/* Visual Side */}
                                 <div className="w-full lg:w-1/2 group relative">
                                     <div className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden border border-foreground/30 shadow-2xl">
-                                        <Image
-                                            src={service.image}
-                                            alt={service.title}
-                                            fill
-                                            className="object-cover group-hover:scale-110 transition-transform duration-1000"
-                                        />
+                                        {service.entry.image && (
+                                            <Image
+                                                src={service.entry.image}
+                                                alt={service.entry.title}
+                                                fill
+                                                className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                                            />
+                                        )}
                                         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
 
                                         {/* Floating Badge */}
                                         <div className="absolute top-8 left-8 bg-background/80 backdrop-blur-xl border border-foreground/10 p-5 rounded-3xl text-accent">
-                                            {getServiceIcon(service.id)}
+                                            {getServiceIcon(service.entry.icon)}
                                         </div>
                                     </div>
 
                                     {/* Decorative Glow */}
-                                    <div className={`absolute -inset-4 bg-accent/10 blur-3xl -z-10 group-hover:bg-accent/20 transition-colors duration-500 rounded-[4rem]`} />
+                                    <div className="absolute -inset-4 bg-accent/10 blur-3xl -z-10 group-hover:bg-accent/20 transition-colors duration-500 rounded-[4rem]" />
                                 </div>
 
                                 {/* Content Side */}
@@ -82,17 +86,17 @@ export default function ServicesPage() {
                                             <span className="text-accent text-xs font-bold tracking-[0.3em] uppercase">Service 0{index + 1}</span>
                                         </div>
                                         <h3 className="text-4xl md:text-6xl font-bold text-foreground tracking-tighter uppercase mb-6 leading-none">
-                                            {service.title}
+                                            {service.entry.title}
                                         </h3>
                                         <p className="text-xl text-foreground/60 leading-relaxed max-w-xl">
-                                            {service.description}
+                                            {service.entry.description}
                                         </p>
                                     </div>
 
                                     <div className="space-y-6">
                                         <p className="text-foreground font-black text-[10px] tracking-[0.2em] uppercase opacity-40">Core Capabilities</p>
                                         <div className="flex flex-wrap gap-3">
-                                            {service.capabilities.map((cap, i) => (
+                                            {service.entry.capabilities.map((cap, i) => (
                                                 <span key={i} className="px-5 py-2 rounded-xl bg-foreground/10 border border-foreground/20 text-foreground/80 text-xs font-bold hover:border-accent/50 hover:bg-accent/10 transition-all cursor-default">
                                                     {cap}
                                                 </span>

@@ -175,6 +175,46 @@ export default config({
                 isFeatured: fields.checkbox({ label: 'Featured', defaultValue: false }),
             },
         }),
+        services: collection({
+            label: 'Services',
+            slugField: 'title',
+            path: 'src/content/services/*',
+            format: { data: 'json' },
+            schema: {
+                title: fields.slug({ name: { label: 'Title' } }),
+                description: fields.text({ label: 'Short Description', multiline: true }),
+                image: fields.image({
+                    label: 'Cover Image',
+                    directory: 'public/images/services',
+                    publicPath: '/images/services/',
+                }),
+                icon: fields.select({
+                    label: 'Icon',
+                    options: [
+                        { label: 'Rocket (Game Dev)', value: 'rocket' },
+                        { label: 'Globe (XR)', value: 'globe' },
+                        { label: 'Academic Cap (Learning)', value: 'academic' },
+                        { label: 'Variable (Gamification)', value: 'variable' },
+                        { label: 'CPU Chip', value: 'cpu' },
+                    ],
+                    defaultValue: 'cpu',
+                }),
+                capabilities: fields.array(
+                    fields.text({ label: 'Capability' }),
+                    { label: 'Capabilities', itemLabel: props => props.fields.value }
+                ),
+                content: fields.document({
+                    label: 'Content',
+                    formatting: true,
+                    dividers: true,
+                    links: true,
+                    images: {
+                        directory: 'public/images/services',
+                        publicPath: '/images/services/',
+                    },
+                }),
+            },
+        }),
         crew: collection({
             label: 'Crew',
             slugField: 'name',

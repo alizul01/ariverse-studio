@@ -1,0 +1,13 @@
+{
+  "title": "Game Development",
+  "description": "End-to-end production for PC, Console, and Mobile. We handle the entire life cycle from concept to post-launch orbit.",
+  "image": "/images/services/game-dev-bg.jpg",
+  "icon": "rocket",
+  "capabilities": [
+    "PC & Console",
+    "UE5 / Unity",
+    "Agile Production",
+    "Multiplayer",
+    "Live-Ops"
+  ]
+}

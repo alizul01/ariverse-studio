@@ -1,29 +1,42 @@
-import { services } from "../../../data/services";
 import { notFound } from "next/navigation";
 import FadeIn from "../../../components/animations/FadeIn";
 import CTA from "../../../components/ui/CTA";
+import PageHeader from "../../../components/ui/PageHeader";
+import DocumentContent from "../../../components/ui/DocumentContent";
+import { reader } from "../../../../lib/keystatic";
+import type { Metadata } from "next";
 
 interface ServiceDetailProps {
-    params: Promise<{
-        slug: string;
-    }>;
+    params: Promise<{ slug: string }>;
 }
 
-export function generateStaticParams() {
-    return services.map((service) => ({
-        slug: service.slug,
-    }));
+export async function generateStaticParams() {
+    const services = await reader.collections.services.all();
+    return services.map((service) => ({ slug: service.slug }));
 }
 
-import PageHeader from "../../../components/ui/PageHeader";
+export async function generateMetadata({ params }: ServiceDetailProps): Promise<Metadata> {
+    const { slug } = await params;
+    const service = await reader.collections.services.read(slug);
+
+    if (!service) return { title: "Service Not Found" };
+
+    return {
+        title: `${service.title} | Ariverse Studio`,
+        description: service.description,
+        openGraph: {
+            title: `${service.title} | Ariverse Studio`,
+            description: service.description,
+            images: service.image ? [service.image] : [],
+        },
+    };
+}
 
 export default async function ServiceDetailPage(props: ServiceDetailProps) {
     const params = await props.params;
-    const service = services.find((s) => s.slug === params.slug);
+    const service = await reader.collections.services.read(params.slug);
 
-    if (!service) {
-        notFound();
-    }
+    if (!service) notFound();
 
     return (
         <div className="pb-20">
@@ -32,34 +45,33 @@ export default async function ServiceDetailPage(props: ServiceDetailProps) {
                 description={service.description}
                 breadcrumbs={[
                     { label: "Services", href: "/services" },
-                    { label: service.title, href: `/services/${service.slug}` }
+                    { label: service.title, href: `/services/${params.slug}` }
                 ]}
             />
 
-            {/* Main Content Area */}
             <div className="max-w-4xl mx-auto px-4 md:px-6 py-20">
                 <FadeIn delay={0.2}>
+                    {/* Capabilities */}
+                    {service.capabilities.length > 0 && (
+                        <div className="mb-16">
+                            <p className="text-foreground font-black text-[10px] tracking-[0.2em] uppercase opacity-40 mb-6">Core Capabilities</p>
+                            <div className="flex flex-wrap gap-3">
+                                {service.capabilities.map((cap, i) => (
+                                    <span key={i} className="px-5 py-2 rounded-xl bg-foreground/10 border border-foreground/20 text-foreground/80 text-xs font-bold">
+                                        {cap}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Rich Content */}
                     <div className="prose prose-invert prose-lg max-w-none">
-                        <p className="lead text-foreground border-l-4 border-accent pl-6 italic">
-                            This is a placeholder for the detailed description of {service.title}.
-                            We customize every aspect of our work to fit your specific needs.
-                        </p>
-
-                        <h3 className="text-foreground font-bold mt-12 mb-4">What We Offer</h3>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0">
-                            {[1, 2, 3, 4, 5, 6].map((item) => (
-                                <li key={item} className="bg-foreground/10 p-4 rounded-lg flex items-center gap-3 border border-foreground/20">
-                                    <div className="w-2 h-2 rounded-full bg-accent"></div>
-                                    <span className="text-foreground/80">Feature or capability {item}</span>
-                                </li>
-                            ))}
-                        </ul>
-
-                        <h3 className="text-foreground font-bold mt-12 mb-4">Why Choose Us for {service.title}?</h3>
-                        <p className="text-foreground/70">
-                            Our team combines years of industry experience with a passion for innovation.
-                            Whether you need a full-scale production or specialized support, we deliver quality that stands out.
-                        </p>
+                        {service.content ? (
+                            <DocumentContent document={await service.content()} />
+                        ) : (
+                            <p className="text-foreground/40">No content available.</p>
+                        )}
                     </div>
                 </FadeIn>
             </div>

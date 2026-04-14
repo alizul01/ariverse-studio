@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "../components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "../components/animations/StaggerContainer";
-import { services } from "../data/services";
 import CTA from "../components/ui/CTA";
 import { reader } from "../../lib/keystatic";
 import GameShowcase from "../components/home/GameShowcase";
@@ -18,6 +17,14 @@ export default async function Home() {
     platforms: game.entry.platforms,
     slug: game.slug,
     image: game.entry.coverImage || "/images/placeholder.jpg",
+  }));
+
+  const servicesData = await reader.collections.services.all();
+  const services = servicesData.map((s) => ({
+    slug: s.slug,
+    title: s.entry.title,
+    description: s.entry.description,
+    capabilities: s.entry.capabilities,
   }));
 
   const crewData = await reader.collections.crew.all();

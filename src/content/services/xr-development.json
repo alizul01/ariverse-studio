@@ -1,0 +1,13 @@
+{
+  "title": "XR Development",
+  "description": "Pushing the boundaries of spatial computing. We create immersive VR/AR experiences for the next frontier.",
+  "image": "/images/services/xr-bg.jpg",
+  "icon": "globe",
+  "capabilities": [
+    "VR Training",
+    "AR Marketing",
+    "Spatial Design",
+    "Metaverse Ops",
+    "Hardware R&D"
+  ]
+}
