@@ -64,8 +64,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const posts = await reader.collections.posts.all();
         const careers = await reader.collections.careers.all();
 
-        // Add Services (from static data)
-        const { services } = await import('./data/services');
+        // Add Services
+        const services = await reader.collections.services.all();
         services.forEach(service => {
             routes.push({
                 url: `${baseUrl}/services/${service.slug}`,

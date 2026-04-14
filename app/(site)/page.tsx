@@ -142,7 +142,7 @@ export default async function Home() {
                 <span className="text-accent text-xs font-bold tracking-[0.3em] uppercase">What We Do</span>
               </div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight uppercase">Our Services</h2>
+            <Link href="/services" className="text-4xl md:text-5xl font-black text-foreground tracking-tight uppercase hover:text-accent transition-colors">Our Services</Link>
             <p className="text-foreground/45 mt-3 max-w-md text-sm leading-relaxed">
               From concept to launch — we bring games and interactive experiences to life.
             </p>

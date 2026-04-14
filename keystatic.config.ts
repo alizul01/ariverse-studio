@@ -201,7 +201,7 @@ export default config({
                 }),
                 capabilities: fields.array(
                     fields.text({ label: 'Capability' }),
-                    { label: 'Capabilities', itemLabel: props => props.fields.value }
+                    { label: 'Capabilities', itemLabel: props => props.value }
                 ),
                 content: fields.document({
                     label: 'Content',

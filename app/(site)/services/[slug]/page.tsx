@@ -4,6 +4,7 @@ import CTA from "../../../components/ui/CTA";
 import PageHeader from "../../../components/ui/PageHeader";
 import DocumentContent from "../../../components/ui/DocumentContent";
 import { reader } from "../../../../lib/keystatic";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 interface ServiceDetailProps {
@@ -48,6 +49,23 @@ export default async function ServiceDetailPage(props: ServiceDetailProps) {
                     { label: service.title, href: `/services/${params.slug}` }
                 ]}
             />
+
+            {/* Cover Image */}
+            {service.image && (
+                <FadeIn>
+                    <div className="max-w-360 mx-auto px-4 md:px-6 pt-16">
+                        <div className="relative h-90 md:h-130 rounded-[3rem] overflow-hidden border border-foreground/10">
+                            <Image
+                                src={service.image}
+                                alt={service.title}
+                                fill
+                                className="object-cover"
+                            />
+                            <div className="absolute inset-0 bg-linear-to-t from-background/60 to-transparent" />
+                        </div>
+                    </div>
+                </FadeIn>
+            )}
 
             <div className="max-w-4xl mx-auto px-4 md:px-6 py-20">
                 <FadeIn delay={0.2}>
