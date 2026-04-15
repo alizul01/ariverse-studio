@@ -222,6 +222,7 @@ export default config({
             format: { data: 'json' },
             schema: {
                 name: fields.slug({ name: { label: 'Name' } }),
+                order: fields.integer({ label: 'Order', defaultValue: 99, validation: { isRequired: true } }),
                 role: fields.text({ label: 'Jabatan' }),
                 photo: fields.image({
                     label: 'Foto',

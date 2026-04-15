@@ -1,5 +1,6 @@
 {
   "name": "Alex",
+  "order": 5,
   "role": "Game Programmer",
   "photo": "/images/crew/alex/photo.jpeg"
 }

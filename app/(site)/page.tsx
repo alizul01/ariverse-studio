@@ -28,11 +28,14 @@ export default async function Home() {
   }));
 
   const crewData = await reader.collections.crew.all();
-  const crew = crewData.map((member) => ({
-    name: member.entry.name,
-    role: member.entry.role,
-    photo: member.entry.photo,
-  }));
+  const crew = crewData
+    .map((member) => ({
+      name: member.entry.name,
+      order: member.entry.order,
+      role: member.entry.role,
+      photo: member.entry.photo,
+    }))
+    .sort((a, b) => a.order - b.order);
 
   const steps = [
     { step: "01", title: "Initiation", desc: "Ideas, target audience, and the core concept." },
