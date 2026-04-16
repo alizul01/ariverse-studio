@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "../components/animations/FadeIn";
-import StaggerContainer, { StaggerItem } from "../components/animations/StaggerContainer";
 import CTA from "../components/ui/CTA";
 import { reader } from "../../lib/keystatic";
 import GameShowcase from "../components/home/GameShowcase";
 import HeroSection from "../components/home/HeroSection";
 import AboutVisuals from "../components/home/AboutVisuals";
 import PressCoverage from "../components/home/PressCoverage";
+import CrewSelect from "../components/home/CrewSelect";
 
 export default async function Home() {
   const gamesData = await reader.collections.games.all();
@@ -274,19 +274,9 @@ export default async function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight uppercase">The Astronauts</h2>
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {crew.map((member, i) => (
-            <StaggerItem key={i} className="group">
-              <div className="w-full aspect-square bg-[#61422D]/20 rounded-2xl mb-4 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500 relative border border-[#61422D]/20">
-                {member.photo && (
-                  <Image src={member.photo} alt={member.name} fill className="object-cover" />
-                )}
-              </div>
-              <h3 className="text-foreground font-bold">{member.name}</h3>
-              <p className="text-[#E2494B] text-sm">{member.role}</p>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+        <FadeIn>
+          <CrewSelect crew={crew} />
+        </FadeIn>
       </section>
 
       {/* 6. Press */}
