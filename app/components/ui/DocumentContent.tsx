@@ -61,12 +61,16 @@ const renderers: DocumentRendererProps['renderers'] = {
         ),
         list: ({ type, children }) =>
             type === 'ordered' ? (
-                <ol className="space-y-3 mb-6 pl-6 list-decimal marker:text-[#96191A] marker:font-bold [&_li]:text-[#101010]/65 [&_li]:text-base [&_li]:leading-relaxed">
-                    {children}
+                <ol className="space-y-3 mb-6 pl-6 list-decimal marker:text-[#96191A] marker:font-bold">
+                    {children.map((child, i) => (
+                        <li key={i} className="text-[#101010]/65 text-base leading-relaxed">{child}</li>
+                    ))}
                 </ol>
             ) : (
-                <ul className="space-y-2 mb-6 pl-0 list-none [&_li]:flex [&_li]:items-start [&_li]:gap-3 [&_li]:text-[#101010]/65 [&_li]:text-base [&_li]:leading-relaxed [&_li]:before:content-[''] [&_li]:before:mt-[0.6em] [&_li]:before:w-1.5 [&_li]:before:h-1.5 [&_li]:before:rounded-full [&_li]:before:bg-[#96191A] [&_li]:before:shrink-0">
-                    {children}
+                <ul className="space-y-2 mb-6 pl-0 list-none">
+                    {children.map((child, i) => (
+                        <li key={i} className="relative pl-5 text-foreground/65 text-base leading-relaxed [&_p]:mb-0 [&_p]:text-base before:absolute before:left-0 before:top-[0.55em] before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-accent">{child}</li>
+                    ))}
                 </ul>
             ),
         code: ({ children }) => (
