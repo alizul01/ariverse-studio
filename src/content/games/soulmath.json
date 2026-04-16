@@ -1,0 +1,11 @@
+{
+  "title": "Soulmath by Butet Mengajar",
+  "description": "Platform dan aplikasi belajar matematika serta persiapan UTBK-SNBT (PK & PM) yang berfokus pada pemahaman konsep logis. Dirancang untuk siswa SD hingga persiapan masuk perguruan tinggi dengan metode step-by-step yang intuitif.",
+  "coverImage": "/images/games/soulmath/coverImage.png",
+  "platforms": [
+    "Android"
+  ],
+  "engine": "Custom",
+  "status": "released",
+  "releaseDate": "2024-01-01"
+}

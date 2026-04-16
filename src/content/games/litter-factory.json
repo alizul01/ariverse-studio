@@ -1,0 +1,11 @@
+{
+  "title": "Litter Factory",
+  "description": "Fast-paced co-op simulation game where players become Waste Warriors — collecting, sorting, and recycling trash together. Race against time, coordinate with your team, and save the world one piece of junk at a time.",
+  "coverImage": "/images/games/litter-factory/coverImage.jpg",
+  "platforms": [
+    "PC"
+  ],
+  "engine": "Unreal Engine 5",
+  "status": "in-development",
+  "releaseDate": "2026-01-01"
+}
