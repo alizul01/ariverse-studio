@@ -1,5 +1,7 @@
 import { ImageResponse } from 'next/og'
 import { reader } from '../../../../lib/keystatic'
+import fs from 'fs'
+import path from 'path'
 
 export const dynamic = 'force-static'
 
@@ -15,6 +17,18 @@ export const size = {
 }
 
 export const contentType = 'image/png'
+
+function getCoverImageDataUrl(coverImagePath: string): string | null {
+    try {
+        const filePath = path.join(process.cwd(), 'public', coverImagePath)
+        const buffer = fs.readFileSync(filePath)
+        const ext = path.extname(coverImagePath).slice(1).toLowerCase()
+        const mimeType = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : ext === 'webp' ? 'image/webp' : 'image/png'
+        return `data:${mimeType};base64,${buffer.toString('base64')}`
+    } catch {
+        return null
+    }
+}
 
 export default async function Image({ params }: { params: { slug: string } }) {
     const { slug } = await params
@@ -44,6 +58,8 @@ export default async function Image({ params }: { params: { slug: string } }) {
         )
     }
 
+    const coverImageDataUrl = game.coverImage ? getCoverImageDataUrl(game.coverImage) : null
+
     return new ImageResponse(
         (
             <div
@@ -60,10 +76,10 @@ export default async function Image({ params }: { params: { slug: string } }) {
                 }}
             >
                 {/* Background Image Overlay */}
-                {game.coverImage && (
+                {coverImageDataUrl && (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
-                        src={new URL(game.coverImage, 'https://ariversestudio.com/').toString()}
+                        src={coverImageDataUrl}
                         alt={game.title}
                         style={{
                             position: 'absolute',
