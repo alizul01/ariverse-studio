@@ -1,7 +1,11 @@
 {
   "title": "Game Developer Malang",
   "description": "The official community hub for one of Indonesia's most active game development communities — home to 500+ developers and 12+ indie studios, built with a headless CMS for effortless content management.",
-  "platforms": ["Web"],
+  "coverImage": "/images/games/game-developer-malang/coverImage.jpg",
+  "platforms": [
+    "Web",
+    "PS5"
+  ],
   "engine": "Next.js",
   "status": "released"
 }

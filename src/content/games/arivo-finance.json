@@ -1,7 +1,10 @@
 {
   "title": "ArivoFinance",
   "description": "An in-house SaaS Financial ERP platform built for Indonesian SMEs and startups — integrating invoicing, accounting, tax management, and project tracking into one secure, automated ecosystem.",
-  "platforms": ["Web"],
+  "coverImage": "/images/games/arivo-finance/coverImage.jpg",
+  "platforms": [
+    "Web"
+  ],
   "engine": "Next.js",
   "status": "released"
 }

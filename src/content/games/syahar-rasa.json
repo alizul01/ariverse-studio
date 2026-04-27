@@ -1,7 +1,10 @@
 {
   "title": "Syahar Rasa",
   "description": "An integrated digital ecosystem for a premium pastry and frozen food brand, featuring dual-purpose e-commerce, a real-time admin dashboard, and a dynamic event booking system for Sweet Corner setups.",
-  "platforms": ["Web"],
+  "coverImage": "/images/games/syahar-rasa/coverImage.jpg",
+  "platforms": [
+    "Web"
+  ],
   "engine": "Next.js",
   "status": "released"
 }
