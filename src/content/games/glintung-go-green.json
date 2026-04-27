@@ -1,0 +1,7 @@
+{
+  "title": "Glintung Go Green",
+  "description": "The official digital gateway for Kampung 3G — an internationally recognised urban sustainability movement that transformed a flood-prone slum in Malang into a world-class eco-tourism destination.",
+  "platforms": ["Web"],
+  "engine": "Next.js",
+  "status": "released"
+}

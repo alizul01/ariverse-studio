@@ -1,0 +1,11 @@
+{
+  "title": "Kreasi Muda Madani",
+  "description": "A Sharia-compliant Microfinance Institution (BMT) platform focused on livestock investment and national food security, connecting investors with sustainable farming projects through transparent Islamic financing.",
+  "coverImage": "/images/games/kreasi-muda-madani/coverImage.jpg",
+  "platforms": [
+    "Web",
+    "PC"
+  ],
+  "engine": "Next.js",
+  "status": "released"
+}

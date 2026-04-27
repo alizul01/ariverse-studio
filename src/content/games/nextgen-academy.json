@@ -1,0 +1,7 @@
+{
+  "title": "NextGen Academy",
+  "description": "A dynamic e-learning platform providing practical, affordable education in economics and business for high school students, university students, and MSME owners across Indonesia.",
+  "platforms": ["Web"],
+  "engine": "Next.js",
+  "status": "released"
+}

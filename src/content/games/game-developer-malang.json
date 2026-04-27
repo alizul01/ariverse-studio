@@ -1,0 +1,7 @@
+{
+  "title": "Game Developer Malang",
+  "description": "The official community hub for one of Indonesia's most active game development communities — home to 500+ developers and 12+ indie studios, built with a headless CMS for effortless content management.",
+  "platforms": ["Web"],
+  "engine": "Next.js",
+  "status": "released"
+}
