@@ -10,17 +10,17 @@ export default function PrivacyPolicyPage() {
         {
             icon: <ShieldCheckIcon className="w-8 h-8" />,
             title: "Data Protection",
-            content: "We take your digital safety seriously. Any data transmitted to Ariverse Studio is encrypted using military-grade spatial protocols. We never sell your personal information to third-party nebulae."
+            content: "We take your privacy seriously. Any data transmitted to Ariverse Studio is handled securely. We never sell your personal information to third-party services or advertisers."
         },
         {
             icon: <DocumentMagnifyingGlassIcon className="w-8 h-8" />,
-            content: "We collect basic information like email and device logs only when you interact with our transmissions (website/games) to ensure optimal performance and communication.",
+            content: "We collect basic information like email and device logs only when you interact with our website or games to ensure optimal performance and communication.",
             title: "Information Collection"
         },
         {
             icon: <LockClosedIcon className="w-8 h-8" />,
             title: "Your Rights",
-            content: "You have the right to request a complete extraction of your data or its permanent deletion from our servers. Contact our Data Sentinel at any time."
+            content: "You have the right to request a copy of your data or its permanent deletion from our servers. Contact our privacy team at any time."
         }
     ];
 
@@ -78,9 +78,9 @@ export default function PrivacyPolicyPage() {
                         </div>
 
                         <div className="space-y-4 border-t border-[#61422D]/20 pt-12">
-                            <h3 className="text-[#E2494B] font-bold text-xl uppercase tracking-widest">Contact the Sentinel</h3>
-                            <p className="text-[#FCEBD7]/60">Have questions about your data? Reach out to our privacy officer:</p>
-                            <p className="text-[#FCEBD7] font-black tracking-widest text-lg">LEGAL@ARIVERSE.COM</p>
+                            <h3 className="text-[#E2494B] font-bold text-xl uppercase tracking-widest">Privacy Contact</h3>
+                            <p className="text-[#FCEBD7]/60">Have questions about your data? Reach out to our privacy team:</p>
+                            <p className="text-[#FCEBD7] font-black tracking-widest text-lg">contact@ariversestudio.com</p>
                         </div>
                     </FadeIn>
                 </section>

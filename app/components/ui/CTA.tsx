@@ -15,7 +15,7 @@ export default function CTA({
     title = "READY TO LAUNCH?",
     description = "Let's build the next big thing together. Contact our command center.",
     buttonText = "START MISSION",
-    href = "mailto:contact@ariverse.com",
+    href = "mailto:contact@ariversestudio.com",
     className = ""
 }: CTAProps) {
     return (

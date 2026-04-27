@@ -8,19 +8,21 @@ export default function NewsletterSignup() {
     const [email, setEmail] = useState("");
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!email) return;
 
         setStatus("submitting");
 
-        // Simulate subscription (replace with actual API endpoint when ready)
-        await new Promise((resolve) => setTimeout(resolve, 1200));
-        setStatus("success");
-        setEmail("");
+        const subject = encodeURIComponent("Newsletter Subscription");
+        const body = encodeURIComponent(`Please subscribe me to the Ariverse Studio newsletter.\n\nEmail: ${email}`);
+        window.location.href = `mailto:contact@ariversestudio.com?subject=${subject}&body=${body}`;
 
-        // Reset after 5 seconds
-        setTimeout(() => setStatus("idle"), 5000);
+        setTimeout(() => {
+            setStatus("success");
+            setEmail("");
+            setTimeout(() => setStatus("idle"), 5000);
+        }, 800);
     };
 
     return (

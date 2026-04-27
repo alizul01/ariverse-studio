@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import FadeIn from "../../../components/animations/FadeIn";
 import CTA from "../../../components/ui/CTA";
 import { Gamepad2, Layers } from "lucide-react";
@@ -103,12 +104,12 @@ export default async function GameDetailPage({ params }: GameDetailPageProps) {
                     </FadeIn>
 
                     <FadeIn delay={0.6} direction="left">
-                        <div className="bg-accent p-10 rounded-[2rem] text-white hover:scale-[1.02] transition-transform cursor-pointer">
+                        <Link href="/presskit" className="block bg-accent p-10 rounded-[2rem] text-white hover:scale-[1.02] transition-transform">
                             <Layers className="mb-6" size={32} />
                             <h3 className="text-2xl font-bold mb-2">Request Presskit</h3>
                             <p className="text-white/70 text-sm mb-6">Access high-res assets and professional studio information.</p>
-                            <div className="font-bold border-b-2 border-white inline-block pb-1">DOWNLOAD NOW</div>
-                        </div>
+                            <div className="font-bold border-b-2 border-white inline-block pb-1">VIEW PRESSKIT</div>
+                        </Link>
                     </FadeIn>
                 </div>
             </div>

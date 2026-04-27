@@ -6,8 +6,8 @@ export default function Footer() {
 
     const socialLinks = [
         { name: "Instagram", icon: Instagram, href: "https://instagram.com/ariversestudio", color: "hover:bg-pink-600 hover:text-white" },
-        { name: "Facebook", icon: Facebook, href: "https://facebook.com/Ariverse Studio", color: "hover:bg-blue-600 hover:text-white" },
-        { name: "YouTube", icon: Youtube, href: "https://youtube.com/@Ariverse Studio", color: "hover:bg-red-600 hover:text-white" },
+        { name: "Facebook", icon: Facebook, href: "https://facebook.com/ariversestudio", color: "hover:bg-blue-600 hover:text-white" },
+        { name: "YouTube", icon: Youtube, href: "https://youtube.com/@ariversestudio", color: "hover:bg-red-600 hover:text-white" },
         { name: "X (Twitter)", icon: Twitter, href: "https://x.com/ariversestudio", color: "hover:bg-slate-700 hover:text-white" },
         { name: "TikTok", icon: Music2, href: "https://tiktok.com/@ariverse.studio", color: "hover:bg-black hover:text-white" },
     ];

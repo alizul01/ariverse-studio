@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Services | Ariverse Studio",
         description: "Professional game development and gamification services. Unreal Engine, 3D Art, and immersive interactive experiences for your business.",
-        url: 'https://ariversestudio.com//services',
+        url: 'https://ariversestudio.com/services',
     },
 };
 

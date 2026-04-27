@@ -40,9 +40,12 @@ export default function PresskitPage() {
                                 <p className="text-[#FCEBD7]/60 text-lg mb-10">
                                     Download the complete studio package including high-res logos, project media, and studio fact sheets (78 MB).
                                 </p>
-                                <button className="bg-[#E2494B] text-[#FCEBD7] px-12 py-5 rounded-full font-black tracking-widest text-sm hover:scale-105 transition-transform shadow-[0_10px_40px_rgba(226,73,75,0.4)] uppercase">
-                                    Download All Assets (.ZIP)
-                                </button>
+                                <a
+                                    href="mailto:press@ariversestudio.com?subject=Presskit%20Request&body=Hi%2C%20I%27d%20like%20to%20request%20the%20full%20Ariverse%20Studio%20presskit."
+                                    className="inline-block bg-[#E2494B] text-[#FCEBD7] px-12 py-5 rounded-full font-black tracking-widest text-sm hover:scale-105 transition-transform shadow-[0_10px_40px_rgba(226,73,75,0.4)] uppercase"
+                                >
+                                    Request Full Presskit
+                                </a>
                             </div>
                         </div>
                     </FadeIn>
@@ -84,9 +87,12 @@ export default function PresskitPage() {
                                         <p className="text-[#FCEBD7]/50 text-sm mb-8 leading-relaxed line-clamp-2">
                                             {asset.description}
                                         </p>
-                                        <button className="w-full flex items-center justify-center gap-3 bg-[#FCEBD7]/5 border border-[#FCEBD7]/10 text-[#FCEBD7] py-4 rounded-xl text-xs font-bold tracking-widest uppercase hover:bg-[#E2494B] hover:border-[#E2494B] transition-all">
-                                            <ArrowDownTrayIcon className="w-4 h-4" /> Download
-                                        </button>
+                                        <a
+                                            href={`mailto:press@ariversestudio.com?subject=Asset%20Request%3A%20${encodeURIComponent(asset.title)}&body=Hi%2C%20I%27d%20like%20to%20request%20the%20following%20asset%3A%20${encodeURIComponent(asset.title)}`}
+                                            className="w-full flex items-center justify-center gap-3 bg-[#FCEBD7]/5 border border-[#FCEBD7]/10 text-[#FCEBD7] py-4 rounded-xl text-xs font-bold tracking-widest uppercase hover:bg-[#E2494B] hover:border-[#E2494B] transition-all"
+                                        >
+                                            <ArrowDownTrayIcon className="w-4 h-4" /> Request Asset
+                                        </a>
                                     </div>
                                 </StaggerItem>
                             ))}
