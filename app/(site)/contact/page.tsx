@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -23,28 +23,11 @@ export default function ContactPage() {
     const [form, setForm] = useState<FormData>({
         name: "",
         email: "",
-        subject: "",
-        type: "general",
-        message: "",
+        subject: searchParams.get("subject") || "",
+        type: searchParams.get("type") || "general",
+        message: searchParams.get("message") || "",
     });
     const [status, setStatus] = useState<FormStatus>("idle");
-
-    useEffect(() => {
-        const subject = searchParams.get("subject");
-        const type = searchParams.get("type");
-        const message = searchParams.get("message");
-
-        if (!subject && !type && !message) {
-            return;
-        }
-
-        setForm((current) => ({
-            ...current,
-            subject: subject || current.subject,
-            type: type || current.type,
-            message: message || current.message,
-        }));
-    }, [searchParams]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));

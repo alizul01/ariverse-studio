@@ -197,7 +197,7 @@ export default function GamesExplorer({ games }: { games: GameCard[] }) {
                 </div>
             ) : (
                 <StaggerContainer className="grid grid-cols-1 gap-10 md:grid-cols-2">
-                    {filteredGames.map((game, index) => {
+                    {filteredGames.map((game) => {
                         const ctas = getGameCtas(game);
                         const primaryCta = ctas[0];
 
