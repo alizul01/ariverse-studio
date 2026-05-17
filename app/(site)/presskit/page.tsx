@@ -60,7 +60,7 @@ export default function PresskitPage() {
                             <div className="w-10 h-10 rounded-xl bg-[#E2494B]/10 border border-[#E2494B]/20 flex items-center justify-center text-[#E2494B]">
                                 <Squares2X2Icon className="w-6 h-6" />
                             </div>
-                            <h2 className="text-3xl font-bold text-[#FCEBD7] tracking-tighter uppercase">Asset Universe</h2>
+                            <h2 className="text-3xl font-bold text-foreground tracking-tighter uppercase">Asset Universe</h2>
                         </div>
 
                         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -81,15 +81,15 @@ export default function PresskitPage() {
                                     </div>
                                     <div className="p-8">
                                         <div className="flex justify-between items-start mb-4">
-                                            <h3 className="text-xl font-bold text-[#FCEBD7] group-hover:text-[#E2494B] transition-colors">{asset.title}</h3>
-                                            <span className="text-[#FCEBD7]/30 text-[10px] font-bold mt-1 uppercase">{asset.fileSize}</span>
+                                            <h3 className="text-xl font-bold text-foreground group-hover:text-[#E2494B] transition-colors">{asset.title}</h3>
+                                            <span className="text-foreground/30 text-[10px] font-bold mt-1 uppercase">{asset.fileSize}</span>
                                         </div>
-                                        <p className="text-[#FCEBD7]/50 text-sm mb-8 leading-relaxed line-clamp-2">
+                                        <p className="text-foreground/50 text-sm mb-8 leading-relaxed line-clamp-2">
                                             {asset.description}
                                         </p>
                                         <a
                                             href={`mailto:press@ariversestudio.com?subject=Asset%20Request%3A%20${encodeURIComponent(asset.title)}&body=Hi%2C%20I%27d%20like%20to%20request%20the%20following%20asset%3A%20${encodeURIComponent(asset.title)}`}
-                                            className="w-full flex items-center justify-center gap-3 bg-[#FCEBD7]/5 border border-[#FCEBD7]/10 text-[#FCEBD7] py-4 rounded-xl text-xs font-bold tracking-widest uppercase hover:bg-[#E2494B] hover:border-[#E2494B] transition-all"
+                                            className="w-full flex items-center justify-center gap-3 bg-foreground/5 border border-foreground/10 text-foreground py-4 rounded-xl text-xs font-bold tracking-widest uppercase hover:bg-[#E2494B] hover:border-[#E2494B] hover:text-[#FCEBD7] transition-all"
                                         >
                                             <ArrowDownTrayIcon className="w-4 h-4" /> Request Asset
                                         </a>
