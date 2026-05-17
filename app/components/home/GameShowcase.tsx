@@ -132,20 +132,20 @@ export default function GameShowcase({ games }: { games: Game[] }) {
             <div className="space-y-6">
                 <div
                     ref={trackRef}
-                    className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                    className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
                 >
-                    {games.map((game, index) => (
-                        <FadeIn key={game.slug} delay={index * 0.05} className="shrink-0 basis-[84%] sm:basis-[58%] lg:basis-[36%] xl:basis-[32%]">
+                    {games.map((game) => (
+                        <div key={game.slug} className="shrink-0 snap-start basis-[92%] sm:basis-[72%] lg:basis-[52%] xl:basis-[44%]">
                             <Link href={`/games/${game.slug}`} className="group block h-full" data-game-card>
                                 <article className="h-full rounded-[2rem] border border-[#101010]/8 bg-background p-4 transition-colors hover:border-[#96191A]/25 md:p-5">
-                                    <div className="relative aspect-[3/4] rounded-[1.5rem] overflow-hidden mb-5 border border-[#101010]/8">
+                                    <div className="relative aspect-video rounded-[1.5rem] overflow-hidden mb-5 border border-[#101010]/8">
                                         <NextImage
                                             src={game.image}
                                             alt={game.title}
                                             fill
                                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#101010]/50 via-transparent to-transparent" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#101010]/60 via-transparent to-transparent" />
 
                                         <div className="absolute top-4 left-4 flex flex-wrap gap-1.5">
                                             {game.platforms.map((platform) => (
@@ -158,20 +158,23 @@ export default function GameShowcase({ games }: { games: Game[] }) {
                                             ))}
                                         </div>
 
-                                        <div className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-[#96191A] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                                            <span className="text-white text-sm font-bold">-&gt;</span>
+                                        <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                                            <div>
+                                                <h3 className="text-white font-black text-xl tracking-tight uppercase leading-tight drop-shadow-md">
+                                                    {game.title}
+                                                </h3>
+                                                <p className="text-white/70 text-xs leading-relaxed line-clamp-2 mt-1 max-w-xs drop-shadow-sm">
+                                                    {game.description}
+                                                </p>
+                                            </div>
+                                            <div className="w-9 h-9 rounded-full bg-[#96191A] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 shrink-0 ml-3">
+                                                <span className="text-white text-sm font-bold">-&gt;</span>
+                                            </div>
                                         </div>
                                     </div>
-
-                                    <h3 className="text-[#101010] font-black text-lg tracking-tight uppercase leading-tight mb-2 group-hover:text-[#96191A] transition-colors duration-200">
-                                        {game.title}
-                                    </h3>
-                                    <p className="text-[#101010]/45 text-sm leading-relaxed line-clamp-3">
-                                        {game.description}
-                                    </p>
                                 </article>
                             </Link>
-                        </FadeIn>
+                        </div>
                     ))}
                 </div>
 

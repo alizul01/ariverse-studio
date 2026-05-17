@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { startTransition, useDeferredValue, useState } from "react";
+import { useState } from "react";
 import NextImage from "next/image";
 import { ArrowUpRight, SlidersHorizontal, X } from "lucide-react";
 import StaggerContainer, { StaggerItem } from "../animations/StaggerContainer";
@@ -75,7 +75,6 @@ function SelectField({
 
 export default function GamesExplorer({ games }: { games: GameCard[] }) {
     const [filters, setFilters] = useState<FilterState>(defaultFilters);
-    const deferredFilters = useDeferredValue(filters);
 
     const statusOptions = [
         { label: "All statuses", value: "all" },
@@ -118,28 +117,28 @@ export default function GamesExplorer({ games }: { games: GameCard[] }) {
     ];
 
     const filteredGames = games
-        .filter((game) => deferredFilters.status === "all" || game.status === deferredFilters.status)
-        .filter((game) => deferredFilters.platform === "all" || game.platforms.includes(deferredFilters.platform))
-        .filter((game) => deferredFilters.engine === "all" || game.engine === deferredFilters.engine)
-        .filter((game) => deferredFilters.genre === "all" || game.genre === deferredFilters.genre)
+        .filter((game) => filters.status === "all" || game.status === filters.status)
+        .filter((game) => filters.platform === "all" || game.platforms.includes(filters.platform))
+        .filter((game) => filters.engine === "all" || game.engine === filters.engine)
+        .filter((game) => filters.genre === "all" || game.genre === filters.genre)
         .sort((left, right) => {
-            if (deferredFilters.sort === "title-asc") {
+            if (filters.sort === "title-asc") {
                 return left.title.localeCompare(right.title);
             }
 
-            if (deferredFilters.sort === "release-desc") {
+            if (filters.sort === "release-desc") {
                 const leftDate = left.releaseDate ? new Date(left.releaseDate).getTime() : 0;
                 const rightDate = right.releaseDate ? new Date(right.releaseDate).getTime() : 0;
                 return rightDate - leftDate || left.title.localeCompare(right.title);
             }
 
-            if (deferredFilters.sort === "release-asc") {
+            if (filters.sort === "release-asc") {
                 const leftDate = left.releaseDate ? new Date(left.releaseDate).getTime() : Number.MAX_SAFE_INTEGER;
                 const rightDate = right.releaseDate ? new Date(right.releaseDate).getTime() : Number.MAX_SAFE_INTEGER;
                 return leftDate - rightDate || left.title.localeCompare(right.title);
             }
 
-            if (deferredFilters.sort === "title-desc") {
+            if (filters.sort === "title-desc") {
                 return right.title.localeCompare(left.title);
             }
 
@@ -179,11 +178,11 @@ export default function GamesExplorer({ games }: { games: GameCard[] }) {
                     </div>
 
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-5">
-                        <SelectField label="Status" value={filters.status} onChange={(value) => startTransition(() => setFilters((current) => ({ ...current, status: value })))} options={statusOptions} />
-                        <SelectField label="Platform" value={filters.platform} onChange={(value) => startTransition(() => setFilters((current) => ({ ...current, platform: value })))} options={platformOptions} />
-                        <SelectField label="Engine" value={filters.engine} onChange={(value) => startTransition(() => setFilters((current) => ({ ...current, engine: value })))} options={engineOptions} />
-                        <SelectField label="Genre" value={filters.genre} onChange={(value) => startTransition(() => setFilters((current) => ({ ...current, genre: value })))} options={genreOptions} />
-                        <SelectField label="Sort" value={filters.sort} onChange={(value) => startTransition(() => setFilters((current) => ({ ...current, sort: value })))} options={sortOptions} />
+                        <SelectField label="Status" value={filters.status} onChange={(value) => setFilters((current) => ({ ...current, status: value }))} options={statusOptions} />
+                        <SelectField label="Platform" value={filters.platform} onChange={(value) => setFilters((current) => ({ ...current, platform: value }))} options={platformOptions} />
+                        <SelectField label="Engine" value={filters.engine} onChange={(value) => setFilters((current) => ({ ...current, engine: value }))} options={engineOptions} />
+                        <SelectField label="Genre" value={filters.genre} onChange={(value) => setFilters((current) => ({ ...current, genre: value }))} options={genreOptions} />
+                        <SelectField label="Sort" value={filters.sort} onChange={(value) => setFilters((current) => ({ ...current, sort: value }))} options={sortOptions} />
                     </div>
                 </div>
             </section>

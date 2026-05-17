@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Mail, MapPin, Clock, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Send, Mail, MapPin, Clock, CheckCircle, AlertCircle, Loader2, Gamepad2 } from "lucide-react";
 import FadeIn from "../../components/animations/FadeIn";
 import PageHeader from "../../components/ui/PageHeader";
 
@@ -18,29 +18,34 @@ type FormData = {
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
-export default function ContactPageClient() {
+type ActiveProject = { title: string; slug: string };
+
+export default function ContactPageClient({ activeProjects = [] }: { activeProjects?: ActiveProject[] }) {
     const searchParams = useSearchParams();
     return (
         <ContactPageView
             initialSubject={searchParams.get("subject") || ""}
             initialType={searchParams.get("type") || "general"}
             initialMessage={searchParams.get("message") || ""}
+            activeProjects={activeProjects}
         />
     );
 }
 
 export function ContactPageFallback() {
-    return <ContactPageView initialSubject="" initialType="general" initialMessage="" />;
+    return <ContactPageView initialSubject="" initialType="general" initialMessage="" activeProjects={[]} />;
 }
 
 function ContactPageView({
     initialSubject,
     initialType,
     initialMessage,
+    activeProjects,
 }: {
     initialSubject: string;
     initialType: string;
     initialMessage: string;
+    activeProjects: ActiveProject[];
 }) {
     const [form, setForm] = useState<FormData>({
         name: "",
@@ -158,7 +163,27 @@ function ContactPageView({
                                 ))}
                             </div>
 
-                            <div className="bg-accent/5 border border-accent/10 rounded-2xl p-6 mt-8">
+                            {activeProjects.length > 0 && (
+                                <div className="border border-foreground/10 rounded-2xl p-6">
+                                    <div className="flex items-center gap-2 mb-4">
+                                        <Gamepad2 className="w-4 h-4 text-accent" />
+                                        <p className="text-[10px] font-bold uppercase tracking-widest text-foreground/40">Active Projects</p>
+                                    </div>
+                                    <div className="flex flex-wrap gap-2">
+                                        {activeProjects.map((project) => (
+                                            <Link
+                                                key={project.slug}
+                                                href={`/games/${project.slug}`}
+                                                className="text-[10px] font-bold uppercase tracking-widest border border-foreground/12 px-3 py-1.5 rounded-full text-foreground/60 hover:border-accent/40 hover:text-accent transition-colors"
+                                            >
+                                                {project.title}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            <div className="bg-accent/5 border border-accent/10 rounded-2xl p-6">
                                 <p className="text-foreground/80 text-sm leading-relaxed">
                                     Tip: <strong className="text-accent">Looking for game dev services?</strong> Check out our{" "}
                                     <Link href="/services" className="text-accent underline underline-offset-4 hover:text-foreground">services page</Link>{" "}

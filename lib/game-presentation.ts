@@ -44,9 +44,6 @@ function isExternalUrl(href: string) {
     return href.startsWith("http://") || href.startsWith("https://") || href.startsWith("mailto:");
 }
 
-function buildContactUrl(subject: string) {
-    return `/contact?subject=${encodeURIComponent(subject)}&type=services`;
-}
 
 function buildStructuredCtas(game: GamePresentation): GameCta[] {
     const ctas: GameCta[] = [];
@@ -78,38 +75,13 @@ export function getGameCtas(game: GamePresentation): GameCta[] {
         return structured.slice(0, 3);
     }
 
-    const fallbackByStatus: Record<string, GameCta[]> = {
-        released: [
-            {
-                label: "Request Access",
-                href: buildContactUrl(`Access request for ${game.title}`),
-                variant: "primary",
-            },
-        ],
-        "early-access": [
-            {
-                label: "Request Demo",
-                href: buildContactUrl(`Demo request for ${game.title}`),
-                variant: "primary",
-            },
-        ],
-        "coming-soon": [
-            {
-                label: "Notify Me",
-                href: buildContactUrl(`Notify me about ${game.title}`),
-                variant: "primary",
-            },
-        ],
-        "in-development": [
-            {
-                label: "Notify Me",
-                href: buildContactUrl(`Notify me about ${game.title}`),
-                variant: "primary",
-            },
-        ],
-    };
-
-    const ctas = fallbackByStatus[game.status || "in-development"] || fallbackByStatus["in-development"];
+    const ctas: GameCta[] = [
+        {
+            label: "Check Details",
+            href: `/games/${game.slug}`,
+            variant: "primary",
+        },
+    ];
 
     if (game.slug === "minimate") {
         return [

@@ -151,10 +151,10 @@ export default async function Home() {
                 <Image src="/emoticon/stary%20eyes.png" alt="" width={24} height={24} className="object-contain" />
               </div>
               <div className="flex items-center px-4 py-2 bg-foreground/[0.03]">
-                <span className="text-accent text-xs font-bold tracking-[0.3em] uppercase">What We Do</span>
+                <span className="text-accent text-xs font-bold tracking-[0.3em] uppercase">Our Services</span>
               </div>
             </div>
-            <Link href="/services" className="text-4xl md:text-5xl font-black text-foreground tracking-tight uppercase hover:text-accent transition-colors">Our Services</Link>
+            <Link href="/services" className="text-4xl md:text-5xl font-black text-foreground tracking-tight uppercase hover:text-accent transition-colors">What We Do</Link>
             <p className="text-foreground/45 mt-3 max-w-md text-sm leading-relaxed">
               From concept to launch - we bring games and interactive experiences to life.
             </p>
