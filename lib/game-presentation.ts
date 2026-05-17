@@ -29,12 +29,23 @@ export function getLanguageMeta(language?: string | null) {
     return languageMeta[(language as GameLanguage) || "en"] || languageMeta.en;
 }
 
+export function getStatusLabel(status?: string | null) {
+    const labels: Record<string, string> = {
+        released: "Released",
+        "early-access": "Early Access",
+        "coming-soon": "Coming Soon",
+        "in-development": "In Development",
+    };
+
+    return labels[status || "in-development"] || labels["in-development"];
+}
+
 function isExternalUrl(href: string) {
     return href.startsWith("http://") || href.startsWith("https://") || href.startsWith("mailto:");
 }
 
 function buildContactUrl(subject: string) {
-    return `/contact?subject=${encodeURIComponent(subject)}&type=general`;
+    return `/contact?subject=${encodeURIComponent(subject)}&type=services`;
 }
 
 function buildStructuredCtas(game: GamePresentation): GameCta[] {

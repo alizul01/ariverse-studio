@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Mail, MapPin, Clock, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import FadeIn from "../../components/animations/FadeIn";
@@ -18,6 +19,7 @@ type FormData = {
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export default function ContactPage() {
+    const searchParams = useSearchParams();
     const [form, setForm] = useState<FormData>({
         name: "",
         email: "",
@@ -26,6 +28,23 @@ export default function ContactPage() {
         message: "",
     });
     const [status, setStatus] = useState<FormStatus>("idle");
+
+    useEffect(() => {
+        const subject = searchParams.get("subject");
+        const type = searchParams.get("type");
+        const message = searchParams.get("message");
+
+        if (!subject && !type && !message) {
+            return;
+        }
+
+        setForm((current) => ({
+            ...current,
+            subject: subject || current.subject,
+            type: type || current.type,
+            message: message || current.message,
+        }));
+    }, [searchParams]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
