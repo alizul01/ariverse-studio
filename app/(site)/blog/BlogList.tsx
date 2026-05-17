@@ -82,6 +82,8 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
                                 {featured.date}
                                 <span className="text-foreground/20">&middot;</span>
                                 <span className="text-accent">{featured.category}</span>
+                                <span className="text-foreground/20">&middot;</span>
+                                <span>{featured.readTime}</span>
                             </div>
                             <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground group-hover:text-accent transition-colors duration-200 mb-3 leading-tight">
                                 {featured.title}
@@ -141,6 +143,8 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
                                         {post.date}
                                         <span className="text-foreground/15">&middot;</span>
                                         <span className="text-accent/70">{post.category}</span>
+                                        <span className="text-foreground/15">&middot;</span>
+                                        <span>{post.readTime}</span>
                                     </div>
                                     <h3 className="text-base font-black uppercase tracking-tight text-foreground group-hover:text-accent transition-colors duration-200 line-clamp-2">
                                         {post.title}

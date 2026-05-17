@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Rocket, Home, ArrowLeft, Gamepad2, BookOpen, Briefcase } from "lucide-react";
+import { Rocket, Home, ArrowLeft, Gamepad2, BookOpen, Briefcase, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
 const stars = [
@@ -115,8 +115,8 @@ export default function NotFound() {
                         <Link href="/about" className="inline-flex items-center gap-2 text-[#FCEBD7]/60 hover:text-[#E2494B] transition-colors text-sm bg-[#61422D]/10 px-4 py-2 rounded-full border border-[#61422D]/20 hover:border-[#E2494B]/30">
                             <Briefcase className="w-4 h-4" /> About Us
                         </Link>
-                        <Link href="/careers" className="inline-flex items-center gap-2 text-[#FCEBD7]/60 hover:text-[#E2494B] transition-colors text-sm bg-[#61422D]/10 px-4 py-2 rounded-full border border-[#61422D]/20 hover:border-[#E2494B]/30">
-                            <Rocket className="w-4 h-4" /> Careers
+                        <Link href="/contact" className="inline-flex items-center gap-2 text-[#FCEBD7]/60 hover:text-[#E2494B] transition-colors text-sm bg-[#61422D]/10 px-4 py-2 rounded-full border border-[#61422D]/20 hover:border-[#E2494B]/30">
+                            <Mail className="w-4 h-4" /> Contact
                         </Link>
                     </div>
                 </motion.div>
