@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Mail, MapPin, Clock, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import FadeIn from "../../components/animations/FadeIn";
@@ -17,23 +18,51 @@ type FormData = {
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
-export default function ContactPageClient({
+export default function ContactPageClient() {
+    const searchParams = useSearchParams();
+    return (
+        <ContactPageView
+            initialSubject={searchParams.get("subject") || ""}
+            initialType={searchParams.get("type") || "general"}
+            initialMessage={searchParams.get("message") || ""}
+        />
+    );
+}
+
+export function ContactPageFallback() {
+    return <ContactPageView initialSubject="" initialType="general" initialMessage="" />;
+}
+
+function ContactPageView({
     initialSubject,
     initialType,
     initialMessage,
 }: {
-    initialSubject?: string;
-    initialType?: string;
-    initialMessage?: string;
+    initialSubject: string;
+    initialType: string;
+    initialMessage: string;
 }) {
     const [form, setForm] = useState<FormData>({
         name: "",
         email: "",
-        subject: initialSubject || "",
-        type: initialType || "general",
-        message: initialMessage || "",
+        subject: initialSubject,
+        type: initialType,
+        message: initialMessage,
     });
     const [status, setStatus] = useState<FormStatus>("idle");
+
+    useEffect(() => {
+        if (!initialSubject && !initialType && !initialMessage) {
+            return;
+        }
+
+        setForm((current) => ({
+            ...current,
+            subject: initialSubject || current.subject,
+            type: initialType || current.type,
+            message: initialMessage || current.message,
+        }));
+    }, [initialMessage, initialSubject, initialType]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));

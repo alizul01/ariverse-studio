@@ -1,23 +1,10 @@
-import ContactPageClient from "./ContactPageClient";
+import { Suspense } from "react";
+import ContactPageClient, { ContactPageFallback } from "./ContactPageClient";
 
-type SearchParams = Promise<{
-    subject?: string;
-    type?: string;
-    message?: string;
-}>;
-
-export default async function ContactPage({
-    searchParams,
-}: {
-    searchParams: SearchParams;
-}) {
-    const params = await searchParams;
-
+export default function ContactPage() {
     return (
-        <ContactPageClient
-            initialSubject={params.subject}
-            initialType={params.type}
-            initialMessage={params.message}
-        />
+        <Suspense fallback={<ContactPageFallback />}>
+            <ContactPageClient />
+        </Suspense>
     );
 }
