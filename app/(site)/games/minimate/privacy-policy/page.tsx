@@ -6,7 +6,7 @@ import StaggerContainer, { StaggerItem } from "../../../../components/animations
 import { ShieldCheckIcon, EyeSlashIcon, WifiIcon } from "@heroicons/react/24/outline";
 
 export const metadata: Metadata = {
-    title: "MiniMate — Privacy Policy | Ariverse Studio",
+    title: "MiniMate - Privacy Policy | Ariverse Studio",
     description: "MiniMate collects no personal data, requires no account, and works fully offline. Your privacy is completely intact.",
 };
 
@@ -19,12 +19,12 @@ const highlights = [
     {
         icon: <EyeSlashIcon className="w-8 h-8" />,
         title: "No Account Required",
-        content: "You do not need to register, log in, or provide an email address to play MiniMate. Open the app and play — that's it."
+        content: "You do not need to register, log in, or provide an email address to play MiniMate. Open the app and play - that's it."
     },
     {
         icon: <WifiIcon className="w-8 h-8" />,
         title: "Fully Offline",
-        content: "MiniMate works entirely without an internet connection. No analytics pings, no ad requests, no background network calls — ever."
+        content: "MiniMate works entirely without an internet connection. No analytics pings, no ad requests, no background network calls - ever."
     }
 ];
 
@@ -32,7 +32,7 @@ export default function MinimatePolicyPage() {
     return (
         <div className="pb-40">
             <PageHeader
-                title="MiniMate — Privacy Policy"
+                title="MiniMate - Privacy Policy"
                 description="Short version: we collect nothing. Long version: keep reading."
                 breadcrumbs={[
                     { label: "Games", href: "/games" },
@@ -53,12 +53,12 @@ export default function MinimatePolicyPage() {
                             <h2 className="text-3xl font-bold text-foreground tracking-tight uppercase">Privacy First, Always</h2>
                         </div>
                         <p className="text-xl text-foreground/60 leading-relaxed">
-                            MiniMate was built around one simple principle: your phone is yours. We designed the game from the ground up to need nothing from you — no name, no email, no device ID, no location. Last updated: May 2026.
+                            MiniMate was built around one simple principle: your phone is yours. We designed the game from the ground up to need nothing from you - no name, no email, no device ID, no location. Last updated: May 2026.
                         </p>
                     </FadeIn>
                 </section>
 
-                {/* Highlights — dark cards so cream text is correct here */}
+                {/* Highlights - dark cards so cream text is correct here */}
                 <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 py-20">
                     {highlights.map((item, i) => (
                         <StaggerItem key={i} className="bg-[#250804] border border-[#61422D]/20 rounded-3xl p-10 hover:border-accent/50 transition-all duration-500">
@@ -75,7 +75,7 @@ export default function MinimatePolicyPage() {
                         <div className="space-y-4">
                             <h3 className="text-foreground font-bold text-2xl uppercase tracking-tight">1. Information We Collect</h3>
                             <p className="text-foreground/60 leading-relaxed">
-                                None. MiniMate does not collect any personally identifiable information (PII), usage statistics, crash reports, or analytics data of any kind. All game progress is stored locally on your device using the operating system's standard local storage.
+                                None. MiniMate does not collect any personally identifiable information (PII), usage statistics, crash reports, or analytics data of any kind. All game progress is stored locally on your device using the operating system&apos;s standard local storage.
                             </p>
                         </div>
 
@@ -96,7 +96,7 @@ export default function MinimatePolicyPage() {
                         <div className="space-y-4">
                             <h3 className="text-foreground font-bold text-2xl uppercase tracking-tight">4. Children's Privacy</h3>
                             <p className="text-foreground/60 leading-relaxed">
-                                Because MiniMate collects no data whatsoever, it is safe for users of all ages, including children. We comply fully with COPPA (Children's Online Privacy Protection Act) and applicable international regulations.
+                                Because MiniMate collects no data whatsoever, it is safe for users of all ages, including children. We comply fully with COPPA (Children&apos;s Online Privacy Protection Act) and applicable international regulations.
                             </p>
                         </div>
 

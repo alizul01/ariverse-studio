@@ -79,10 +79,10 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-sm text-background/50">
-                        © {currentYear} Ariverse Studio. All rights reserved.
+                        &copy; {currentYear} Ariverse Studio. All rights reserved.
                     </p>
                     <p className="text-xs text-background/30">
-                        Made with ❤️ in Malang, Indonesia
+                        Made with love in Malang, Indonesia
                     </p>
                 </div>
             </div>

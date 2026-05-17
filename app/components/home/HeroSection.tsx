@@ -46,7 +46,7 @@ export default function HeroSection() {
         >
           <span className="w-8 h-px bg-accent/60" />
           <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-foreground/40">
-            Est. 2024 — Malang, Indonesia
+            Est. 2024 - Malang, Indonesia
           </span>
           <span className="w-8 h-px bg-accent/60" />
         </motion.div>
@@ -74,7 +74,7 @@ export default function HeroSection() {
           transition={{ duration: 0.4, delay: 0.18 }}
           className="text-xs md:text-sm text-foreground/45 tracking-wide max-w-xs leading-relaxed"
         >
-          Games rooted in local culture — stories that feel familiar to locals, intriguing to the world.
+          Games rooted in local culture - stories that feel familiar to locals, intriguing to the world.
         </motion.p>
 
         {/* CTA row */}
@@ -88,7 +88,7 @@ export default function HeroSection() {
             href="/games"
             className="inline-flex items-center gap-2 bg-accent text-white px-6 md:px-7 py-2.5 md:py-3 rounded-full font-black tracking-widest text-[11px] md:text-xs hover:bg-accent/85 transition-all shadow-[0_8px_28px_rgba(150,25,26,0.28)]"
           >
-            EXPLORE GAMES →
+            EXPLORE GAMES -&gt;
           </Link>
           <Link
             href="/about"

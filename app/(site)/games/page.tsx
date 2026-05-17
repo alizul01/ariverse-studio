@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Our Games | Ariverse Studio",
         description: "Explore the immersive worlds created by Ariverse Studio. From RPGs to simulations, discover our latest releases and upcoming titles.",
-        url: 'https://ariversestudio.com//games',
+        url: 'https://ariversestudio.com/games',
     },
 };
 
@@ -79,7 +79,7 @@ export default async function GamesPage() {
                                         </p>
                                     </div>
                                     <span className="text-accent text-2xl transform group-hover:translate-x-2 transition-transform pt-1 shrink-0">
-                                        →
+                                        -&gt;
                                     </span>
                                 </div>
 

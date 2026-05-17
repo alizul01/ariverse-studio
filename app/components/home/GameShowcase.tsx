@@ -38,7 +38,7 @@ export default function GameShowcase({ games }: { games: Game[] }) {
                     href="/games"
                     className="text-[#101010]/35 hover:text-[#96191A] transition-colors text-sm font-bold tracking-widest uppercase shrink-0"
                 >
-                    All Games →
+                    All Games -&gt;
                 </Link>
             </FadeIn>
 
@@ -74,7 +74,7 @@ export default function GameShowcase({ games }: { games: Game[] }) {
 
                                     {/* Hover arrow */}
                                     <div className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-[#96191A] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                                        <span className="text-white text-sm font-bold">→</span>
+                                        <span className="text-white text-sm font-bold">-&gt;</span>
                                     </div>
                                 </div>
 

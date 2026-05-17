@@ -52,7 +52,7 @@ export default function AboutVisuals() {
         <p className="text-foreground/40 text-xs tracking-wide">
           In production:{" "}
           <span className="text-foreground/65 font-semibold">Nightwatch at the Museum</span>
-          {" "}— Steam, Q3 2026
+          {" "}- Steam, Q3 2026
         </p>
       </motion.div>
 

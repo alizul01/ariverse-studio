@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Mail, MapPin, Clock, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import FadeIn from "../../components/animations/FadeIn";
@@ -86,7 +87,7 @@ export default function ContactPage() {
                                 </h2>
                                 <p className="text-foreground/60 leading-relaxed">
                                     Whether you&apos;re interested in our game development services, looking for a collaboration, 
-                                    or just want to say hello — drop us a message.
+                                    or just want to say hello - drop us a message.
                                 </p>
                             </div>
 
@@ -113,8 +114,8 @@ export default function ContactPage() {
                             {/* Decorative card */}
                             <div className="bg-accent/5 border border-accent/10 rounded-2xl p-6 mt-8">
                                 <p className="text-foreground/80 text-sm leading-relaxed">
-                                    💡 <strong className="text-accent">Looking for game dev services?</strong> Check out our{" "}
-                                    <a href="/services" className="text-accent underline underline-offset-4 hover:text-foreground">services page</a>{" "}
+                                    Tip: <strong className="text-accent">Looking for game dev services?</strong> Check out our{" "}
+                                    <Link href="/services" className="text-accent underline underline-offset-4 hover:text-foreground">services page</Link>{" "}
                                     for detailed information about what we offer.
                                 </p>
                             </div>
@@ -142,7 +143,7 @@ export default function ContactPage() {
                                             onClick={() => setStatus("idle")}
                                             className="text-accent font-bold text-sm uppercase tracking-widest hover:text-foreground transition-colors"
                                         >
-                                            Send Another Message →
+                                            Send Another Message -&gt;
                                         </button>
                                     </motion.div>
                                 ) : (

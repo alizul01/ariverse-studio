@@ -4,6 +4,14 @@ import Link from "next/link";
 import { Rocket, Home, ArrowLeft, Gamepad2, BookOpen, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
 
+const stars = [
+    { top: "24%", left: "18%", duration: 2.1, delay: 0.2 },
+    { top: "36%", left: "78%", duration: 3.2, delay: 0.7 },
+    { top: "58%", left: "26%", duration: 2.7, delay: 1.1 },
+    { top: "72%", left: "68%", duration: 3.6, delay: 0.4 },
+    { top: "44%", left: "52%", duration: 2.4, delay: 1.5 },
+];
+
 export default function NotFound() {
     return (
         <div className="min-h-[80vh] flex items-center justify-center px-4">
@@ -24,16 +32,16 @@ export default function NotFound() {
                         </motion.div>
                     </div>
                     {/* Stars decoration */}
-                    {[...Array(5)].map((_, i) => (
+                    {stars.map((star, i) => (
                         <motion.div
                             key={i}
                             className="absolute w-1.5 h-1.5 bg-[#FCEBD7] rounded-full"
                             style={{
-                                top: `${20 + Math.random() * 60}%`,
-                                left: `${15 + Math.random() * 70}%`,
+                                top: star.top,
+                                left: star.left,
                             }}
                             animate={{ opacity: [0.2, 1, 0.2], scale: [0.8, 1.2, 0.8] }}
-                            transition={{ duration: 2 + Math.random() * 2, repeat: Infinity, delay: Math.random() * 2 }}
+                            transition={{ duration: star.duration, repeat: Infinity, delay: star.delay }}
                         />
                     ))}
                 </motion.div>

@@ -11,8 +11,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => { setIsOpen(false); }, [pathname]);
-
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 48);
     window.addEventListener("scroll", handler, { passive: true });
@@ -38,7 +36,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 h-20 flex items-center px-4 md:px-6 pointer-events-none">
 
-      {/* Pill / flat nav — animated */}
+      {/* Pill / flat nav - animated */}
       <motion.nav
         className="w-full max-w-[1440px] mx-auto pointer-events-auto"
         animate={
@@ -65,7 +63,7 @@ export default function Navbar() {
         <div className="h-14 flex items-center justify-between">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
+          <Link href="/" className="flex items-center gap-2.5 shrink-0 group" onClick={() => setIsOpen(false)}>
             <div className="relative w-8 h-8">
               <Image
                 src="/images/logo.png"
@@ -201,7 +199,7 @@ export default function Navbar() {
                   className="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.22em] uppercase text-background bg-foreground px-6 py-3.5 hover:bg-accent transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
-                  Presskit →
+                  Presskit -&gt;
                 </Link>
               </motion.div>
             </div>

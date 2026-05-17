@@ -40,7 +40,7 @@ export default async function Home() {
   const steps = [
     { step: "01", title: "Initiation", desc: "Ideas, target audience, and the core concept." },
     { step: "02", title: "Pre-Production", desc: "GDD, art style direction, and prototyping." },
-    { step: "03", title: "Production", desc: "Assets, code, audio — everything gets built." },
+    { step: "03", title: "Production", desc: "Assets, code, audio - everything gets built." },
     { step: "04", title: "Testing", desc: "Internal alpha: bugs get squashed, stability checked." },
     { step: "05", title: "Beta", desc: "Limited release for real feedback from real players." },
     { step: "06", title: "Launch", desc: "Ship it. Then keep improving." },
@@ -95,11 +95,11 @@ export default async function Home() {
               {/* Description */}
               <p className="text-lg text-foreground/55 leading-relaxed mb-12 max-w-lg">
                 Ariverse Studio is an indie game studio from Malang, Indonesia.
-                We make games rooted in local culture — stories that feel
+                We make games rooted in local culture - stories that feel
                 familiar to locals and intriguing to the world.
               </p>
 
-              {/* Stats row — no boxes, just dividers */}
+              {/* Stats row - no boxes, just dividers */}
               <div className="flex items-stretch divide-x divide-foreground/10 mb-12">
                 {[
                   { num: "2024", label: "Founded" },
@@ -119,7 +119,7 @@ export default async function Home() {
                 className="group inline-flex items-center gap-3 text-foreground font-bold tracking-widest text-xs py-3.5 px-7 border border-foreground/15 rounded-full hover:border-accent/50 hover:text-accent transition-all duration-300"
               >
                 MEET THE TEAM
-                <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+                <span className="transform group-hover:translate-x-1 transition-transform duration-300">-&gt;</span>
               </Link>
             </FadeIn>
 
@@ -133,7 +133,7 @@ export default async function Home() {
       {/* 3. Game Showcase */}
       <GameShowcase games={games} />
 
-      {/* 3. Services — card grid */}
+      {/* 3. Services - card grid */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-20 w-full">
         <FadeIn className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div>
@@ -147,14 +147,14 @@ export default async function Home() {
             </div>
             <Link href="/services" className="text-4xl md:text-5xl font-black text-foreground tracking-tight uppercase hover:text-accent transition-colors">Our Services</Link>
             <p className="text-foreground/45 mt-3 max-w-md text-sm leading-relaxed">
-              From concept to launch — we bring games and interactive experiences to life.
+              From concept to launch - we bring games and interactive experiences to life.
             </p>
           </div>
           <Link
             href="/services"
             className="text-foreground/40 hover:text-accent transition-colors text-sm font-bold tracking-widest uppercase shrink-0"
           >
-            All Services →
+            All Services -&gt;
           </Link>
         </FadeIn>
 
@@ -185,7 +185,7 @@ export default async function Home() {
                         </span>
                       ))}
                     </div>
-                    <span className="text-accent font-bold text-sm inline-block transform group-hover:translate-x-1.5 transition-transform duration-200">→</span>
+                    <span className="text-accent font-bold text-sm inline-block transform group-hover:translate-x-1.5 transition-transform duration-200">-&gt;</span>
                   </div>
                 </div>
               </Link>
@@ -194,7 +194,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 4. Process — timeline */}
+      {/* 4. Process - timeline */}
       <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-20 w-full">
         <FadeIn className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
           <div>

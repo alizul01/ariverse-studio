@@ -66,7 +66,7 @@ export default async function Image() {
                             alignItems: 'center',
                             justifyContent: 'center',
                         }}>
-                            <span style={{ color: '#FCEBD7', fontSize: 14, fontWeight: 'bold' }}>★</span>
+                            <span style={{ color: '#FCEBD7', fontSize: 14, fontWeight: 'bold' }}>*</span>
                         </div>
                         <span style={{ color: '#E2494B', fontSize: 20, fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '4px' }}>
                             Ariverse Studio

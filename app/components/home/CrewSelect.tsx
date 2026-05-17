@@ -17,7 +17,7 @@ export default function CrewSelect({ crew }: { crew: CrewMember[] }) {
   return (
     <div className="flex flex-col lg:flex-row gap-8 items-stretch">
 
-      {/* Left — character detail panel */}
+      {/* Left - character detail panel */}
       <div className="relative w-full lg:w-72 shrink-0 rounded-2xl overflow-hidden border border-[#101010]/10 bg-[#101010]/4 min-h-[340px] flex flex-col">
 
         {/* Scanline overlay */}
@@ -77,12 +77,12 @@ export default function CrewSelect({ crew }: { crew: CrewMember[] }) {
         </AnimatePresence>
       </div>
 
-      {/* Right — character select grid */}
+      {/* Right - character select grid */}
       <div className="flex-1">
         {/* Grid header */}
         <div className="flex items-center justify-between mb-4">
           <span className="text-[#101010]/35 text-[10px] font-black tracking-[0.3em] uppercase">
-            Select Astronaut — {crew.length} crew
+            Select Astronaut - {crew.length} crew
           </span>
           <span className="text-[#101010]/25 text-[10px] font-bold tracking-widest uppercase">
             {String(selected + 1).padStart(2, "0")} / {String(crew.length).padStart(2, "0")}

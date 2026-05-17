@@ -32,7 +32,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
                     breadcrumbs={[{ label: "Blog", href: "/blog" }]}
                 />
                 <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-20 text-center text-foreground/40 text-sm">
-                    No posts yet — check back soon.
+                    No posts yet - check back soon.
                 </div>
             </div>
         );
