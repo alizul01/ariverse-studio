@@ -21,10 +21,20 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
     if (!post) return { title: "Post Not Found" };
     return {
         title: post.title,
-        description: `Read ${post.title} on Ariverse Studio Blog.`,
+        description: post.excerpt || `Read ${post.title} on Ariverse Studio Blog.`,
+        alternates: {
+            canonical: `/blog/${slug}`,
+        },
         openGraph: {
             title: post.title,
-            description: `Read ${post.title} on Ariverse Studio Blog.`,
+            description: post.excerpt || `Read ${post.title} on Ariverse Studio Blog.`,
+            url: `https://ariversestudio.com/blog/${slug}`,
+            images: post.coverImage ? [post.coverImage] : [],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.title,
+            description: post.excerpt || `Read ${post.title} on Ariverse Studio Blog.`,
             images: post.coverImage ? [post.coverImage] : [],
         },
     };
@@ -60,7 +70,7 @@ export default async function BlogPostPage(props: BlogPostProps) {
                             {post.title}
                         </h1>
                         <p className="text-foreground/40 text-xs font-bold tracking-widest uppercase mt-4">
-                            Ariverse Studio
+                            {post.authorName || "Ariverse Studio"} / {post.readTime || "4 min read"}
                         </p>
                     </header>
 

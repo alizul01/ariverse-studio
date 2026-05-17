@@ -21,10 +21,20 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Services",
     description: "Professional game development and gamification services. Unreal Engine, 3D Art, and immersive interactive experiences for your business.",
+    alternates: {
+        canonical: "/services",
+    },
     openGraph: {
         title: "Services | Ariverse Studio",
         description: "Professional game development and gamification services. Unreal Engine, 3D Art, and immersive interactive experiences for your business.",
         url: 'https://ariversestudio.com/services',
+        images: ["/images/services/game-dev-bg.jpg"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Services | Ariverse Studio",
+        description: "Game development, gamification, XR, and game-based learning services.",
+        images: ["/images/services/game-dev-bg.jpg"],
     },
 };
 

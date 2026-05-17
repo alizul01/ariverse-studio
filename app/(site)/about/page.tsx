@@ -76,7 +76,7 @@ export default function AboutPage() {
                                     </div>
                                     <div className="w-px h-10 bg-foreground/10" />
                                     <div className="flex flex-col">
-                                        <span className="text-3xl font-bold text-foreground">05+</span>
+                                        <span className="text-3xl font-bold text-foreground">03+</span>
                                         <span className="text-[10px] font-black text-accent tracking-widest uppercase">Years Orbit</span>
                                     </div>
                                 </div>

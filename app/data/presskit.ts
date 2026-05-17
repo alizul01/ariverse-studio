@@ -8,56 +8,58 @@ export interface PressAsset {
     fileSize: string;
 }
 
+export const presskitDriveUrl = "https://drive.google.com/drive/folders/1LjpbRZXHdLz7D-Uu-Xrl1kuYp_hgzvEO?usp=sharing";
+
 export const pressAssets: PressAsset[] = [
     {
         id: "asset-01",
         title: "Ariverse Studio Logo Kit",
         description: "Logo resmi Ariverse Studio (SVG, PNG, AI) versi Dark/Light.",
-        thumbnail: "/images/press/logo-kit-thumb.jpg",
-        downloadUrl: "/downloads/ariverse-logo-kit.zip",
+        thumbnail: "/images/logo.png",
+        downloadUrl: presskitDriveUrl,
         type: "Logo",
         fileSize: "4.2 MB"
     },
     {
         id: "asset-02",
-        title: "Product Media - Mana",
-        description: "Tangkapan layar UI/UX SaaS ERP 'Mana' (Next.js & Supabase).",
-        thumbnail: "/images/press/mana-thumb.jpg",
-        downloadUrl: "/downloads/mana-media-kit.zip",
+        title: "Game Media - Nightwatch at the Museum",
+        description: "Key art and project media for Ariverse Studio's psychological horror title.",
+        thumbnail: "/images/games/nightwatch-at-the-museum/coverImage.png",
+        downloadUrl: presskitDriveUrl,
         type: "Screenshot",
         fileSize: "15.5 MB"
     },
     {
         id: "asset-03",
-        title: "Game Media - Butet Mengajar",
-        description: "Key art dan screenshot aplikasi belajar matematika gamifikasi.",
-        thumbnail: "/images/press/butet-thumb.jpg",
-        downloadUrl: "/downloads/butet-media-kit.zip",
+        title: "Game Media - MiniMate",
+        description: "Puzzle strategy game cover art and supporting media.",
+        thumbnail: "/images/games/mini-mate/coverImage.png",
+        downloadUrl: presskitDriveUrl,
         type: "Screenshot",
         fileSize: "22 MB"
     },
     {
         id: "asset-04",
-        title: "Project Media - The Dawn: Office",
-        description: "Early look proyek horor Unreal Engine 5.",
-        thumbnail: "/images/press/thedawn-thumb.jpg",
-        downloadUrl: "/downloads/thedawn-media-kit.zip",
+        title: "Studio Press Coverage",
+        description: "Selected media coverage and editorial screenshots featuring Ariverse Studio.",
+        thumbnail: "/images/press/foto-cerita-geliat-imajinasi-digital-di-kota-kreatif/screenshot.jpg",
+        downloadUrl: presskitDriveUrl,
         type: "Screenshot",
         fileSize: "35 MB"
     },
     {
         id: "asset-05",
         title: "Studio Fact Sheet",
-        description: "Statistik kunci, bio founder, dan visi Sharia-compliant business.",
-        thumbnail: "/images/press/fact-sheet-thumb.jpg",
-        downloadUrl: "/downloads/ariverse-fact-sheet.pdf",
+        description: "Key studio facts, contact information, leadership bio, and current project summary.",
+        thumbnail: "/images/header/about-header.jpg",
+        downloadUrl: presskitDriveUrl,
         type: "Document",
         fileSize: "1.1 MB"
     }
 ];
 
 export const studioInfo = {
-    foundingDate: "January 2021",
+    foundingDate: "2023",
     location: "Malang, Indonesia",
     teamSize: "15 Explorers",
     founder: "Ali Zulfikar",

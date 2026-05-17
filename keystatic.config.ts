@@ -51,6 +51,7 @@ export default config({
                     ],
                     defaultValue: 'Unreal Engine 5',
                 }),
+                genre: fields.text({ label: 'Genre', defaultValue: 'Interactive Experience' }),
                 status: fields.select({
                     label: 'Development Status',
                     options: [
@@ -87,6 +88,12 @@ export default config({
                     directory: 'public/images/posts',
                     publicPath: '/images/posts/',
                 }),
+                excerpt: fields.text({ label: 'Excerpt', multiline: true }),
+                category: fields.text({ label: 'Category', defaultValue: 'Devlog' }),
+                readTime: fields.text({ label: 'Read Time', defaultValue: '5 min read' }),
+                authorName: fields.text({ label: 'Author Name', defaultValue: 'Ariverse Team' }),
+                authorRole: fields.text({ label: 'Author Role', defaultValue: 'Editor' }),
+                featured: fields.checkbox({ label: 'Featured', defaultValue: false }),
                 content: fields.document({
                     label: 'Content',
                     formatting: true,

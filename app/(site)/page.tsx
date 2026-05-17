@@ -102,7 +102,7 @@ export default async function Home() {
               {/* Stats row - no boxes, just dividers */}
               <div className="flex items-stretch divide-x divide-foreground/10 mb-12">
                 {[
-                  { num: "2024", label: "Founded" },
+                  { num: "2023", label: "Founded" },
                   { num: "Malang", label: "Based In" },
                   { num: "Horror", label: "Genre" },
                 ].map((s, i) => (

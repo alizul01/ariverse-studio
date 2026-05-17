@@ -1,11 +1,12 @@
-{
-  "title": "Nightwatch at The Museum",
-  "description": "Play as Raja, a new security guard at a Javanese cultural heritage museum in Indonesia, 2003. What begins as routine night patrols slowly descends into a psychological horror experience that tests your sanity - and your choices determine Raja's fate.",
-  "coverImage": "/images/games/nightwatch-at-the-museum/coverImage.png",
-  "platforms": [
-    "PC"
-  ],
-  "engine": "Unity",
-  "status": "coming-soon",
-  "releaseDate": "2026-08-08"
+﻿{
+    "title":  "Nightwatch at The Museum",
+    "description":  "Play as Raja, a new security guard at a Javanese cultural heritage museum in Indonesia, 2003. What begins as routine night patrols slowly descends into a psychological horror experience that tests your sanity - and your choices determine Raja\u0027s fate.",
+    "coverImage":  "/images/games/nightwatch-at-the-museum/coverImage.png",
+    "platforms":  [
+                      "PC"
+                  ],
+    "engine":  "Unity",
+    "genre":  "Psychological Horror",
+    "status":  "coming-soon",
+    "releaseDate":  "2026-08-08"
 }

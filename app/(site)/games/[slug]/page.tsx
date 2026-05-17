@@ -34,6 +34,16 @@ export async function generateMetadata({ params }: GameDetailPageProps): Promise
         openGraph: {
             title: game.title,
             description: game.description || `Explore ${game.title}, a new immersive experience by Ariverse Studio.`,
+            url: `https://ariversestudio.com/games/${slug}`,
+            images: game.coverImage ? [game.coverImage] : [],
+        },
+        alternates: {
+            canonical: `/games/${slug}`,
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${game.title} | Ariverse Studio`,
+            description: game.description || `Explore ${game.title}, a new immersive experience by Ariverse Studio.`,
             images: game.coverImage ? [game.coverImage] : [],
         },
     };
@@ -97,7 +107,7 @@ export default async function GameDetailPage({ params }: GameDetailPageProps) {
                                 </div>
                                 <div>
                                     <p className="text-foreground/40 text-xs uppercase mb-2 tracking-widest">Genre</p>
-                                    <p className="text-foreground font-bold text-lg">Interactive Experience</p>
+                                    <p className="text-foreground font-bold text-lg">{game.genre}</p>
                                 </div>
                             </div>
                         </div>

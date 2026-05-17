@@ -10,10 +10,20 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Our Games",
     description: "Explore the immersive worlds created by Ariverse Studio. From RPGs to simulations, discover our latest releases and upcoming titles.",
+    alternates: {
+        canonical: "/games",
+    },
     openGraph: {
         title: "Our Games | Ariverse Studio",
         description: "Explore the immersive worlds created by Ariverse Studio. From RPGs to simulations, discover our latest releases and upcoming titles.",
         url: 'https://ariversestudio.com/games',
+        images: ["/images/placeholders/games-header.jpg"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Our Games | Ariverse Studio",
+        description: "Explore releases and upcoming titles from Ariverse Studio.",
+        images: ["/images/placeholders/games-header.jpg"],
     },
 };
 

@@ -28,6 +28,16 @@ export async function generateMetadata({ params }: ServiceDetailProps): Promise<
         openGraph: {
             title: `${service.title} | Ariverse Studio`,
             description: service.description,
+            url: `https://ariversestudio.com/services/${slug}`,
+            images: service.image ? [service.image] : [],
+        },
+        alternates: {
+            canonical: `/services/${slug}`,
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${service.title} | Ariverse Studio`,
+            description: service.description,
             images: service.image ? [service.image] : [],
         },
     };

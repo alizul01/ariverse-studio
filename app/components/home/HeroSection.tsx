@@ -46,7 +46,7 @@ export default function HeroSection() {
         >
           <span className="w-8 h-px bg-accent/60" />
           <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-foreground/40">
-            Est. 2024 - Malang, Indonesia
+            Est. 2023 - Malang, Indonesia
           </span>
           <span className="w-8 h-px bg-accent/60" />
         </motion.div>
@@ -107,7 +107,7 @@ export default function HeroSection() {
         >
           {[
             { num: "3+", label: "Games" },
-            { num: "2024", label: "Founded" },
+            { num: "2023", label: "Founded" },
             { num: "INA", label: "Origin" },
           ].map((s) => (
             <div key={s.label} className="flex items-center gap-1.5 md:gap-2 px-3.5 md:px-5 py-0.5 md:py-1">

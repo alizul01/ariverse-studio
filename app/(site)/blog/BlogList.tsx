@@ -80,7 +80,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
                             <div className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-foreground/35 mb-4">
                                 <Calendar size={11} />
                                 {featured.date}
-                                <span className="text-foreground/20">·</span>
+                                <span className="text-foreground/20">&middot;</span>
                                 <span className="text-accent">{featured.category}</span>
                             </div>
                             <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground group-hover:text-accent transition-colors duration-200 mb-3 leading-tight">
@@ -139,7 +139,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
                                     <div className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-foreground/30 mb-2">
                                         <Calendar size={10} />
                                         {post.date}
-                                        <span className="text-foreground/15">·</span>
+                                        <span className="text-foreground/15">&middot;</span>
                                         <span className="text-accent/70">{post.category}</span>
                                     </div>
                                     <h3 className="text-base font-black uppercase tracking-tight text-foreground group-hover:text-accent transition-colors duration-200 line-clamp-2">

@@ -3,13 +3,11 @@
 import PageHeader from "../../components/ui/PageHeader";
 import FadeIn from "../../components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "../../components/animations/StaggerContainer";
-import { pressAssets, studioInfo } from "../../data/presskit";
+import { pressAssets, presskitDriveUrl, studioInfo } from "../../data/presskit";
+import Image from "next/image";
 import {
     CloudArrowDownIcon,
     InformationCircleIcon,
-    PhotoIcon,
-    VideoCameraIcon,
-    DocumentTextIcon,
     Squares2X2Icon,
     ArrowDownTrayIcon
 } from "@heroicons/react/24/outline";
@@ -41,10 +39,12 @@ export default function PresskitPage() {
                                     Download the complete studio package including high-res logos, project media, and studio fact sheets (78 MB).
                                 </p>
                                 <a
-                                    href="mailto:press@ariversestudio.com?subject=Presskit%20Request&body=Hi%2C%20I%27d%20like%20to%20request%20the%20full%20Ariverse%20Studio%20presskit."
+                                    href={presskitDriveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="inline-block bg-[#E2494B] text-[#FCEBD7] px-12 py-5 rounded-full font-black tracking-widest text-sm hover:scale-105 transition-transform shadow-[0_10px_40px_rgba(226,73,75,0.4)] uppercase"
                                 >
-                                    Request Full Presskit
+                                    Open Full Presskit
                                 </a>
                             </div>
                         </div>
@@ -67,12 +67,13 @@ export default function PresskitPage() {
                             {pressAssets.map((asset) => (
                                 <StaggerItem key={asset.id} className="group bg-[#61422D]/5 border border-[#61422D]/20 rounded-3xl overflow-hidden hover:border-[#E2494B]/50 transition-all duration-500">
                                     <div className="h-48 relative overflow-hidden bg-[#250804]">
-                                        <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity">
-                                            {asset.type === "Logo" && <Squares2X2Icon className="w-20 h-20" />}
-                                            {asset.type === "Screenshot" && <PhotoIcon className="w-20 h-20" />}
-                                            {asset.type === "Document" && <DocumentTextIcon className="w-20 h-20" />}
-                                            {asset.type === "Video" && <VideoCameraIcon className="w-20 h-20" />}
-                                        </div>
+                                        <Image
+                                            src={asset.thumbnail}
+                                            alt={asset.title}
+                                            fill
+                                            className="object-cover opacity-80 transition-transform duration-500 group-hover:scale-105 group-hover:opacity-100"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#250804]/70 via-[#250804]/20 to-transparent" />
                                         <div className="absolute top-4 left-4">
                                             <span className="bg-[#250804]/80 backdrop-blur-md border border-[#FCEBD7]/10 text-[#FCEBD7] text-[10px] font-black px-3 py-1 rounded-md uppercase tracking-widest">
                                                 {asset.type}
@@ -88,10 +89,12 @@ export default function PresskitPage() {
                                             {asset.description}
                                         </p>
                                         <a
-                                            href={`mailto:press@ariversestudio.com?subject=Asset%20Request%3A%20${encodeURIComponent(asset.title)}&body=Hi%2C%20I%27d%20like%20to%20request%20the%20following%20asset%3A%20${encodeURIComponent(asset.title)}`}
+                                            href={asset.downloadUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             className="w-full flex items-center justify-center gap-3 bg-foreground/5 border border-foreground/10 text-foreground py-4 rounded-xl text-xs font-bold tracking-widest uppercase hover:bg-[#E2494B] hover:border-[#E2494B] hover:text-[#FCEBD7] transition-all"
                                         >
-                                            <ArrowDownTrayIcon className="w-4 h-4" /> Request Asset
+                                            <ArrowDownTrayIcon className="w-4 h-4" /> Open Asset
                                         </a>
                                     </div>
                                 </StaggerItem>
@@ -149,7 +152,9 @@ export default function PresskitPage() {
 
                                 <div className="mt-12 p-6 rounded-2xl bg-[#E2494B]/5 border border-[#E2494B]/10">
                                     <p className="text-[#FCEBD7]/40 text-[10px] font-bold uppercase tracking-widest mb-3">Press Contact</p>
-                                    <p className="text-[#FCEBD7] font-bold text-sm">press@ariverse.com</p>
+                                    <a href="mailto:contact@ariversestudio.com" className="text-[#FCEBD7] font-bold text-sm hover:text-[#E2494B] transition-colors">
+                                        contact@ariversestudio.com
+                                    </a>
                                 </div>
                             </div>
                         </FadeIn>

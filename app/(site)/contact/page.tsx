@@ -35,19 +35,30 @@ export default function ContactPage() {
         e.preventDefault();
         setStatus("submitting");
 
-        // Construct mailto link as fallback (no backend)
-        const mailtoSubject = encodeURIComponent(`[${form.type}] ${form.subject}`);
-        const mailtoBody = encodeURIComponent(
-            `Name: ${form.name}\nEmail: ${form.email}\nType: ${form.type}\n\n${form.message}`
-        );
-        
-        window.location.href = `mailto:contact@ariversestudio.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-        
-        // Simulate success after opening mail client
-        setTimeout(() => {
+        try {
+            const response = await fetch("https://n8n.ariversestudio.com/webhook/contact-form", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: form.name,
+                    email: form.email,
+                    subject: form.subject,
+                    type: form.type,
+                    message: form.message,
+                    source: "ariversestudio.com/contact",
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error("Contact form webhook failed");
+            }
+
             setStatus("success");
             setForm({ name: "", email: "", subject: "", type: "general", message: "" });
-        }, 1000);
+        } catch (error) {
+            console.error(error);
+            setStatus("error");
+        }
     };
 
     const inquiryTypes = [
@@ -138,7 +149,7 @@ export default function ContactPage() {
                                             <CheckCircle className="w-10 h-10 text-green-400" />
                                         </div>
                                         <h3 className="text-2xl font-bold text-foreground mb-3">Message Sent!</h3>
-                                        <p className="text-foreground/60 mb-8">Your email client should have opened. We&apos;ll get back to you within 48 hours.</p>
+                                        <p className="text-foreground/60 mb-8">Thanks for reaching out. We&apos;ll get back to you within 48 hours.</p>
                                         <button
                                             onClick={() => setStatus("idle")}
                                             className="text-accent font-bold text-sm uppercase tracking-widest hover:text-foreground transition-colors"
