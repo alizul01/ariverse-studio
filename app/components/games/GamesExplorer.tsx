@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import NextImage from "next/image";
 import { ArrowUpRight, SlidersHorizontal, X } from "lucide-react";
-import StaggerContainer, { StaggerItem } from "../animations/StaggerContainer";
 import GameStatusBadge from "../ui/GameStatusBadge";
 import LanguageBadge from "../ui/LanguageBadge";
 import { getGameCtas, getStatusSortRank } from "../../../lib/game-presentation";
@@ -195,13 +194,13 @@ export default function GamesExplorer({ games }: { games: GameCard[] }) {
                     </p>
                 </div>
             ) : (
-                <StaggerContainer className="grid grid-cols-1 gap-10 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
                     {filteredGames.map((game) => {
                         const ctas = getGameCtas(game);
                         const primaryCta = ctas[0];
 
                         return (
-                            <StaggerItem key={game.slug} className="group">
+                            <div key={game.slug} className="group">
                                 <article className="rounded-[2rem] border border-foreground/8 bg-background p-4 transition-colors hover:border-accent/25 md:p-5">
                                     <Link href={`/games/${game.slug}`} className="block">
                                         <div className="relative mb-6 aspect-video overflow-hidden rounded-[1.5rem] border border-foreground/8">
@@ -278,10 +277,10 @@ export default function GamesExplorer({ games }: { games: GameCard[] }) {
                                         )}
                                     </div>
                                 </article>
-                            </StaggerItem>
+                            </div>
                         );
                     })}
-                </StaggerContainer>
+                </div>
             )}
         </div>
     );

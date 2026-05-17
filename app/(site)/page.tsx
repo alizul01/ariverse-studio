@@ -146,15 +146,17 @@ export default async function Home() {
       <section className="max-w-[1440px] mx-auto px-4 md:px-6 py-20 w-full">
         <FadeIn className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div>
-            <div className="inline-flex items-stretch mb-4 rounded-xl border border-foreground/10 overflow-hidden">
+            <div className="mb-4 w-fit inline-flex items-stretch rounded-xl border border-foreground/10 overflow-hidden">
               <div className="flex items-center justify-center px-3 py-2 bg-foreground/5">
                 <Image src="/emoticon/stary%20eyes.png" alt="" width={24} height={24} className="object-contain" />
               </div>
               <div className="flex items-center px-4 py-2 bg-foreground/[0.03]">
-                <span className="text-accent text-xs font-bold tracking-[0.3em] uppercase">Our Services</span>
+                <span className="text-accent text-xs font-bold tracking-[0.3em] uppercase">What We Do</span>
               </div>
             </div>
-            <Link href="/services" className="text-4xl md:text-5xl font-black text-foreground tracking-tight uppercase hover:text-accent transition-colors">What We Do</Link>
+            <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight uppercase">
+              <Link href="/services" className="hover:text-accent transition-colors">Our Services</Link>
+            </h2>
             <p className="text-foreground/45 mt-3 max-w-md text-sm leading-relaxed">
               From concept to launch - we bring games and interactive experiences to life.
             </p>
