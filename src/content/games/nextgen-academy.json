@@ -6,5 +6,6 @@
                   ],
     "engine":  "Next.js",
     "genre":  "Learning Platform",
+    "language":  "en",
     "status":  "released"
 }

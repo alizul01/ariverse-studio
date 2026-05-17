@@ -7,6 +7,11 @@
                   ],
     "engine":  "Unity",
     "genre":  "Psychological Horror",
+    "language":  "id",
     "status":  "coming-soon",
-    "releaseDate":  "2026-08-08"
+    "releaseDate":  "2026-08-08",
+    "websiteUrl":  "",
+    "wishlistUrl":  "",
+    "demoUrl":  "",
+    "downloadUrl":  ""
 }

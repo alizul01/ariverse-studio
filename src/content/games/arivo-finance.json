@@ -7,5 +7,6 @@
                   ],
     "engine":  "Next.js",
     "genre":  "Financial ERP",
+    "language":  "en",
     "status":  "released"
 }

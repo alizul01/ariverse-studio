@@ -7,6 +7,11 @@
                   ],
     "engine":  "Custom",
     "genre":  "Interactive Photobooth",
+    "language":  "id",
     "status":  "released",
-    "releaseDate":  "2024-01-01"
+    "releaseDate":  "2024-01-01",
+    "websiteUrl":  "",
+    "wishlistUrl":  "",
+    "demoUrl":  "",
+    "downloadUrl":  ""
 }

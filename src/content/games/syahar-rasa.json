@@ -7,5 +7,6 @@
                   ],
     "engine":  "Next.js",
     "genre":  "E-Commerce Platform",
+    "language":  "en",
     "status":  "released"
 }

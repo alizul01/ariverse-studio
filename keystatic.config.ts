@@ -52,6 +52,15 @@ export default config({
                     defaultValue: 'Unreal Engine 5',
                 }),
                 genre: fields.text({ label: 'Genre', defaultValue: 'Interactive Experience' }),
+                language: fields.select({
+                    label: 'Primary Content Language',
+                    options: [
+                        { label: 'English', value: 'en' },
+                        { label: 'Bahasa Indonesia', value: 'id' },
+                        { label: 'Bilingual', value: 'bilingual' },
+                    ],
+                    defaultValue: 'en',
+                }),
                 status: fields.select({
                     label: 'Development Status',
                     options: [
@@ -63,6 +72,10 @@ export default config({
                     defaultValue: 'in-development',
                 }),
                 releaseDate: fields.date({ label: 'Release Date' }),
+                websiteUrl: fields.text({ label: 'Live / Website URL', defaultValue: '' }),
+                wishlistUrl: fields.text({ label: 'Wishlist URL', defaultValue: '' }),
+                demoUrl: fields.text({ label: 'Demo URL', defaultValue: '' }),
+                downloadUrl: fields.text({ label: 'Download / Store URL', defaultValue: '' }),
                 content: fields.document({
                     label: 'Content',
                     formatting: true,

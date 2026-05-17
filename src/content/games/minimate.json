@@ -8,6 +8,11 @@
                   ],
     "engine":  "Unity",
     "genre":  "Puzzle Strategy",
+    "language":  "en",
     "status":  "in-development",
-    "releaseDate":  null
+    "releaseDate":  null,
+    "websiteUrl":  "",
+    "wishlistUrl":  "",
+    "demoUrl":  "",
+    "downloadUrl":  ""
 }
