@@ -14,7 +14,7 @@ export const pressAssets: PressAsset[] = [
     {
         id: "asset-01",
         title: "Ariverse Studio Logo Kit",
-        description: "Logo resmi Ariverse Studio (SVG, PNG, AI) versi Dark/Light.",
+        description: "Official Ariverse Studio logo files in SVG, PNG, and AI formats for light and dark use cases.",
         thumbnail: "/images/logo.png",
         downloadUrl: presskitDriveUrl,
         type: "Logo",
@@ -64,6 +64,6 @@ export const studioInfo = {
     teamSize: "15 Explorers",
     founder: "Ali Zulfikar",
     mission: "To forge digital universes that challenge reality and inspire exploration.",
-    activeProjects: ["Mana (SaaS ERP)", "Butet Mengajar", "The Dawn: Office"],
+    activeProjects: ["ArivoFinance", "MiniMate", "Nightwatch at The Museum"],
     techStack: ["Unity", "Unreal Engine 5", "Next.js", "Supabase"]
 };
