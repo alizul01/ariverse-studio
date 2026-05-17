@@ -9,5 +9,6 @@
     "engine":  "Next.js",
     "genre":  "Community Platform",
     "language":  "en",
-    "status":  "released"
+    "status":  "released",
+    "isFeatured":  false
 }

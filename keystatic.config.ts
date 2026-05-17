@@ -71,6 +71,7 @@ export default config({
                     ],
                     defaultValue: 'in-development',
                 }),
+                isFeatured: fields.checkbox({ label: 'Featured on Homepage', defaultValue: false }),
                 releaseDate: fields.date({ label: 'Release Date' }),
                 websiteUrl: fields.text({ label: 'Live / Website URL', defaultValue: '' }),
                 wishlistUrl: fields.text({ label: 'Wishlist URL', defaultValue: '' }),

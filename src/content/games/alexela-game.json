@@ -10,6 +10,7 @@
     "genre":  "Narrative Adventure",
     "language":  "en",
     "status":  "in-development",
+    "isFeatured":  false,
     "releaseDate":  null,
     "websiteUrl":  "",
     "wishlistUrl":  "",

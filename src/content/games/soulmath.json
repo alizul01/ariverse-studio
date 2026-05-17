@@ -9,6 +9,7 @@
     "genre":  "Educational Game",
     "language":  "id",
     "status":  "released",
+    "isFeatured":  true,
     "releaseDate":  "2024-01-01",
     "websiteUrl":  "",
     "wishlistUrl":  "",

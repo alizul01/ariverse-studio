@@ -11,13 +11,22 @@ import CrewSelect from "../components/home/CrewSelect";
 
 export default async function Home() {
   const gamesData = await reader.collections.games.all();
-  const games = gamesData.map((game) => ({
+  const featuredGames = gamesData
+    .filter((game) => game.entry.isFeatured)
+    .map((game) => ({
+      title: game.entry.title,
+      description: game.entry.description,
+      platforms: game.entry.platforms,
+      slug: game.slug,
+      image: game.entry.coverImage || "/images/placeholder.jpg",
+    }));
+  const games = (featuredGames.length > 0 ? featuredGames : gamesData.slice(0, 6).map((game) => ({
     title: game.entry.title,
     description: game.entry.description,
     platforms: game.entry.platforms,
     slug: game.slug,
     image: game.entry.coverImage || "/images/placeholder.jpg",
-  }));
+  })));
 
   const servicesData = await reader.collections.services.all();
   const services = servicesData.map((s) => ({

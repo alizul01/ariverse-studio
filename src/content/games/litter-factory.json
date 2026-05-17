@@ -9,6 +9,7 @@
     "genre":  "Co-op Simulation",
     "language":  "id",
     "status":  "in-development",
+    "isFeatured":  false,
     "releaseDate":  "2026-01-01",
     "websiteUrl":  "",
     "wishlistUrl":  "",

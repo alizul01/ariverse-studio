@@ -8,5 +8,6 @@
     "engine":  "Next.js",
     "genre":  "E-Commerce Platform",
     "language":  "en",
-    "status":  "released"
+    "status":  "released",
+    "isFeatured":  false
 }

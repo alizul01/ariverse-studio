@@ -10,6 +10,7 @@
     "genre":  "Puzzle Strategy",
     "language":  "en",
     "status":  "in-development",
+    "isFeatured":  true,
     "releaseDate":  null,
     "websiteUrl":  "",
     "wishlistUrl":  "",

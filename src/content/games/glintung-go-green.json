@@ -8,5 +8,6 @@
     "engine":  "Next.js",
     "genre":  "Institutional Website",
     "language":  "en",
-    "status":  "released"
+    "status":  "released",
+    "isFeatured":  false
 }
