@@ -94,7 +94,7 @@ export default function MinimatePolicyPage() {
                         </div>
 
                         <div className="space-y-4">
-                            <h3 className="text-foreground font-bold text-2xl uppercase tracking-tight">4. Children's Privacy</h3>
+                            <h3 className="text-foreground font-bold text-2xl uppercase tracking-tight">4. Children&apos;s Privacy</h3>
                             <p className="text-foreground/60 leading-relaxed">
                                 Because MiniMate collects no data whatsoever, it is safe for users of all ages, including children. We comply fully with COPPA (Children&apos;s Online Privacy Protection Act) and applicable international regulations.
                             </p>
