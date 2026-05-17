@@ -1,0 +1,12 @@
+{
+  "title": "MiniMate",
+  "description": "Chess puzzle meets brain challenge — move smart, dodge enemies, collect stars! Guide your chess piece from Start to Finish across a grid board packed with traps, enemies, and challenges. Simple to learn, tough to master.",
+  "coverImage": "/images/games/minimate/coverImage.png",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "engine": "Unity",
+  "status": "in-development",
+  "releaseDate": null
+}
