@@ -1,6 +1,6 @@
-﻿{
+{
     "title":  "Nightwatch at The Museum",
-    "description":  "Play as Raja, a new security guard at a Javanese cultural heritage museum in Indonesia, 2003. What begins as routine night patrols slowly descends into a psychological horror experience that tests your sanity - and your choices determine Raja\u0027s fate.",
+    "description":  "A first-person psychological horror game set in Indonesia after the 1990s financial crisis. Play as Raja, a newly hired night guard at a former Dutch colonial museum — where scorch marks, vanished guards, and a distorted reality unravel the official story one patrol at a time.",
     "coverImage":  "/images/games/nightwatch-at-the-museum/coverImage.png",
     "platforms":  [
                       "PC"
@@ -12,7 +12,7 @@
     "isFeatured":  true,
     "releaseDate":  "2026-08-08",
     "websiteUrl":  "",
-    "wishlistUrl":  "",
+    "wishlistUrl":  "https://store.steampowered.com/app/4483010/Nightwatch_at_The_Museum/",
     "demoUrl":  "",
     "downloadUrl":  ""
 }
