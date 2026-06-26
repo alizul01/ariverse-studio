@@ -48,6 +48,15 @@ function getServiceIcon(icon: string) {
     }
 }
 
+// dummy images for services, replace with actual images from keystatic when available
+// Keys MUST match the Keystatic slug (folder name in src/content/services/)
+const serviceImages: { [key: string]: string } = {
+    "game-development": "/images/services/our-service/FullCycleServices-NOVA.jpg",
+    "gamification": "/images/services/our-service/GamificationServices-LUMA.jpg",
+    "xr-development": "/images/services/our-service/2D_3DArtCreationServices-KIP.jpg",
+    "game-based-learning": "/images/services/our-service/SoftwareServices-REX.jpg",
+};
+
 export default async function ServicesPage() {
     const services = await reader.collections.services.all();
 
@@ -60,6 +69,50 @@ export default async function ServicesPage() {
             />
 
             <div className="max-w-[1440px] mx-auto px-4 md:px-6 mt-20">
+                <div className="space-y-12 mb-40">
+                    {services.map((service, index) => (
+                        <FadeIn key={service.slug} direction="up">
+                            <div className="relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-[3rem] overflow-hidden group shadow-2xl">
+
+                                <Image
+                                    // Logika: ambil dari slug yang cocok, jika tidak ada fallback ke gambar default
+                                    src={serviceImages[service.slug] || "/images/services/game-dev-bg.jpg"}
+                                    alt={service.entry.title}
+                                    fill
+                                    className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"
+                                />
+
+                                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
+
+                                <div className="absolute inset-0 flex items-center justify-start p-8 md:p-16 lg:p-24">
+                                    <div className="max-w-lg space-y-6">
+                                        <div className="inline-flex items-center gap-2 text-white">
+                                            {getServiceIcon(service.entry.icon)}
+                                            <span className="text-sm font-bold tracking-[0.2em] uppercase">0{index + 1}</span>
+                                        </div>
+
+                                        <h3 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tighter uppercase leading-[0.9]">
+                                            {service.entry.title}
+                                        </h3>
+                                        <p className="text-lg text-white/70 leading-relaxed">
+                                            {service.entry.description}
+                                        </p>
+
+                                        <div className="pt-4">
+                                            <Link
+                                                href={`/services/${service.slug}`}
+                                                className="inline-flex items-center gap-3 text-white font-black tracking-[0.2em] text-xs uppercase hover:text-accent transition-colors"
+                                            >
+                                                MORE INFO
+                                                <ArrowRightIcon className="w-4 h-4" />
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </FadeIn>
+                    ))}
+                </div>
 
                 {/* Cinematic Services List */}
                 <div className="space-y-40 mb-40">
