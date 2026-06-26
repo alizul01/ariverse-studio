@@ -64,7 +64,7 @@ export default async function ServicesPage() {
                 <div className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 mb-20 sm:mb-28 md:mb-40">
                     {services.map((service, index) => (
                         <FadeIn key={service.slug} direction="up">
-                            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] rounded-2xl sm:rounded-[3rem] overflow-hidden group shadow-2xl">
+                            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] rounded-2xl sm:rounded-[3rem] overflow-hidden group shadow-2xl">
 
                                 <Image
                                     // Logika: ambil dari slug yang cocok, jika tidak ada fallback ke gambar default
@@ -74,7 +74,7 @@ export default async function ServicesPage() {
                                     className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"
                                 />
 
-                                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 via-60% to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 via-70% to-transparent" />
 
                                 <div className="absolute inset-0 flex items-center justify-start p-5 sm:p-8 md:p-16 lg:p-24">
                                     <div className="max-w-[65%] sm:max-w-[60%] md:max-w-xl space-y-3 sm:space-y-4 md:space-y-6">
