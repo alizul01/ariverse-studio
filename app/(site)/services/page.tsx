@@ -17,6 +17,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import type { Metadata } from "next";
+import { services } from "../../data/services";
 
 export const metadata: Metadata = {
     title: "Services",
@@ -49,7 +50,7 @@ function getServiceIcon(icon: string) {
 }
 
 export default async function ServicesPage() {
-    const services = await reader.collections.services.all();
+    // const services = await reader.collections.services.all();
 
     return (
         <div className="pb-40">
@@ -59,14 +60,58 @@ export default async function ServicesPage() {
                 breadcrumbs={[{ label: "Services", href: "/services" }]}
             />
 
-            <div className="max-w-[1440px] mx-auto px-4 md:px-6 mt-20">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6">
+                <div className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 mb-20 sm:mb-28 md:mb-40">
+                    {services.map((service, index) => (
+                        <FadeIn key={service.slug} direction="up">
+                            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] rounded-2xl sm:rounded-[3rem] overflow-hidden group shadow-2xl">
+
+                                <Image
+                                    // Logika: ambil dari slug yang cocok, jika tidak ada fallback ke gambar default
+                                    src={service.imageCard || "/images/services/game-dev-bg.jpg"}
+                                    alt={service.entry.title}
+                                    fill
+                                    className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"
+                                />
+
+                                <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 via-70% to-transparent" />
+
+                                <div className="absolute inset-0 flex items-center justify-start p-5 sm:p-8 md:p-16 lg:p-24">
+                                    <div className="max-w-[65%] sm:max-w-[60%] md:max-w-xl space-y-3 sm:space-y-4 md:space-y-6">
+                                        <div className="inline-flex items-center gap-1.5 sm:gap-2 text-white">
+                                            <span className="[&>svg]:w-5 [&>svg]:h-5 sm:[&>svg]:w-8 sm:[&>svg]:h-8">{getServiceIcon(service.entry.icon)}</span>
+                                            <span className="text-[10px] sm:text-sm font-bold tracking-[0.2em] uppercase">0{index + 1}</span>
+                                        </div>
+
+                                        <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold text-white tracking-wide uppercase leading-tight sm:leading-none lg:leading-[1]">
+                                            {service.entry.title}
+                                        </h3>
+                                        <p className="text-xs sm:text-sm md:text-lg text-white/70 leading-relaxed line-clamp-2 sm:line-clamp-3 md:line-clamp-none">
+                                            {service.entry.description}
+                                        </p>
+
+                                        <div className="pt-1 sm:pt-4">
+                                            <Link
+                                                href={`/services/${service.slug}`}
+                                                className="inline-flex items-center gap-3 text-white font-black tracking-[0.2em] text-xs uppercase hover:text-accent transition-colors"
+                                            >
+                                                MORE INFO
+                                                <ArrowRightIcon className="w-4 h-4" />
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </FadeIn>
+                    ))}
+                </div>
 
                 {/* Cinematic Services List */}
-                <div className="space-y-40 mb-40">
+                {/* <div className="space-y-40 mb-40">
                     {services.map((service, index) => (
                         <FadeIn key={service.slug} direction={index % 2 === 0 ? "left" : "right"}>
                             <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-24 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
-                                {/* Visual Side */}
+                                Visual Side
                                 <div className="w-full lg:w-1/2 group relative">
                                     <div className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden border border-foreground/30 shadow-2xl">
                                         {service.entry.image && (
@@ -79,17 +124,17 @@ export default async function ServicesPage() {
                                         )}
                                         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
 
-                                        {/* Floating Badge */}
+                                        Floating Badge
                                         <div className="absolute top-8 left-8 bg-background/80 backdrop-blur-xl border border-foreground/10 p-5 rounded-3xl text-accent">
                                             {getServiceIcon(service.entry.icon)}
                                         </div>
                                     </div>
 
-                                    {/* Decorative Glow */}
+                                    Decorative Glow
                                     <div className="absolute -inset-4 bg-accent/10 blur-3xl -z-10 group-hover:bg-accent/20 transition-colors duration-500 rounded-[4rem]" />
                                 </div>
 
-                                {/* Content Side */}
+                                Content Side
                                 <div className="w-full lg:w-1/2 space-y-8">
                                     <div>
                                         <div className="inline-block mb-4 px-4 py-1 rounded-full border border-accent/30 bg-accent/5 backdrop-blur-sm">
@@ -129,7 +174,7 @@ export default async function ServicesPage() {
                             </div>
                         </FadeIn>
                     ))}
-                </div>
+                </div> */}
 
                 {/* Key Platforms and Technologies */}
                 <section className="py-32 relative overflow-hidden flex flex-col items-center">
