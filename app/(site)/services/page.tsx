@@ -195,6 +195,11 @@ export default async function ServicesPage() {
                             <StaggerItem key={index}>
                                 <div className="group relative bg-background/40 backdrop-blur-xl border border-foreground/10 p-6 md:px-10 md:py-8 rounded-[2rem] hover:border-accent/50 transition-all duration-500 cursor-default">
                                     <span className="text-lg md:text-xl font-bold text-foreground/80 group-hover:text-foreground transition-colors">{tech.name}</span>
+                                    {tech.comingSoon && (
+                                        <span className="ml-2 align-middle text-[9px] font-black uppercase tracking-widest text-accent/70 border border-accent/30 rounded-full px-2 py-0.5">
+                                            Coming Soon
+                                        </span>
+                                    )}
                                     <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-[2rem]" />
                                 </div>
                             </StaggerItem>

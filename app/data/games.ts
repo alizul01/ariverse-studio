@@ -14,7 +14,7 @@ export const games: Game[] = [
         description: "A cozy yet chaotic co-op simulation game. Manage a busy recycling plant, sort trash with friends, and save the planet one piece of junk at a time.",
         slug: "litter-factory",
         image: "/images/games/litter-factory.jpg", // Pastikan file gambar ada
-        platforms: ["PC", "Switch"],
+        platforms: ["PC"],
         engine: "Unreal Engine 5",
         releaseDate: "2026"
     },
