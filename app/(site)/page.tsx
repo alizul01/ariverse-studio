@@ -8,6 +8,7 @@ import HeroSection from "../components/home/HeroSection";
 import AboutVisuals from "../components/home/AboutVisuals";
 import PressCoverage from "../components/home/PressCoverage";
 import CrewSelect from "../components/home/CrewSelect";
+import CompanyProfileVideo from "../components/home/CompanyProfileVideo";
 
 export default async function Home() {
   const gamesData = await reader.collections.games.all();
@@ -61,7 +62,10 @@ export default async function Home() {
       {/* 1. Hero */}
       <HeroSection />
 
-      {/* 2. Who We Are */}
+      {/* 2. Company Profile Video - temporary YouTube video, replace with the final company profile */}
+      <CompanyProfileVideo src="https://www.youtube.com/watch?v=jeq2u8HlKfM" />
+
+      {/* 3. Who We Are */}
       <div className="relative w-full py-16 md:py-20">
 
         {/* Grid background */}
