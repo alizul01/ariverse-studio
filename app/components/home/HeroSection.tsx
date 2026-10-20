@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function HeroSection() {
+export default function HeroSection({ projectCount }: { projectCount: number }) {
   return (
     <section className="relative min-h-[calc(100vh-5rem)] overflow-hidden py-8 md:py-10 pb-0">
 
@@ -106,7 +106,7 @@ export default function HeroSection() {
           className="flex items-center divide-x divide-foreground/10 bg-background/75 backdrop-blur-md border border-foreground/10 rounded-xl md:rounded-2xl px-1 md:px-2 py-1.5 md:py-2 shadow-[0_4px_24px_rgba(0,0,0,0.06)] mt-3"
         >
           {[
-            { num: "3+", label: "Games" },
+            { num: String(projectCount), label: "Projects" },
             { num: "2023", label: "Founded" },
             { num: "INA", label: "Origin" },
           ].map((s) => (

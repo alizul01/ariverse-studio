@@ -1,4 +1,4 @@
-import { config, fields, collection } from '@keystatic/core';
+import { config, fields, collection, singleton } from '@keystatic/core';
 
 export default config({
     storage: process.env.NODE_ENV === 'production' && process.env.KEYSTATIC_GITHUB_CLIENT_ID
@@ -254,6 +254,20 @@ export default config({
                     label: 'Foto',
                     directory: 'public/images/crew',
                     publicPath: '/images/crew/',
+                }),
+            },
+        }),
+    },
+    singletons: {
+        homepage: singleton({
+            label: 'Homepage',
+            path: 'src/content/homepage',
+            format: { data: 'json' },
+            schema: {
+                companyProfileVideoUrl: fields.text({
+                    label: 'Company Profile Video (YouTube URL)',
+                    description: 'Leave empty to show the "Video Coming Soon" frame.',
+                    defaultValue: '',
                 }),
             },
         }),

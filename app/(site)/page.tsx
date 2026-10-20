@@ -29,6 +29,8 @@ export default async function Home() {
     image: game.entry.coverImage || "/images/placeholder.jpg",
   })));
 
+  const homepage = await reader.singletons.homepage.read();
+
   const servicesData = await reader.collections.services.all();
   const services = servicesData.map((s) => ({
     slug: s.slug,
@@ -60,10 +62,10 @@ export default async function Home() {
     <div className="flex flex-col pb-20">
 
       {/* 1. Hero */}
-      <HeroSection />
+      <HeroSection projectCount={gamesData.length} />
 
-      {/* 2. Company Profile Video - temporary YouTube video, replace with the final company profile */}
-      <CompanyProfileVideo src="https://www.youtube.com/watch?v=jeq2u8HlKfM" />
+      {/* 2. Company Profile Video - URL is edited in Keystatic (Homepage singleton) */}
+      <CompanyProfileVideo src={homepage?.companyProfileVideoUrl} />
 
       {/* 3. Who We Are */}
       <div className="relative w-full py-16 md:py-20">
@@ -117,7 +119,7 @@ export default async function Home() {
                 {[
                   { num: "2023", label: "Founded" },
                   { num: "Malang", label: "Based In" },
-                  { num: "Horror", label: "Genre" },
+                  { num: "Games & Apps", label: "Focus" },
                 ].map((s, i) => (
                   <div key={s.label} className={`flex flex-col gap-1.5 ${i === 0 ? "pr-8" : "px-8"}`}>
                     <span className="text-foreground font-black text-xl tracking-tight leading-none">{s.num}</span>

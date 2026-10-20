@@ -40,3 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /dist
+# API routes moved aside during static export (scripts/prebuild.js)
+/.api-backup
