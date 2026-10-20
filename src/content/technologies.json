@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "name": "Unreal Engine 5",
+      "category": "Engine",
+      "comingSoon": false
+    },
+    {
+      "name": "Unity",
+      "category": "Engine",
+      "comingSoon": false
+    },
+    {
+      "name": "PC",
+      "category": "Platform",
+      "comingSoon": false
+    },
+    {
+      "name": "Android",
+      "category": "Platform",
+      "comingSoon": false
+    },
+    {
+      "name": "PlayStation 5",
+      "category": "Platform",
+      "comingSoon": true
+    },
+    {
+      "name": "Xbox Series X/S",
+      "category": "Platform",
+      "comingSoon": true
+    },
+    {
+      "name": "Nintendo Switch",
+      "category": "Platform",
+      "comingSoon": true
+    },
+    {
+      "name": "Blender",
+      "category": "Tool",
+      "comingSoon": false
+    },
+    {
+      "name": "Maya",
+      "category": "Tool",
+      "comingSoon": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "2D 3D Art Creation Services",
+  "order": 4,
+  "description": "Concept art, characters, environments, and 3D assets crafted for games, campaigns, and interactive experiences.",
+  "image": "/images/services/our-service/2D_3DArtCreationServices-KIP.jpg",
+  "icon": "paint",
+  "capabilities": [
+    "Concept Art",
+    "Character Design",
+    "Environment Art",
+    "3D Modeling",
+    "Illustration"
+  ]
+}

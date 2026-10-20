@@ -1,9 +1,7 @@
-"use client";
-
 import PageHeader from "../../components/ui/PageHeader";
 import FadeIn from "../../components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "../../components/animations/StaggerContainer";
-import { pressAssets, presskitDriveUrl, studioInfo } from "../../data/presskit";
+import { reader } from "../../../lib/keystatic";
 import Image from "next/image";
 import {
     CloudArrowDownIcon,
@@ -12,7 +10,11 @@ import {
     ArrowDownTrayIcon
 } from "@heroicons/react/24/outline";
 
-export default function PresskitPage() {
+export default async function PresskitPage() {
+    const studioInfo = await reader.singletons.presskit.readOrThrow();
+    const presskitDriveUrl = studioInfo.driveUrl;
+    const pressAssets = studioInfo.assets;
+
     return (
         <div className="pb-40">
             <PageHeader
@@ -64,8 +66,8 @@ export default function PresskitPage() {
                         </div>
 
                         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {pressAssets.map((asset) => (
-                                <StaggerItem key={asset.id} className="group bg-[#61422D]/5 border border-[#61422D]/20 rounded-3xl overflow-hidden hover:border-[#E2494B]/50 transition-all duration-500">
+                            {pressAssets.map((asset, i) => (
+                                <StaggerItem key={i} className="group bg-[#61422D]/5 border border-[#61422D]/20 rounded-3xl overflow-hidden hover:border-[#E2494B]/50 transition-all duration-500">
                                     <div className="h-48 relative overflow-hidden bg-[#250804]">
                                         <Image
                                             src={asset.thumbnail}
@@ -89,7 +91,7 @@ export default function PresskitPage() {
                                             {asset.description}
                                         </p>
                                         <a
-                                            href={asset.downloadUrl}
+                                            href={asset.downloadUrl || presskitDriveUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="w-full flex items-center justify-center gap-3 bg-foreground/5 border border-foreground/10 text-foreground py-4 rounded-xl text-xs font-bold tracking-widest uppercase hover:bg-[#E2494B] hover:border-[#E2494B] hover:text-[#FCEBD7] transition-all"
@@ -141,7 +143,7 @@ export default function PresskitPage() {
                                     <div className="space-y-4">
                                         <p className="text-[10px] font-black text-[#E2494B] tracking-[0.2em] uppercase">Tech Stack</p>
                                         <div className="flex flex-wrap gap-2">
-                                            {studioInfo.techStack?.map((tech: string, i: number) => (
+                                            {studioInfo.techStack.map((tech, i) => (
                                                 <span key={i} className="px-3 py-1 rounded-md bg-[#61422D]/10 border border-[#61422D]/20 text-[#FCEBD7]/70 text-[10px] font-bold uppercase tracking-widest">
                                                     {tech}
                                                 </span>

@@ -32,7 +32,7 @@ export default async function Home() {
   const homepage = await reader.singletons.homepage.read();
 
   const servicesData = await reader.collections.services.all();
-  const services = servicesData.map((s) => ({
+  const services = [...servicesData].sort((a, b) => a.entry.order - b.entry.order).map((s) => ({
     slug: s.slug,
     title: s.entry.title,
     description: s.entry.description,

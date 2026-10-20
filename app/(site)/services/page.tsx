@@ -1,5 +1,4 @@
 import { reader } from "../../../lib/keystatic";
-import { technologies } from "../../data/technologies";
 import FadeIn from "../../components/animations/FadeIn";
 import StaggerContainer, { StaggerItem } from "../../components/animations/StaggerContainer";
 import CTA from "../../components/ui/CTA";
@@ -11,13 +10,13 @@ import {
     AcademicCapIcon,
     ArrowRightIcon,
     VariableIcon,
+    PaintBrushIcon,
     LightBulbIcon
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
 
 import type { Metadata } from "next";
-import { services } from "../../data/services";
 
 export const metadata: Metadata = {
     title: "Services",
@@ -29,13 +28,13 @@ export const metadata: Metadata = {
         title: "Services | Ariverse Studio",
         description: "Professional game development and gamification services. Unreal Engine, 3D Art, and immersive interactive experiences for your business.",
         url: 'https://ariversestudio.com/services',
-        images: ["/images/services/game-dev-bg.jpg"],
+        images: ["/images/services/our-service/FullCycleServices-NOVA.jpg"],
     },
     twitter: {
         card: "summary_large_image",
         title: "Services | Ariverse Studio",
-        description: "Game development, gamification, XR, and game-based learning services.",
-        images: ["/images/services/game-dev-bg.jpg"],
+        description: "Full-cycle game development, gamification, software, and 2D/3D art services.",
+        images: ["/images/services/our-service/FullCycleServices-NOVA.jpg"],
     },
 };
 
@@ -45,12 +44,15 @@ function getServiceIcon(icon: string) {
         case 'variable': return <VariableIcon className="w-8 h-8" />;
         case 'globe': return <GlobeAltIcon className="w-8 h-8" />;
         case 'academic': return <AcademicCapIcon className="w-8 h-8" />;
+        case 'paint': return <PaintBrushIcon className="w-8 h-8" />;
         default: return <CpuChipIcon className="w-8 h-8" />;
     }
 }
 
 export default async function ServicesPage() {
-    // const services = await reader.collections.services.all();
+    const services = (await reader.collections.services.all())
+        .sort((a, b) => a.entry.order - b.entry.order);
+    const technologies = (await reader.singletons.technologies.read())?.items ?? [];
 
     return (
         <div className="pb-40">
@@ -67,8 +69,7 @@ export default async function ServicesPage() {
                             <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] rounded-2xl sm:rounded-[3rem] overflow-hidden group shadow-2xl">
 
                                 <Image
-                                    // Logika: ambil dari slug yang cocok, jika tidak ada fallback ke gambar default
-                                    src={service.imageCard || "/images/services/game-dev-bg.jpg"}
+                                    src={service.entry.image || "/images/services/game-dev-bg.jpg"}
                                     alt={service.entry.title}
                                     fill
                                     className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"

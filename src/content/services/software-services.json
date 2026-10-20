@@ -1,0 +1,14 @@
+{
+  "title": "Software Services",
+  "order": 3,
+  "description": "Web platforms and business software built on modern stacks — from company websites and e-commerce to custom dashboards and ERP.",
+  "image": "/images/services/our-service/SoftwareServices-REX.jpg",
+  "icon": "cpu",
+  "capabilities": [
+    "Web Platforms",
+    "Next.js",
+    "Laravel",
+    "Dashboards & ERP",
+    "E-Commerce"
+  ]
+}

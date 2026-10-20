@@ -208,6 +208,7 @@ export default config({
             format: { data: 'json' },
             schema: {
                 title: fields.slug({ name: { label: 'Title' } }),
+                order: fields.integer({ label: 'Order', defaultValue: 99, validation: { isRequired: true } }),
                 description: fields.text({ label: 'Short Description', multiline: true }),
                 image: fields.image({
                     label: 'Cover Image',
@@ -221,6 +222,7 @@ export default config({
                         { label: 'Globe (XR)', value: 'globe' },
                         { label: 'Academic Cap (Learning)', value: 'academic' },
                         { label: 'Variable (Gamification)', value: 'variable' },
+                        { label: 'Paint Brush (Art)', value: 'paint' },
                         { label: 'CPU Chip', value: 'cpu' },
                     ],
                     defaultValue: 'cpu',
@@ -269,6 +271,70 @@ export default config({
                     description: 'Leave empty to show the "Video Coming Soon" frame.',
                     defaultValue: '',
                 }),
+            },
+        }),
+        presskit: singleton({
+            label: 'Presskit',
+            path: 'src/content/presskit',
+            format: { data: 'json' },
+            schema: {
+                driveUrl: fields.text({ label: 'Presskit Folder URL (Google Drive)' }),
+                foundingDate: fields.text({ label: 'Founded' }),
+                location: fields.text({ label: 'Location' }),
+                teamSize: fields.text({ label: 'Team Size' }),
+                founder: fields.text({ label: 'Founder' }),
+                mission: fields.text({ label: 'Mission', multiline: true }),
+                activeProjects: fields.array(
+                    fields.text({ label: 'Project' }),
+                    { label: 'Active Projects', itemLabel: props => props.value }
+                ),
+                techStack: fields.array(
+                    fields.text({ label: 'Technology' }),
+                    { label: 'Tech Stack', itemLabel: props => props.value }
+                ),
+                assets: fields.array(
+                    fields.object({
+                        title: fields.text({ label: 'Title' }),
+                        description: fields.text({ label: 'Description', multiline: true }),
+                        thumbnail: fields.text({ label: 'Thumbnail Path', description: 'Path under /public, e.g. /images/logo.png' }),
+                        downloadUrl: fields.text({ label: 'Download URL', description: 'Leave empty to use the presskit folder URL.' }),
+                        type: fields.select({
+                            label: 'Type',
+                            options: [
+                                { label: 'Logo', value: 'Logo' },
+                                { label: 'Screenshot', value: 'Screenshot' },
+                                { label: 'Video', value: 'Video' },
+                                { label: 'Document', value: 'Document' },
+                            ],
+                            defaultValue: 'Screenshot',
+                        }),
+                        fileSize: fields.text({ label: 'File Size' }),
+                    }),
+                    { label: 'Press Assets', itemLabel: props => props.fields.title.value }
+                ),
+            },
+        }),
+        technologies: singleton({
+            label: 'Tech & Platforms',
+            path: 'src/content/technologies',
+            format: { data: 'json' },
+            schema: {
+                items: fields.array(
+                    fields.object({
+                        name: fields.text({ label: 'Name' }),
+                        category: fields.select({
+                            label: 'Category',
+                            options: [
+                                { label: 'Engine', value: 'Engine' },
+                                { label: 'Platform', value: 'Platform' },
+                                { label: 'Tool', value: 'Tool' },
+                            ],
+                            defaultValue: 'Tool',
+                        }),
+                        comingSoon: fields.checkbox({ label: 'Coming Soon', defaultValue: false }),
+                    }),
+                    { label: 'Items', itemLabel: props => props.fields.name.value }
+                ),
             },
         }),
     },
