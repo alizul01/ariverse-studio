@@ -21,7 +21,7 @@ No test suite is configured.
 
 `next.config.ts` switches behavior based on `KEYSTATIC_GITHUB_CLIENT_ID`:
 
-- **Without it** (default): `output: 'export'`, builds static HTML to `/dist`. The `prebuild` script temporarily moves `/app/api` to `.api-backup/` (Next.js would error on API routes in static export), then `postbuild` restores it. All pages must be statically renderable at build time.
+- **Without it** (default): `output: 'export'`, builds static HTML to `/dist`. The `prebuild` script temporarily moves `/app/api` to `.api-backup/` (Next.js would error on API routes in static export), then `postbuild` restores it. `.api-backup/` is gitignored; if a failed build leaves `app/api` missing, move it back by hand or the Keystatic admin API breaks in dev. All pages must be statically renderable at build time.
 - **With it** (server deployment): normal Next.js server build; API routes and SSR are available.
 
 Images are always unoptimized (`images: { unoptimized: true }`) for static export compatibility.
@@ -45,14 +45,18 @@ Storage: filesystem locally; commits directly to GitHub repo (`alizul01/ariverse
 
 The `lib/keystatic.ts` `reader` object is the only way to fetch content — use it in Server Components only (build-time), never in Client Components.
 
-### Static Data
+Singletons (single JSON files in `src/content/`):
 
-Legacy content not yet in Keystatic lives in `app/data/` as TypeScript files: `games.ts`, `posts.ts`, `services.ts`, `presskit.ts`, `technologies.ts`.
+- **Homepage** — `homepage.json` (company profile YouTube URL)
+- **Presskit** — `presskit.json` (studio facts, Drive folder URL, press assets)
+- **Tech & Platforms** — `technologies.json` (list on the Services page)
+
+Services and crew are ordered by their `order` field. All site content comes from Keystatic; there is no hardcoded data folder.
 
 ### Styling
 
 Tailwind CSS v4 via PostCSS (`@tailwindcss/postcss`). Theme in `app/globals.css` using CSS variables:
-- Background: `#250804` (dark brown) — Accent: `#96191A` (red) — Foreground: `#FCEBD7` (cream)
+- Background: `#F5F0E8` (light cream) — Accent: `#96191A` (red) — Foreground: `#101010` — Secondary: `#D6C9B6`
 - Font: Plus Jakarta Sans (loaded via `next/font` in `app/(site)/layout.tsx`)
 
 ### Animations

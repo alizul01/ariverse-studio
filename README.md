@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ariverse Studio
 
-## Getting Started
+Website portofolio Ariverse Studio — studio game dari Malang, Indonesia. Dibangun dengan Next.js (App Router), Tailwind CSS v4, Framer Motion, dan [Keystatic](https://keystatic.com) sebagai CMS berbasis Git.
 
-First, run the development server:
+## Menjalankan secara lokal
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Admin CMS tersedia di [http://localhost:3000/keystatic](http://localhost:3000/keystatic). Di lokal, Keystatic langsung menulis ke file di `src/content/`, jadi perubahan tinggal di-commit seperti kode biasa.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Konten
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Semua konten dikelola lewat Keystatic (`keystatic.config.ts`):
 
-## Learn More
+| Tipe | Lokasi | Dipakai di |
+|---|---|---|
+| Games / proyek | `src/content/games/` | Home, `/games` |
+| Posts | `src/content/posts/` | `/blog` |
+| Services | `src/content/services/` | Home, `/services` |
+| Careers | `src/content/careers/` | Belum ditampilkan di halaman mana pun |
+| Press coverage | `src/content/press/` | Home |
+| Crew | `src/content/crew/` | Home |
+| Homepage (singleton) | `src/content/homepage.json` | Video company profile di home |
+| Presskit (singleton) | `src/content/presskit.json` | `/presskit` |
+| Tech & Platforms (singleton) | `src/content/technologies.json` | `/services` |
 
-To learn more about Next.js, take a look at the following resources:
+Gambar disimpan di `public/images/`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+- **Tanpa** `KEYSTATIC_GITHUB_CLIENT_ID`: static export ke `dist/`. Script `prebuild` memindahkan `app/api` ke `.api-backup/` selama build, lalu `postbuild` mengembalikannya.
+- **Dengan** `KEYSTATIC_GITHUB_CLIENT_ID` dan `KEYSTATIC_GITHUB_CLIENT_SECRET`: build server (`npm run start`). Admin Keystatic di production login lewat GitHub dan meng-commit langsung ke repo `alizul01/ariverse-studio` — jalankan `git pull` sebelum mengedit di lokal.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Lainnya
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run lint
+```
+
+Belum ada test suite.
